@@ -1,0 +1,37 @@
+.btn-pet {
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-family: secondfont;
+
+
+}
+
+.btn-black {
+    background-color: #000;
+    transition: .3s;
+
+    &:hover {
+        background-color: #1e1e1e;
+        font-size: 17px;
+    }
+}
+
+.btn-blue-clicked {
+    background-color: $blue-clicked-btn;
+}
+
+.btn-blue-not-clicked {
+    background-color: $blue-not-clicked-btn;
+}
+
+.btn-pink-clicked {
+    background-color: $pink-clicked-btn;
+}
+
+.btn-pink-not-clicked {
+    background-color: $pink-not-clicked-btn;
+}

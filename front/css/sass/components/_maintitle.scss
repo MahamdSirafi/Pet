@@ -1,0 +1,27 @@
+.main-title {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h1 {
+        font-family: myfont;
+        font-size: 60px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 2px;
+
+
+        }
+    }
+
+    p {
+        font-family: secondfont;
+    }
+
+}

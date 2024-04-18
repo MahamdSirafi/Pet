@@ -1,0 +1,130 @@
+.doctors {
+    background-color: #efefefef;
+
+    .main-title {
+        h1 {
+            color: black;
+
+            &::before {
+                background-color: black;
+            }
+        }
+
+        p {
+            color: black;
+        }
+    }
+
+    .slider-body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .slider {
+            max-width: 1120px;
+            width: 100%;
+            background-color: gray;
+            padding: 40px 0;
+
+            .slide-content {
+                margin: 0 40px;
+
+                .card-wrapper {
+                    .doctor-card {
+                        width: 320px;
+                        border-radius: 25px;
+                        background-color: #fff;
+
+                        .card-content {
+                            h2.name {
+                                font-size: 18px;
+                                font-weight: 500;
+                                color: #333;
+                            }
+
+                            p.description {
+                                font-size: 14px;
+                                color: #707070;
+                                text-align: center;
+                            }
+
+                            button {
+                                border: none;
+                                font-size: 16px;
+                                color: #fff;
+                                padding: 8px 16px;
+                                background-color: #4070f4;
+                                border-radius: 6px;
+                                margin: 14px;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+
+                                &:hover {
+                                    background-color: #265df2;
+                                }
+                            }
+
+                        }
+
+                        .image-content,
+                        .card-content {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            padding: 10px 14px;
+                        }
+
+                        .image-content {
+                            row-gap: 5px;
+                            position: relative;
+                            padding: 25px 0;
+
+                            span.overlay {
+                                position: absolute;
+                                height: 100%;
+                                width: 100%;
+                                background-color: #4070f4;
+                                border-radius: 25px 25px 0 25px;
+                                left: 0;
+                                top: 0;
+
+                                &::before,
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    height: 40px;
+                                    width: 40px;
+                                    bottom: -40px;
+                                    right: 0;
+                                    background-color: #4070f4;
+                                }
+
+                                &::after {
+                                    border-radius: 0 25px 0 0;
+                                    background-color: #fff;
+                                }
+                            }
+
+                            .card-image {
+                                position: relative;
+                                width: 150px;
+                                height: 150px;
+                                border-radius: 50%;
+                                padding: 3px;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    border-radius: 50%;
+                                    border: 4px solid #4070f4;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

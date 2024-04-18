@@ -1,0 +1,58 @@
+[
+    {
+        "id":1,
+        "name":"product",
+        "price":200,
+        "image":"/assets/imgs/product-1.jpg",
+        "category": "food"
+    },
+    {
+        "id":2,
+        "name":"product",
+        "price":200,
+        "image":"/assets/imgs/product-2.jpg",
+        "category": "food"
+
+    },
+    {
+        "id":3,
+        "name":"product",
+        "price":200,
+        "image":"/assets/imgs/product-3.jpg",
+        "category": "requirements"
+
+    },
+    {
+        "id":4,
+        "name":"product",
+        "price":200,
+        "image":"/assets/imgs/product-4.jpg",
+        "category": "requirements"
+    },
+    {
+        "id":5,
+        "name":"product",
+        "price":200,
+        "image":"/assets/imgs/product-5.jpg",
+        "category": "requirements"
+    }, {
+        "id":6,
+        "name":"product",
+        "price":200,
+        "image":"/assets/imgs/product-6.jpg",
+        "category": "medcines"
+    }, {
+        "id":7,
+        "name":"product",
+        "price":200,
+        "image":"/assets/imgs/product-7.jpg",
+        "category": "medcines"
+
+    }, {
+        "id":8,
+        "name":"product",
+        "price":200,
+        "image":"/assets/imgs/product-8.jpg",
+        "category": "medcines"
+    }
+]

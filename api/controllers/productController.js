@@ -1,0 +1,10 @@
+const Product = require('../models/productModel');
+const factory = require('../utils/handlerFactory');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('./../utils/appError');
+const { patch } = require('../routes/productRoutes');
+exports.getAllProduct = factory.getAllpop(Product, 'company');
+exports.getProduct = factory.getOne(Product, { patch: 'company' });
+exports.updateProduct = factory.updateOne(Product);
+exports.createProduct = factory.createOne(Product);
+exports.deleteProduct = factory.deleteOne(Product);

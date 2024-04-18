@@ -1,0 +1,9 @@
+const Pet = require('../models/petModel');
+const AppError = require('../utils/appError');
+const handlerFactory = require('../utils/handlerFactory');
+const catchAsync = require('../utils/catchAsync');
+exports.getPet = handlerFactory.getOne(Pet);
+exports.createPet = handlerFactory.createOne(Pet);
+exports.updatePet = handlerFactory.updateOne(Pet);
+exports.deletePet = handlerFactory.deleteOne(Pet);
+exports.getAllPet = handlerFactory.getAll(Pet);
