@@ -12,8 +12,9 @@ This is an API for a pet store company that deals with many different companies 
 Some basic Git commands are:
 
 ```
-$ git clone https://github.com/MahamdSirafi/sweet.git
-$ cd sweet
+$ git clone https://github.com/MahamdSirafi/Pet.git
+$ cd Pet
+$ cd api
 $ npm install
 ```
 
