@@ -1,9 +1,8 @@
 const express = require('express');
+const dynamicImgMiddlewers = require('./../middlewares/dynamicImgMiddlewers');
 const userController = require('./../controllers/userController');
 const authController = require('./../controllers/authController');
 const authMiddlewers = require('./../middlewares/authMiddlewers');
-const imguserMiddlewers = require('./../middlewares/imguserMiddlewers');
-const dynamicImgMiddlewers = require('./../middlewares/dynamicImgMiddlewers');
 const router = express.Router();
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);

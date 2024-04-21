@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authMiddlewers = require('../middlewares/authMiddlewers');
 const dynamicImgMiddlewers = require('../middlewares/dynamicImgMiddlewers');
+const dynamicMiddleware = require('../middlewares/dynamicMiddleware');
 const productController = require('../controllers/productController');
 router.use(authMiddlewers.protect);
 router
