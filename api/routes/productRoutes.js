@@ -8,7 +8,16 @@ router.use(authMiddlewers.protect);
 router
   .route('/')
   .get(productController.getAllProduct)
-  .post(authMiddlewers.restrictTo('admin'), productController.createProduct);
+  .post(
+    authMiddlewers.restrictTo('admin'),
+    dynamicImgMiddlewers.uploadPhoto(
+      `public/img/products`,
+      `products-${Math.random() * 1000000}`,
+      `image`
+    ),
+    dynamicMiddleware.setPathImginBody('companies', 'image'),
+    productController.createProduct
+  );
 router
   .route('/:id')
   .get(productController.getProduct)
