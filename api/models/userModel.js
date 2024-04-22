@@ -2,7 +2,23 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
+const { type } = require('os');
 const userSchema = new mongoose.Schema({
+  health_centers: {
+    type: {
+      name: {
+        type: String,
+        trim: true,
+      },
+      address: {
+        type: String,
+        trim: true,
+      },
+    },
+    select: function () {
+      return this.role !== 'doctor' ? true : false;
+    },
+  },
   name: {
     type: String,
     required: [true, 'Please tell us your name!'],
@@ -21,7 +37,7 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['user', 'guide', 'emp', 'admin'],
+    enum: ['user', 'doctor', 'admin'],
     default: 'user',
   },
   password: {
