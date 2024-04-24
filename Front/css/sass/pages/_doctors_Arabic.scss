@@ -1,0 +1,227 @@
+.doctors {
+    background-color: #efefefef;
+
+    .main-title {
+        padding-top: 50px;
+
+        h1 {
+            color: #265df2;
+            font-family: ArabicFont;
+
+            &::before {
+                background-color: black;
+            }
+        }
+
+        p {
+            color: #265df2;
+            font-family: ArabicFont2;
+        }
+    }
+
+    .slider-body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        .slider {
+            max-width: 800px;
+            width: 100%;
+            padding: 40px 0;
+
+
+
+            .slide-content {
+                margin: 0 40px;
+
+                .card-wrapper {
+                    .doctor-card {
+                        margin-right: 153px;
+                        border-radius: 25px;
+                        background-color: #d9dfee;
+                        display: flex;
+                        width: 100%;
+                        height: 500px;
+                        justify-content: space-between;
+                        align-items: center;
+                        position: relative;
+
+
+                        @media #{$maxMobile} {
+                            flex-direction: column;
+                        }
+
+
+
+                        .card-content {
+                            right: 67px;
+                            position: relative;
+
+                            @media #{$minSmall} and #{$maxSmall} {
+                                position: absolute;
+                                right: 35px;
+                            }
+
+                            @media #{$maxMobile} {
+                                position: relative;
+                                left: 0;
+                            }
+
+
+                            .text {
+                                position: relative;
+                                right: 0;
+                                top: 0;
+                                text-align: center;
+                                margin: 0 32px;
+
+                                h2.name {
+                                    font-size: 35px;
+                                    font-weight: 500;
+                                    color: #333;
+
+
+                                    @media #{$minSmall} and #{$maxSmall} {
+                                        font-size: 35px;
+                                    }
+
+                                    @media #{$maxMobile} {
+                                        font-size: 30px;
+                                    }
+
+                                }
+
+                                p.description {
+                                    font-size: 14px;
+                                    color: #707070;
+                                    text-align: center;
+
+
+                                    &:last-of-type {
+                                        margin-top: -15px;
+                                    }
+
+                                    @media #{$minSmall} and #{$maxSmall} {
+                                        font-size: 15px;
+                                    }
+
+                                    @media #{$maxMobile} {
+                                        font-size: 13px;
+                                    }
+                                }
+
+                                button {
+
+                                    border: none;
+                                    font-size: 16px;
+                                    color: #fff;
+                                    padding: 8px 16px;
+                                    background-color: #4070f4;
+                                    border-radius: 6px;
+                                    margin: 14px;
+                                    cursor: pointer;
+                                    transition: all 0.3s ease;
+
+                                    &:hover {
+                                        background-color: #265df2;
+                                    }
+
+                                    @media #{$minSmall} and #{$maxSmall} {
+                                        padding: 8px;
+                                        font-size: 15px;
+                                    }
+
+                                    @media #{$maxMobile} {
+                                        font-size: 13px;
+                                    }
+
+                                }
+
+
+                            }
+
+                        }
+
+                        .image-content,
+                        .card-content {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            padding: 10px 14px;
+                        }
+
+                        .image-content {
+                            position: relative;
+                            padding: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 50%;
+                            top: 0;
+                            background-color: #4070f4;
+                            border-radius: 25px 0 0 25px;
+
+
+                            @media #{$maxMobile} {
+                                width: 100%;
+                                border-radius: 25px;
+                            }
+
+
+                            .card-image {
+                                position: absolute;
+                                padding: 3px;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 25px;
+                                top: 20px;
+                                left: 200px;
+
+                                @media #{$minSmall} and #{$maxSmall} {
+                                    width: 79%;
+                                    height: 79%;
+                                    position: absolute;
+                                    left: 97px;
+                                    top: 77px;
+                                }
+
+                                @media (min-width: 991px) {
+                                    width: 273px;
+                                    left: 136px;
+                                    height: 450px;
+                                    top: 38px;
+                                }
+
+                                @media #{$maxMobile} {
+                                    position: relative;
+                                    width: 39%;
+                                    height: 86%;
+                                    left: 0;
+                                    top: 15px;
+
+
+                                }
+
+                                img {
+                                    width: 100%;
+                                    height: 90%;
+                                    object-fit: cover;
+                                    position: absolute;
+                                    border: 1px solid;
+
+                                    @media #{$maxMobile} {
+                                        height: 100%;
+                                        width: 100%;
+                                    }
+
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

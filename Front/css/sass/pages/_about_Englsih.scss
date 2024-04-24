@@ -1,0 +1,90 @@
+.about {
+    background-color: #e1e5bf;
+
+    .logo {
+        @media #{$maxMobile} {
+
+            position: absolute;
+            left: 8%;
+            top: 3%;
+
+        }
+    }
+
+    h1 {
+        color: #96934e;
+
+        &::before {
+            background-color: #466264;
+            position: absolute;
+
+
+
+        }
+    }
+
+    .content {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .down {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media #{$maxMobile} {
+                flex-direction: column;
+            }
+
+            .image {
+                width: 275px;
+                overflow: hidden;
+                border: 2px solid #000;
+                background: #e6e3c2;
+                margin-right: 73px;
+
+                @media #{$maxMobile} {
+                    margin: 0 0 30px 0;
+                }
+
+                img {
+                    width: 100%;
+
+                    transition: 0.3s;
+
+                    &:hover {
+                        transform: scale(1.1) rotate(-25deg);
+
+                    }
+                }
+            }
+
+            .text {
+                width: 400px;
+                margin-left: 20px;
+
+                @media #{$maxMobile} {
+                    margin: 0 auto;
+                    text-align: center;
+                }
+
+                h2 {
+                    font-family: secondfont;
+                    color: #aa362e;
+                }
+
+                p {
+                    font-family: secondfont;
+                }
+
+                button {
+                    text-transform: uppercase;
+
+                }
+            }
+        }
+
+
+
+    }
+}

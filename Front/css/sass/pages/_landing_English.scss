@@ -1,0 +1,440 @@
+.Landing {
+    background-image: url('/assets/Landing.png');
+    background-size: cover;
+    width: 100%;
+    height: 120vh;
+    position: absolute;
+    top: -2px;
+    font-size: 30px;
+
+    @media #{$maxMobile} {
+        & {
+            background-image: url('/assets/Group\ 5.png');
+            background-size: cover;
+            height: 1000px;
+            width: 100vw;
+
+        }
+    }
+
+
+}
+
+.Landing {
+
+    .container {
+        position: relative;
+    }
+
+    .header {
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+        }
+
+        @media #{$maxMobile} {
+
+            padding-top: 100px;
+
+        }
+
+        @media #{$minSmall} and #{$maxSmall} {
+
+            padding-top: 100px;
+
+        }
+
+        img {
+            width: 140px;
+        }
+
+    }
+
+    .toggle {
+        position: absolute;
+        cursor: pointer;
+        z-index: 1000;
+
+        right: 0;
+
+        @media (max-width: 569px) {
+            right: 25px;
+
+
+        }
+
+        @media #{$maxMobile} {
+            z-index: 1001;
+
+        }
+
+    }
+
+    .Navbar {
+
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: calc(50% - 200px);
+        font-family: myfont;
+        transition: .3s;
+
+        &::before {
+            content: "";
+            width: 2px;
+            height: 0;
+            background-color: #000;
+            position: absolute;
+            right: -15px;
+            top: 17px;
+            transition: .3s;
+        }
+
+        @media #{$maxMobile} {
+            &.open-toggle {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                z-index: 1000;
+                font-size: 52px;
+                left: -35%;
+                top: -12%;
+                width: 167%;
+                height: 159%;
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        @media #{$minSmall} and #{$maxSmall} {
+            &.open-toggle {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                z-index: 1000;
+                font-size: 52px;
+                left: -35%;
+                top: -32%;
+                width: 167%;
+                height: 159%;
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &:hover::before {
+            height: 25px;
+        }
+
+        li {
+            position: relative;
+            margin-left: 10px;
+            cursor: pointer;
+
+            a {
+                font-size: 20px;
+                transition: .2s;
+                color: #fff;
+
+                &:hover,
+                &.active {
+                    color: #000;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: #000;
+                    bottom: -2px;
+                    left: 0;
+                    z-index: 300;
+                    transition: .3s;
+
+                }
+
+                &:hover::before,
+                &.active::before {
+                    width: 100%;
+                }
+
+            }
+
+
+        }
+
+
+    }
+}
+
+
+
+.icons {
+    display: none;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+
+    @media #{$maxMobile} {
+        &.open-icons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            z-index: 1000;
+        }
+    }
+
+    @media #{$minSmall} and #{$maxSmall} {
+        &.open-icons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 47%;
+            top: 100%;
+            z-index: 1000;
+        }
+    }
+
+    button {
+        text-align: center;
+        font-size: 11px;
+        padding: 10px;
+        font-family: secondfont;
+        transition: .3s;
+
+        &:hover {
+            font-size: 12px;
+        }
+
+        @media #{$maxMobile} {
+
+            font-size: 12px;
+            position: absolute;
+            left: -10px;
+            top: 58px;
+            z-index: 1000;
+
+            &:hover {
+                font-size: 13px;
+            }
+
+        }
+
+        @media #{$minSmall} and #{$maxSmall} {
+            font-size: 12px;
+            position: absolute;
+            right: -60px;
+            bottom: 60px;
+            z-index: 1000;
+
+            &:hover {
+                font-size: 13px;
+            }
+
+        }
+    }
+
+    i {
+        font-size: 20px;
+        color: #000;
+        cursor: pointer;
+        margin-right: 20px;
+        transition: .2s;
+
+        &:hover {
+            font-size: 21px;
+        }
+
+        @media #{$maxMobile} {
+            margin-bottom: 20px;
+            margin-top: 20px;
+            font-size: 28px;
+            z-index: 1000;
+
+            &:hover {
+                font-size: 29px;
+            }
+
+        }
+
+        @media #{$minSmall} and #{$maxSmall} {
+            & {
+                margin-bottom: 20px;
+                margin-top: 20px;
+                font-size: 28px;
+                position: absolute;
+                left: 13px;
+                top: -175px;
+                z-index: 1000;
+
+                &:hover {
+                    font-size: 29px;
+                }
+
+            }
+        }
+    }
+}
+
+.landing-page {
+    margin-top: 20px;
+    padding-left: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @media #{$maxMobile} {
+        & {
+            flex-direction: column;
+            margin-top: 200px;
+        }
+
+        img {
+            width: 140px;
+        }
+
+    }
+
+    @media #{$minSmall} and #{$maxSmall} {
+        & {
+            margin-top: 100px;
+
+        }
+    }
+
+    .image {
+        width: 900px;
+
+        @media #{$maxMobile} {
+            & {
+                position: absolute;
+                width: 414px;
+                bottom: -259px;
+                left: 26px;
+            }
+        }
+
+        @media #{$minSmall} and #{$maxSmall} {
+            & {
+                margin-top: -51px;
+
+            }
+        }
+
+        img {
+            width: 100%;
+            margin-left: 50px;
+
+        }
+    }
+
+    .text {
+        position: relative;
+        top: -68px;
+
+        @media #{$maxMobile} {
+
+            text-align: center;
+            top: 444px;
+
+        }
+
+        @media (max-width:566px) {
+
+            text-align: center;
+            top: 355px;
+
+        }
+
+        h1 {
+            font-family: myfont;
+            font-size: 42px;
+
+            @media #{$minSmall} and #{$maxSmall} {
+
+                font-size: 42px;
+
+
+            }
+        }
+
+        P:first-of-type {
+            font-family: myfont;
+            margin-top: -20px;
+            font-size: 24px;
+
+            @media #{$minSmall} and #{$maxSmall} {
+                & {
+                    font-size: 21px;
+
+                }
+            }
+        }
+
+        P:last-of-type {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: gray;
+            font-size: 24px;
+            font-weight: normal;
+
+            @media #{$minSmall} and #{$maxSmall} {
+                font-size: 21px;
+
+            }
+        }
+
+        .btn-explore {
+            position: absolute;
+            left: calc(50% - 30px);
+            border-radius: 40px;
+            font-size: 20px;
+            font-family: secondfont;
+            transition: .3s;
+            color: #fff;
+
+            &:hover {
+                font-size: 21px;
+            }
+
+            @media #{$minSmall} and #{$maxSmall} {
+                font-size: 19px;
+
+                &:hover {
+                    font-size: 20px;
+                }
+
+            }
+
+            @media #{$maxMobile} {
+                left: calc(50% - 60px);
+                margin-top: 0;
+                font-size: 17px;
+                border-radius: 40px;
+
+                &:hover {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+}
