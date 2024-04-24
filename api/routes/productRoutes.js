@@ -29,11 +29,14 @@ router
     authMiddlewers.restrictTo('admin'),
     dynamicImgMiddlewers.uploadPhoto(
       `public/img/prodects`,
-      `prodects${Math.random() * 1000000}`,
+      `prodects-${Math.random() * 1000000}`,
       `image`
     ),
     dynamicMiddleware.filteredBody('image'),
     dynamicMiddleware.setPathImginBody('prodects', 'image'),
     productController.updateProduct
   );
+router
+  .route('/:id/review')
+  .patch(authMiddlewers.restrictTo('user'), productController.review);
 module.exports = router;

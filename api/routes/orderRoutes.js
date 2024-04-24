@@ -12,7 +12,20 @@ router
     authMiddlewers.restrictTo('admin'),
     orderController.statisticsWithLinkUser
   );
-
+router
+  .route('/Prescription')
+  .post(
+    authMiddlewers.restrictTo('user'),
+    dynamicMiddleware.addVarBody('user', 'userId'),
+    orderController.createOrderforPrescription
+  );
+router
+  .route('/mien')
+  .get(
+    authMiddlewers.restrictTo('user'),
+    dynamicMiddleware.addQuery('user', 'userId'),
+    orderController.getAllOrder
+  );
 router
   .route('/')
   .get(authMiddlewers.restrictTo('admin'), orderController.getAllOrder)
