@@ -78,11 +78,13 @@ const petRouter = require('./routes/petRouter');
 const companyRouter = require('./routes/companyRouter');
 const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
+const prescriptionRouter = require('./routes/prescriptionRouter');
 
 // 3) ROUTES
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 app.use('/', userRouter);
 app.use('/api/v1.0.0/pets', petRouter);
+app.use('/api/v1.0.0/prescriptions', prescriptionRouter);
 app.use('/api/v1.0.0/orders', orderRoutes);
 app.use('/api/v1.0.0/products', productRoutes);
 app.use('/api/v1.0.0/companies', companyRouter);

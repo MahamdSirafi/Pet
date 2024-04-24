@@ -3,7 +3,7 @@ const productSchema = new mongoose.Schema(
   {
     company: {
       type: mongoose.Schema.ObjectId,
-      ref: 'Companie',
+      ref: 'Company',
       required: [true, 'enter filde Restaurant'],
     },
     category: {

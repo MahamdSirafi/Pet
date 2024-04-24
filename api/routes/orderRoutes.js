@@ -13,7 +13,7 @@ router
     orderController.statisticsWithLinkUser
   );
 router
-  .route('/Prescription')
+  .route('/prescription')
   .post(
     authMiddlewers.restrictTo('user'),
     dynamicMiddleware.addVarBody('user', 'userId'),

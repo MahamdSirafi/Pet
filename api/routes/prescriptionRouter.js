@@ -14,7 +14,7 @@ router
   );
 
 router
-  .route('/:id/mine')
+  .route('/mine')
   .get(
     authMiddlewers.restrictTo('user'),
     dynamicMiddleware.addQuery('user', 'userId'),

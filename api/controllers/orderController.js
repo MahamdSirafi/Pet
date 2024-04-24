@@ -31,6 +31,7 @@ exports.deleteOrder = factory.deleteOne(Order);
 exports.createOrder = factory.createOne(Order);
 exports.createOrderforPrescription = catchAsync(async (req, res, next) => {
   for (let i = 0; i < req.body.cart.length; i++) {
+    req.body.total = 0;
     thisProduct = await Product.findById(req.body.cart[i].product);
     if (!thisProduct) return next(new AppError('Product is not defind', 404));
     req.body.cart[i] = {
