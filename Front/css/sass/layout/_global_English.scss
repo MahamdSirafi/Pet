@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+@font-face {
+    font-family: myfont;
+    src: url(/Front/webfonts/mvboli\ \(1\).ttf);
+}
+
+@font-face {
+    font-family: secondfont;
+    src: url(/Front/webfonts/Asul-Bold.ttf);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
+    border: none;
+    outline: none;
+}
+
+.logo {
+    position: absolute;
+    left: 200px;
+    cursor: pointer;
+
+    img {
+        width: 100px;
+    }
+
+}
+
+.language {
+    cursor: pointer;
+
+    .language-box {
+        width: 40px;
+        height: 40px;
+        background-color: #000;
+        color: #fff;
+        padding: 6px;
+        font-size: 15px;
+        text-align: center;
+        border: 2px solid #fff;
+        outline: 2px solid #000;
+        border-radius: 50%;
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        cursor: pointer;
+
+        @media #{$maxMobile} {
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+            padding: 3px;
+        }
+    }
+}
