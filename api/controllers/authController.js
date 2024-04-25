@@ -71,11 +71,11 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     const resetURL = `${req.protocol}://${req.get('host')}${req.originalUrl
       .split('/', 4)
       .join('/')}/resetPassword/${resetToken}`;
-    await new Email(user, resetURL).sendPasswordReset();
+    // await new Email(user, resetURL).sendPasswordReset();
     res.status(200).json({
       status: 'success',
       message: 'Token sent to email!',
-      // url: resetURL,
+      url: resetURL,
     });
   } catch (err) {
     user.passwordResetToken = undefined;

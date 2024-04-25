@@ -20,7 +20,7 @@ router
   );
 router
   .route('/:id')
-  .get(petController.deletePet)
+  .get(petController.getPet)
   .patch(petController.updatePet)
   .delete(petController.deletePet);
 router
@@ -29,7 +29,7 @@ router
     authMiddlewers.restrictTo('admin'),
     dynamicImgMiddlewers.uploadPhoto(
       `public/img/pets`,
-      `prodects${Math.random() * 1000000}`,
+      `pets-${Math.random() * 1000000}`,
       `image`
     ),
     dynamicMiddleware.filteredBody('image'),

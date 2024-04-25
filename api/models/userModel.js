@@ -2,7 +2,6 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
-const { type } = require('os');
 const userSchema = new mongoose.Schema({
   health_centers: {
     type: {

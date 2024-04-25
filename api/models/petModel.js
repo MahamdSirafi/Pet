@@ -15,10 +15,6 @@ const animalSchema = new mongoose.Schema(
       type: String,
       required: [true, 'enter filde image'],
     },
-    description: {
-      type: String,
-      trim: true,
-    },
     price: {
       type: Number,
       required: [true, 'enter filde price'],
@@ -36,5 +32,5 @@ const animalSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-const Animal = mongoose.model('Animal', animalSchema);
-module.exports = Animal;
+const Pet = mongoose.model('Pet', animalSchema);
+module.exports = Pet;

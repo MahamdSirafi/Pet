@@ -12,11 +12,11 @@ const orderSchema = new mongoose.Schema(
         quantity: { type: Number, default: 1 },
         price: {
           type: Number,
-          required: [true, 'A product must have a price'],
+          required: [true, 'A cart must have a price'],
         },
         type: {
           type: String,
-          required: [true, 'enter filde category'],
+          required: [true, 'enter type FK Product or Pet'],
           enum: ['Product', 'Pet'],
         },
       },

@@ -1,0 +1,1409 @@
+{
+	"info": {
+		"_postman_id": "a91c0ae1-2afa-448a-bd04-4b815275d232",
+		"name": "pet project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"admin\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"123454321\",\r\n//   \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup doctor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"gtdgdgfd\",\r\n  \"email\": \"hgdfgdg@gmail.com\",\r\n  \"password\": \"123454321\",\r\n  \"role\": \"doctor\",\r\n  \"health_centers\":{\r\n      \"name\":\"x\",\r\n      \"address\":\"gdfdg\"\r\n  } \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"adel@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/forgotPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"adel@gmail.com\",\r\n  \"password\": \"123454321\"\r\n}\r\n// {\r\n//   \"email\": \"mgr@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"delivery@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"user@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"mgrres@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"123454321\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"adel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/updateMe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"updateMe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Me And Upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "adel",
+									"type": "default"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/updateMeAndUpload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"updateMeAndUpload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update My Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"passwordCurrent\":\"123454321\",\r\n  \"password\": \"123454321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/updateMyPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"updateMyPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/deleteMe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"deleteMe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"nour\",\r\n  \"email\": \"nour@gmail.com\",\r\n  \"phone\":\"+963343454564\",\r\n  \"role\":\"mgr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/65328d2eef364c66f2c18e5a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"65328d2eef364c66f2c18e5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/65328d2eef364c66f2c18e5a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"65328d2eef364c66f2c18e5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/65328d2eef364c66f2c18e5a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"65328d2eef364c66f2c18e5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active Me",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/users/activeMe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"users",
+								"activeMe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "company",
+									"value": "gfdgfdhgfg",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "ssdasd",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "asdasd",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/3.png"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "food",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product of category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products?category=a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products?type=product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "product"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all food",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products?type=food",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "food"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all medican",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products?type=medican",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "medican"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products/662566c6aa0ac9d7705241f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products",
+								"662566c6aa0ac9d7705241f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products/65465ed4b2620880273d3c55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products",
+								"65465ed4b2620880273d3c55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"s\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products/65465ed4b2620880273d3c55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products",
+								"65465ed4b2620880273d3c55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products/662566c6aa0ac9d7705241f1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products",
+								"662566c6aa0ac9d7705241f1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uplode",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/6.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/products/662566c6aa0ac9d7705241f1/uplode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"products",
+								"662566c6aa0ac9d7705241f1",
+								"uplode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pet",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"value": "ssdasd",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "asdasd",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/3.png"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "كبير",
+									"type": "default"
+								},
+								{
+									"key": "color",
+									"value": "ابيض",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get petsof category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/pets?category=a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"pets"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/pets/662a0895b1d7004afde878ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"pets",
+								"662a0895b1d7004afde878ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/pets/662a0895b1d7004afde878ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"pets",
+								"662a0895b1d7004afde878ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"s\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/pets/65465ed4b2620880273d3c55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"pets",
+								"65465ed4b2620880273d3c55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uplode",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/6.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/pets/662a0895b1d7004afde878ca/uplode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"pets",
+								"662a0895b1d7004afde878ca",
+								"uplode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"6629586f47444c43956cf9e3\",\"quantity\":1,\"type\":\"Pet\",\"price\":200},\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":2,\"type\":\"Product\",\"price\":400}\r\n    ],\r\n    \"address\":\"saasdasdasdsa\",\r\n    \"total\":600\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create order for prescription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":2},\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":1}\r\n    ],\r\n    \"address\":\"660483ab6c1e1af3e145aee8\"\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/orders/prescription",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"orders",
+								"prescription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all mien",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/orders/mien",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"orders",
+								"mien"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/orders/654942f635bcec68d4cf2878",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"orders",
+								"654942f635bcec68d4cf2878"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"dsfdsfsdf\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/orders/654942f635bcec68d4cf2878",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"orders",
+								"654942f635bcec68d4cf2878"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/orders/654942f635bcec68d4cf2878",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"orders",
+								"654942f635bcec68d4cf2878"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "prescription",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":2},\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":1}\r\n    ],\r\n\"user\":\"6626a35908b6406049b77437\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/prescriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"prescriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/prescriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"prescriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all mien",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/prescriptions/mine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"prescriptions",
+								"mine"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
