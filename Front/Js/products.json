@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "name":"منتج",
+        "name":"product",
         "price":200,
         "image":"/assets/imgs/product-1.jpg",
         "category": "food"
