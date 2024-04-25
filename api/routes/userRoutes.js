@@ -9,7 +9,7 @@ router.get('/logout', authController.logout);
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
 router.get('/resetPassword/:token', (req, res) => {
-  res.render('user/resetPassword4');
+  res.render('user/resetPassword2');
 });
 router.post('/signup', authController.signup);
 // router.use(authMiddlewers.protect);

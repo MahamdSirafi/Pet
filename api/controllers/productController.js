@@ -2,11 +2,8 @@ const Product = require('../models/productModel');
 const factory = require('../utils/handlerFactory');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('./../utils/appError');
-exports.getAllProduct = factory.getAllpop(Product, 'company');
-exports.getProduct = factory.getOne(Product, {
-  patch: 'company',
-  select: '-_id -__v',
-});
+exports.getAllProduct = factory.getAll(Product);
+exports.getProduct = factory.getOne(Product);
 exports.updateProduct = factory.updateOne(Product);
 exports.createProduct = factory.createOne(Product);
 exports.deleteProduct = factory.deleteOne(Product);

@@ -15,10 +15,6 @@ const animalSchema = new mongoose.Schema(
       type: String,
       required: [true, 'enter filde image'],
     },
-    description: {
-      type: String,
-      trim: true,
-    },
     price: {
       type: Number,
       required: [true, 'enter filde price'],

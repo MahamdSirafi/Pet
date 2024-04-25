@@ -20,7 +20,7 @@ router
   );
 router
   .route('/:id')
-  .get(petController.deletePet)
+  .get(petController.getPet)
   .patch(petController.updatePet)
   .delete(petController.deletePet);
 router

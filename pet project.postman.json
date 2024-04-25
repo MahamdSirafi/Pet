@@ -6,186 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "company",
-			"item": [
-				{
-					"name": "create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "mas",
-									"type": "default"
-								},
-								{
-									"key": "image",
-									"type": "file",
-									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/1.png"
-								},
-								{
-									"key": "location",
-									"value": "sadasd",
-									"type": "default"
-								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/companies",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"api",
-								"v1.0.0",
-								"companies"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get one",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/companies/660484846c1e1af3e145aef6",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"api",
-								"v1.0.0",
-								"companies",
-								"660484846c1e1af3e145aef6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"aa\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/companies/660484846c1e1af3e145aef6",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"api",
-								"v1.0.0",
-								"companies",
-								"660484846c1e1af3e145aef6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/companies/660484846c1e1af3e145aef6",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"api",
-								"v1.0.0",
-								"companies",
-								"660484846c1e1af3e145aef6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get All",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/companies",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"api",
-								"v1.0.0",
-								"companies"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "uplode",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "imageCover",
-									"type": "file",
-									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/3.png"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/companies/660484846c1e1af3e145aef6/uplode",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"api",
-								"v1.0.0",
-								"companies",
-								"660484846c1e1af3e145aef6",
-								"uplode"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "user",
 			"item": [
 				{
@@ -248,7 +68,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"doctor\",\r\n  \"email\": \"doctor@gmail.com\",\r\n  \"password\": \"123454321\",\r\n  \"role\": \"doctor\",\r\n  \"health_centers\":{\r\n      \"name\":\"x\",\r\n      \"address\":\"asfasfasf\"\r\n  } \r\n\r\n}",
+							"raw": "{\r\n  \"name\": \"gtdgdgfd\",\r\n  \"email\": \"hgdfgdg@gmail.com\",\r\n  \"password\": \"123454321\",\r\n  \"role\": \"doctor\",\r\n  \"health_centers\":{\r\n      \"name\":\"x\",\r\n      \"address\":\"gdfdg\"\r\n  } \r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -279,7 +99,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"adsssmin@gmail.com\"\r\n}",
+							"raw": "{\r\n  \"email\": \"adel@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -321,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"123454321\"\r\n}\r\n// {\r\n//   \"email\": \"mgr@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"delivery@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"user@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"mgrres@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n",
+							"raw": "{\r\n  \"email\": \"adel@gmail.com\",\r\n  \"password\": \"123454321\"\r\n}\r\n// {\r\n//   \"email\": \"mgr@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"delivery@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"user@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n// {\r\n//   \"email\": \"mgrres@gmail.com\",\r\n//   \"password\": \"123454321\"\r\n// }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -471,12 +291,12 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/C:/Users/User/Pictures/Instagram/IMG_20221107_194119_385.jpg"
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/1.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/users/updateMe",
+							"raw": "http://localhost:7000/api/v1.0.0/users/updateMeAndUpload",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -486,7 +306,7 @@
 								"api",
 								"v1.0.0",
 								"users",
-								"updateMe"
+								"updateMeAndUpload"
 							]
 						}
 					},
@@ -775,48 +595,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "signup Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.environment.set(\"jwt\",pm.response.json().token);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"admin\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"123454321\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/users/signup",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"api",
-								"v1.0.0",
-								"users",
-								"signup"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -833,7 +611,7 @@
 							"formdata": [
 								{
 									"key": "company",
-									"value": "662563de87786ff90229bc77",
+									"value": "gfdgfdhgfg",
 									"type": "default"
 								},
 								{
@@ -849,12 +627,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/7.png"
-								},
-								{
-									"key": "description",
-									"value": "asdsad",
-									"type": "default"
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/3.png"
 								},
 								{
 									"key": "price",
@@ -949,7 +722,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products?type=midcan",
+							"raw": "http://localhost:7000/api/v1.0.0/products?type=food",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -963,7 +736,7 @@
 							"query": [
 								{
 									"key": "type",
-									"value": "midcan"
+									"value": "food"
 								}
 							]
 						}
@@ -971,12 +744,12 @@
 					"response": []
 				},
 				{
-					"name": "get all midcan",
+					"name": "get all medican",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products?category=a",
+							"raw": "http://localhost:7000/api/v1.0.0/products?type=medican",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -989,8 +762,8 @@
 							],
 							"query": [
 								{
-									"key": "category",
-									"value": "a"
+									"key": "type",
+									"value": "medican"
 								}
 							]
 						}
@@ -1003,7 +776,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products/65465ed4b2620880273d3c55",
+							"raw": "http://localhost:7000/api/v1.0.0/products/662566c6aa0ac9d7705241f1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1013,7 +786,7 @@
 								"api",
 								"v1.0.0",
 								"products",
-								"65465ed4b2620880273d3c55"
+								"662566c6aa0ac9d7705241f1"
 							]
 						}
 					},
@@ -1079,7 +852,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"rating\":1\r\n}",
+							"raw": "{\r\n    \"rating\":3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1087,7 +860,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products/66295a4f9a8465406340d765/review",
+							"raw": "http://localhost:7000/api/v1.0.0/products/662566c6aa0ac9d7705241f1/review",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1097,7 +870,7 @@
 								"api",
 								"v1.0.0",
 								"products",
-								"66295a4f9a8465406340d765",
+								"662566c6aa0ac9d7705241f1",
 								"review"
 							]
 						}
@@ -1115,12 +888,12 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/18.png"
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/6.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products/65465ed4b2620880273d3c55/uplode",
+							"raw": "http://localhost:7000/api/v1.0.0/products/662566c6aa0ac9d7705241f1/uplode",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1130,7 +903,7 @@
 								"api",
 								"v1.0.0",
 								"products",
-								"65465ed4b2620880273d3c55",
+								"662566c6aa0ac9d7705241f1",
 								"uplode"
 							]
 						}
@@ -1163,12 +936,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/7.png"
-								},
-								{
-									"key": "description",
-									"value": "asdsad",
-									"type": "default"
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/3.png"
 								},
 								{
 									"key": "price",
@@ -1209,12 +977,12 @@
 					"response": []
 				},
 				{
-					"name": "get product of category",
+					"name": "get petsof category",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products?category=a",
+							"raw": "http://localhost:7000/api/v1.0.0/pets?category=a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1223,7 +991,7 @@
 							"path": [
 								"api",
 								"v1.0.0",
-								"products"
+								"pets"
 							],
 							"query": [
 								{
@@ -1236,12 +1004,12 @@
 					"response": []
 				},
 				{
-					"name": "get one",
+					"name": "get all",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products/65465ed4b2620880273d3c55",
+							"raw": "http://localhost:7000/api/v1.0.0/pets",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1250,8 +1018,29 @@
 							"path": [
 								"api",
 								"v1.0.0",
-								"products",
-								"65465ed4b2620880273d3c55"
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/pets/662a0895b1d7004afde878ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"pets",
+								"662a0895b1d7004afde878ca"
 							]
 						}
 					},
@@ -1263,7 +1052,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products/65465ed4b2620880273d3c55",
+							"raw": "http://localhost:7000/api/v1.0.0/pets/662a0895b1d7004afde878ca",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1272,8 +1061,8 @@
 							"path": [
 								"api",
 								"v1.0.0",
-								"products",
-								"65465ed4b2620880273d3c55"
+								"pets",
+								"662a0895b1d7004afde878ca"
 							]
 						}
 					},
@@ -1294,7 +1083,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products/65465ed4b2620880273d3c55",
+							"raw": "http://localhost:7000/api/v1.0.0/pets/65465ed4b2620880273d3c55",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1303,7 +1092,7 @@
 							"path": [
 								"api",
 								"v1.0.0",
-								"products",
+								"pets",
 								"65465ed4b2620880273d3c55"
 							]
 						}
@@ -1321,12 +1110,12 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/18.png"
+									"src": "/C:/Users/User/Desktop/zAmericanEnglish/Level 0/6.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/products/65465ed4b2620880273d3c55/uplode",
+							"raw": "http://localhost:7000/api/v1.0.0/pets/662a0895b1d7004afde878ca/uplode",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1335,8 +1124,8 @@
 							"path": [
 								"api",
 								"v1.0.0",
-								"products",
-								"65465ed4b2620880273d3c55",
+								"pets",
+								"662a0895b1d7004afde878ca",
 								"uplode"
 							]
 						}
@@ -1355,7 +1144,37 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"662566c6aa0ac9d7705241f1\",\"quantity\":2},\r\n        {\"product\":\"6625673487e0725f4329b4fe\",\"quantity\":2}\r\n    ],\r\n    \"address\":\"saasdasdasdsa\"\r\n}",
+							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"6629586f47444c43956cf9e3\",\"quantity\":1,\"type\":\"Pet\",\"price\":200},\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":2,\"type\":\"Product\",\"price\":400}\r\n    ],\r\n    \"address\":\"saasdasdasdsa\",\r\n    \"total\":600\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/v1.0.0/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"v1.0.0",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create order for prescription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":2},\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":1}\r\n    ],\r\n    \"address\":\"660483ab6c1e1af3e145aee8\"\r\n    }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1374,36 +1193,6 @@
 								"v1.0.0",
 								"orders",
 								"prescription"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create order for prescription",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"6605e26004e2f56b70cdb833\",\"quantity\":2,\"type\":\"Product\",\"price\":200},\r\n        {\"product\":\"6605e26004e2f56b70cdb833\",\"quantity\":2,\"type\":\"Pet\",\"price\":200}\r\n    ],\r\n    \"address\":\"660483ab6c1e1af3e145aee8\",\r\n    \"total\":800\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:7000/api/v1.0.0/orders",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"api",
-								"v1.0.0",
-								"orders"
 							]
 						}
 					},
@@ -1548,7 +1337,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"6605e26004e2f56b70cdb833\",\"quantity\":2},\r\n        {\"product\":\"6605e26004e2f56b70cdb833\",\"quantity\":2}\r\n    ],\r\n\"user\":\"23524efsdferq3rf3\"\r\n}",
+							"raw": "{\r\n    \"cart\":[\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":2},\r\n        {\"product\":\"662a056609d79251b11f010d\",\"quantity\":1}\r\n    ],\r\n\"user\":\"6626a35908b6406049b77437\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

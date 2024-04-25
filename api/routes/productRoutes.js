@@ -28,7 +28,7 @@ router
   .patch(
     authMiddlewers.restrictTo('admin'),
     dynamicImgMiddlewers.uploadPhoto(
-      `public/img/prodects`,
+      `public/img/products`,
       `prodects-${Math.random() * 1000000}`,
       `image`
     ),

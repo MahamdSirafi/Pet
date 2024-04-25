@@ -75,7 +75,6 @@ app.use(
 app.use(compression());
 const userRouter = require('./routes/userRoutes');
 const petRouter = require('./routes/petRouter');
-const companyRouter = require('./routes/companyRouter');
 const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const prescriptionRouter = require('./routes/prescriptionRouter');
@@ -87,7 +86,6 @@ app.use('/api/v1.0.0/pets', petRouter);
 app.use('/api/v1.0.0/prescriptions', prescriptionRouter);
 app.use('/api/v1.0.0/orders', orderRoutes);
 app.use('/api/v1.0.0/products', productRoutes);
-app.use('/api/v1.0.0/companies', companyRouter);
 app.use('/api/v1.0.0/users', userRouter);
 //في حال طلب مورد غير موجود
 app.all('*', (req, res, next) => {
