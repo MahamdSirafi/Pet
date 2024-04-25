@@ -1,17 +1,17 @@
 .explore {
-    background-image: url('/assets/e344bdcc2387d5c494ba7b3cf2f6d75c.jpg');
+    background-image: url('/Front/assets/e344bdcc2387d5c494ba7b3cf2f6d75c.jpg');
     background-size: cover;
     height: 141vh;
 
     @media #{$maxMobile} {
-        background-image: url('/assets/Explore.jpg');
+        background-image: url('/Front/assets/Explore.jpg');
         background-size: cover;
         height: 189vh;
 
     }
 
     @media #{$minSmall} and (max-width: 997px) {
-        background-image: url('/assets/Explore.jpg');
+        background-image: url('/Front/assets/Explore.jpg');
         background-size: cover;
         height: 189vh;
     }

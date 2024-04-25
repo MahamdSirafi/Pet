@@ -30,15 +30,15 @@ html {
 
 @font-face {
   font-family: ArabicFont;
-  src: url("/webfonts/Marhey/Marhey-VariableFont_wght.ttf");
+  src: url("/Front/webfonts/Marhey/Marhey-VariableFont_wght.ttf");
 }
 @font-face {
   font-family: ArabicFont2;
-  src: url("/webfonts/Rubik/Rubik-VariableFont_wght.ttf");
+  src: url("/Front/webfonts/Rubik/Rubik-VariableFont_wght.ttf");
 }
 @font-face {
   font-family: ArabicFont3;
-  src: url("/webfonts/Amiri/Amiri-Bold.ttf");
+  src: url("/Front/webfonts/Amiri/Amiri-Bold.ttf");
 }
 ul {
   list-style: none;
@@ -94,7 +94,7 @@ input[type=submit] {
 }
 
 .Landing {
-  background-image: url("/assets/Landing.png");
+  background-image: url("/Front/assets/Landing.png");
   background-size: cover;
   width: 100%;
   height: 110vh;
@@ -104,7 +104,7 @@ input[type=submit] {
 }
 @media (max-width: 767px) {
   .Landing {
-    background-image: url("/assets/Group 5.png");
+    background-image: url("/Front/assets/Group 5.png");
     background-size: cover;
     height: 1000px;
     width: 100vw;
@@ -909,20 +909,20 @@ body.show-cart .cart-tab {
 }
 
 .explore {
-  background-image: url("/assets/e344bdcc2387d5c494ba7b3cf2f6d75c.jpg");
+  background-image: url("/Front/assets/e344bdcc2387d5c494ba7b3cf2f6d75c.jpg");
   background-size: cover;
   height: 141vh;
 }
 @media (max-width: 767px) {
   .explore {
-    background-image: url("/assets/Explore.jpg");
+    background-image: url("/Front/assets/Explore.jpg");
     background-size: cover;
     height: 189vh;
   }
 }
 @media (min-width: 768px) and (max-width: 997px) {
   .explore {
-    background-image: url("/assets/Explore.jpg");
+    background-image: url("/Front/assets/Explore.jpg");
     background-size: cover;
     height: 189vh;
   }
@@ -1336,7 +1336,7 @@ body.show-cart .cart-tab {
 }
 
 .signin {
-  background-image: url("/assets/Background.png");
+  background-image: url("/Front/assets/Background.png");
   background-size: cover;
   position: relative;
   top: -2px;
@@ -1451,7 +1451,7 @@ body.show-cart .cart-tab {
 }
 
 .signup {
-  background-image: url("/assets/Background.png");
+  background-image: url("/Front/assets/Background.png");
   background-size: cover;
   position: relative;
   top: -2px;
