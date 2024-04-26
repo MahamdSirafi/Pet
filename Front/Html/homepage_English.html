@@ -7,6 +7,7 @@
     <title>Pets Home</title>
     <link rel="stylesheet" href="../../all.min.css">
     <link rel="stylesheet" href="/Front/normalize.css">
+    <link rel="stylesheet" href="/Front/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="/Front/bootstrap.min.css">
     <link rel="stylesheet" href="/Front/css/sass/pages/homepage_English.css">
     <link rel="shortcut icon" href="/Front/1711465949026.png" type="image/svg+xml">
@@ -14,46 +15,447 @@
 </head>
 
 <body>
-    <div class="Landing">
-        <div class="container">
-            <div class="header">
-                <div class="logo">
-                    <a onclick="location.href='homepage_English.html'"><img src="/Front/assets/Logo.jpg" alt=""> </a>
+    <div class="home">
+        <!-- Start Landing -->
+        <div class="Landing">
+            <div class="container">
+                <div class="header">
+                    <div class="logo">
+                        <a onclick="location.href='homepage_English.html'"><img src="/Front/assets/Logo.jpg" alt="">
+                        </a>
+                    </div>
+                    <ul class='Navbar  d-lg-flex '>
+                        <li><a class="active" href="#">Home</a></li>
+                        <li><a onclick="location.href='products_English.html'">Products</a></li>
+                        <li><a onclick="location.href='contact_English.html'">Contact</a></li>
+                        <li><a onclick="location.href='about_English.html'">About</a></li>
+                    </ul>
+                    <div class="toggle d-lg-none d-sm-block">
+                        <i class="fas fa-solid fa-bars"></i>
+                    </div>
+                    <div class="icons d-lg-flex ">
+                        <a href="products_English.html"><i class="fas fa-solid fa-cart-shopping "></i></a>
+                        <button class="btn-pet btn-black " onclick="location.href='signin_English.html'">Signin</button>
+                    </div>
                 </div>
-                <ul class='Navbar  d-lg-flex '>
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a onclick="location.href='products_English.html'">Products</a></li>
-                    <li><a onclick="location.href='contact_English.html'">Contact</a></li>
-                    <li><a onclick="location.href='about_English.html'">About</a></li>
-                </ul>
-                <div class="toggle d-lg-none d-sm-block">
-                    <i class="fas fa-solid fa-bars"></i>
+                <div class="language">
+                    <a class="language-box" href='../homepage_Arabic.html'>Ar</a>
                 </div>
-                <div class="icons d-lg-flex ">
-                    <a href="products_English.html"><i class="fas fa-solid fa-cart-shopping "></i></a>
-                    <button class="btn-pet btn-black " onclick="location.href='signin_English.html'">Signin</button>
-                </div>
-            </div>
-            <div class="language">
-                <a class="language-box" href='../homepage_Arabic.html'>Ar</a>
-            </div>
-            <div class="landing-page">
-                <div class="text">
-                    <h1>Pets Home</h1>
-                    <p>is the home of your pets!</p>
-                    <p>if you are looking for anything to take care of your pets then you are in the right place</p>
-                    <a class="btn-pet btn-black btn-explore" href='explore_Englsih.html'>Explore</a>
-                </div>
-                <div class="image">
-                    <img src="/Front/assets/1711409746150.png" alt="">
+                <div class="landing-page">
+                    <div class="text">
+                        <h1>Pets Home</h1>
+                        <p>is the home of your pets!</p>
+                        <p>if you are looking for anything to take care of your pets then you are in the right place</p>
+                        <a class="btn-pet btn-black btn-explore" href='explore_Englsih.html'>Explore</a>
+                    </div>
+                    <div class="image">
+                        <img src="/Front/assets/1711409746150.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- End Landing -->
+        <div class="empty"></div>
+        <!-- Start About Us -->
+        <div class="about">
+            <div class="container">
+                <div class="content">
+                    <div class="main-title">
+                        <h1>About Us</h1>
+                        <p>Know what you are looking for</p>
+                    </div>
+                    <div class="down">
+                        <div class="image">
+                            <img src="/Front/assets/158954e27c136b9ed6a733005c1515cc.jpg">
+                        </div>
+                        <div class="text">
+                            <h2>Pets Home</h2>
+                            <p>It is a site founded in 2019, and since that moment it has taken
+                                upon itself the quality of what it provides, whether
+                                supplies, food, or...
+                                Even the quality and health of the adopted animal and the level of health service that
+                                we seek to
+                                provide to your pet,
+                                which
+                                For this purpose, we contracted with the most famous, skilled and careful doctors</p>
+                            <a class="btn-pet btn-black" href='/Front/Html/explore_Englsih.html'>Start</a>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End About Us -->
+        <!-- Start Products -->
+        <div class="categories">
+
+            <div class="container">
+                <h2 class="title">
+                    <span>Top</span> categories
+                </h2>
+
+                <ul class="categories-list">
+
+                    <li class="categories-item">
+                        <div class="category-card">
+
+                            <div class="card-banner img-holder">
+                                <img src="/Front/assets/imgs/category-1.jpg" alt="Cat Food" class="img-cover">
+                            </div>
+
+                            <h3 class="h3">
+                                <a href="#" class="card-title">Cat Food</a>
+                            </h3>
+
+                        </div>
+                    </li>
+
+                    <li class="categories-item">
+                        <div class=" category-card">
+
+                            <div class="card-banner img-holder">
+                                <img src="/Front/assets/imgs/category-2.jpg" alt="Cat Toys" class="img-cover">
+                            </div>
+
+                            <h3 class="h3">
+                                <a href="#" class="card-title">Cat Toys</a>
+                            </h3>
+
+                        </div>
+                    </li>
+
+                    <li class="categories-item">
+                        <div class="category-card">
+
+                            <div class="card-banner img-holder">
+                                <img src="/Front/assets/imgs/category-3.jpg" alt="Dog Food" class="img-cover">
+                            </div>
+
+                            <h3 class="h3">
+                                <a href="#" class="card-title">Dog Food</a>
+                            </h3>
+
+                        </div>
+                    </li>
+
+                    <li class="categories-item">
+                        <div class="category-card">
+
+                            <div class="card-banner img-holder">
+                                <img src="/Front/assets/imgs/category-4.jpg" alt="Dog Toys" class="img-cover">
+                            </div>
+
+                            <h3 class="h3">
+                                <a href="#" class="card-title">Dog Toys</a>
+                            </h3>
+
+                        </div>
+                    </li>
+
+                    <li class="categories-item">
+                        <div class="category-card">
+
+                            <div class="card-banner img-holder">
+                                <img src="/Front/assets/imgs/category-5.jpg" alt="Dog Sumpplements" class="img-cover">
+                            </div>
+
+                            <h3 class="h3">
+                                <a href="#" class="card-title">Medcines</a>
+                            </h3>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="container">
+                <div class="main-title">
+                    <h1>Pets Home</h1>
+                    <p>Our Products</p>
+                </div>
+                <div class="icon-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>0</span>
+                </div>
+                <div class="product-category">
+                    <ul>
+                        <li class="active" data-name='all'>All</li>
+                        <li data-name="food">Food</li>
+                        <li data-name="requirements">Requirements</li>
+                        <li data-name="medcines">Medcines</li>
+                    </ul>
+                </div>
+                <div class="product-list ">
+                </div>
+            </div>
+            <div class="cart-tab">
+                <h1>Shopping Cart</h1>
+                <div class="list-cart">
+                    <div class="item">
+                        <div class="image">
+                            <img src="/Front/assets/imgs/product-1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            NAME
+                        </div>
+                        <div class="total-price">
+                            $200
+                        </div>
+                        <div class="quantity">
+                            <span class="minus"> - </span>
+                            <span></span>
+                            <span class="plus"> + </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns ">
+                    <button class="close">CLOSE</button>
+                    <button class="check">CHECK OUT</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="brand">
+            <div class="container">
+                <h2>
+                    <span class="span">Popular</span> Brands
+                </h2>
+                <ul>
+                    <li>
+                        <div class="image">
+                            <img src="/Front/assets/imgs/brand-1.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image">
+                            <img src="/Front/assets/imgs/brand-2.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image">
+                            <img src="/Front/assets/imgs/brand-3.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image">
+                            <img src="/Front/assets/imgs/brand-4.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image">
+                            <img src="/Front/assets/imgs/brand-5.jpg" alt="">
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- End Products -->
+        <!-- Start Doctors -->
+        <div class="doctors">
+            <div class="container">
+                <div class="main-title">
+                    <h1>Doctors</h1>
+                    <p>Our Health Care</p>
+                </div>
+                <div class="slider-body">
+                    <div class="slider swiper ">
+                        <div class="slide-content">
+                            <div class="card-wrapper swiper-wrapper">
+                                <div class="doctor-card swiper-slide">
+                                    <div class="image-content">
+                                        <div class="card-image">
+                                            <img src="/Front/assets/imgs/doctor-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="text">
+                                            <h2 class="name">David Dell</h2>
+                                            <p class="description">Experience Years : 4</p>
+                                            <p class="description">Care Center : 4</p>
+                                            <button class="button">Regester Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doctor-card swiper-slide">
+                                    <div class="image-content">
+                                        <div class="card-image">
+                                            <img src="/Front/assets/imgs/doctor-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="text">
+                                            <h2 class="name">David Dell</h2>
+                                            <p class="description">Experience Years : 4</p>
+                                            <p class="description">Care Center : 4</p>
+                                            <button class="button">Regester Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doctor-card swiper-slide">
+                                    <div class="image-content">
+                                        <div class="card-image">
+                                            <img src="/Front/assets/imgs/doctor-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="text">
+                                            <h2 class="name">David Dell</h2>
+                                            <p class="description">Experience Years : 4</p>
+                                            <p class="description">Care Center : 4</p>
+                                            <button class="button">Regester Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doctor-card swiper-slide">
+                                    <div class="image-content">
+                                        <div class="card-image">
+                                            <img src="/Front/assets/imgs/doctor-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="text">
+                                            <h2 class="name">David Dell</h2>
+                                            <p class="description">Experience Years : 4</p>
+                                            <p class="description">Care Center : 4</p>
+                                            <button class="button">Regester Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doctor-card swiper-slide">
+                                    <div class="image-content">
+                                        <div class="card-image">
+                                            <img src="/Front/assets/imgs/doctor-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="text">
+                                            <h2 class="name">David Dell</h2>
+                                            <p class="description">Experience Years : 4</p>
+                                            <p class="description">Care Center : 4</p>
+                                            <button class="button">Regester Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doctor-card swiper-slide">
+                                    <div class="image-content">
+                                        <div class="card-image">
+                                            <img src="/assets/imgs/doctor-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="text">
+                                            <h2 class="name">David Dell</h2>
+                                            <p class="description">Experience Years : 4</p>
+                                            <p class="description">Care Center : 4</p>
+                                            <button class="button">Regester Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                        <div class="swiper-button-next "></div>
+                        <div class="swiper-button-prev "></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Doctors -->
+        <!-- Start Contact  -->
+        <div class="contact">
+            <div class="conatiner">
+                <div class="logo"><a href='homepage_English.html'><img src=" /Front/assets/Logo.jpg" alt=""></a>
+                </div>
+                <div class="main-title">
+                    <h1>Contact Us</h1>
+                    <p>Feel free to contact us</p>
+                </div>
+                <form>
+                    <div class="left ">
+                        <input type="text" placeholder="Your Name " Name="username">
+                        <input type="text" placeholder="Your Phone" name="phone">
+                        <input type="email" placeholder="Your Email" name="email">
+                    </div>
+                    <div class="right">
+                        <input type="text" placeholder="Subject" name="subject">
+                        <textarea name="message" placeholder="Your Message"></textarea>
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Contact  -->
+        <!-- Start Footer -->
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+                <h3>Pets<span>Home</span></h3>
+
+                <p class="footer-links">
+                    <a href="#">Home</a>
+                    |
+                    <a href="#">About</a>
+                    |
+                    <a href="#">Contact</a>
+                    |
+                </p>
+
+                <p class="footer-company-name">Copyright © 2024 <strong>Pets Home</strong> All rights reserved</p>
+            </div>
+
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Aleppo</span>
+                        Syria</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+91 74**9**258</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:sagar00001.co@gmail.com">PetsHome@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About The Website</span>
+                    <strong>Pets Home</strong> It is a site founded in 2019, and since that moment it has taken
+                    upon itself the quality of what it provides, whether
+                    supplies, food, or...
+                    Even the quality and health of the adopted animal and the level of health service that we seek to
+                    provide to your pet,
+                    which
+                    For this purpose, we contracted with the most famous, skilled and careful doctors
+                </p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
 
     <script src="/Front/Js/open-toggle.js"></script>
     <script src="/Front/Js/nav-active.js"></script>
+    <script src="/Front/Js/products.js"></script>
+    <script src="/Front/Js/swiper-bundle.min.js"></script>
+    <script src="/Front/Js/doctors.js"></script>
 </body>
 
 </html>

@@ -21,6 +21,15 @@ ul {
     list-style: none;
 }
 
+
+.empty {
+    height: 720px;
+
+    @media #{$maxMobile} {
+        height: 998px;
+    }
+}
+
 a {
     text-decoration: none;
 }

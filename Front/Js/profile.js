@@ -2,7 +2,7 @@ let tabs = document.querySelectorAll("ul li");
 let content = document.querySelectorAll(".content > div");
 let img = document.querySelector(".image-cover img");
 let inputImage = document.getElementById('file-image');
-let isAdoc = doctor;
+let isAdoc = false;
 
 tabs.forEach((li) => {
 

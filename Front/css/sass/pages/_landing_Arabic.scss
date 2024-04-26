@@ -311,6 +311,7 @@
 
         img {
             width: 140px;
+
         }
 
     }
@@ -328,12 +329,12 @@
         right: 60px;
 
         @media #{$maxMobile} {
-            & {
-                position: absolute;
-                width: 414px;
-                bottom: -259px;
-                left: 26px;
-            }
+
+            position: absolute;
+            width: 414px;
+            bottom: -259px;
+            left: 26px;
+
         }
 
         @media #{$minSmall} and #{$maxSmall} {
@@ -346,6 +347,7 @@
         img {
             width: 100%;
             margin-left: 50px;
+
 
         }
     }

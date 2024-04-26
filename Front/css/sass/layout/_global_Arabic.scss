@@ -21,6 +21,13 @@ html {
     src: url('/Front/Fonts/Amiri/Amiri-Bold.ttf');
 }
 
+.empty {
+    height: 664px;
+
+    @media #{$maxMobile} {
+        height: 998px;
+    }
+}
 
 ul {
     list-style: none;

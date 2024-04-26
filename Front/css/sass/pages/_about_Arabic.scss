@@ -74,6 +74,13 @@
                     text-align: center;
                     position: absolute;
                     bottom: -400px;
+
+                }
+
+                &.home {
+                    @media #{$maxMobile} {
+                        bottom: -1380px;
+                    }
                 }
 
                 h2 {
