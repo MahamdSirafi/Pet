@@ -1451,6 +1451,9 @@ body.show-cart .cart-tab {
 .signin .content .up button:not(:first-of-type) {
   margin-left: 40px;
 }
+.signin .content form .pass {
+  font-family: myfont;
+}
 .signin .content form .username,
 .signin .content form .password {
   position: relative;
@@ -1564,10 +1567,17 @@ body.show-cart .cart-tab {
 .signup .content form .password {
   position: relative;
 }
+.signup .content form p.doc {
+  font-family: myfont;
+}
+.signup .content form .care {
+  top: 73%;
+  right: 33px;
+}
 .signup .content form i {
   position: absolute;
-  right: 20px;
-  top: 33%;
+  right: 38px;
+  top: 28%;
   z-index: 1000;
 }
 .signup .content form input[type=text],

@@ -80,10 +80,21 @@
                 position: relative;
             }
 
+            p.doc {
+
+                font-family: myfont;
+
+            }
+
+            .care {
+                top: 73%;
+                right: 33px;
+            }
+
             i {
                 position: absolute;
-                right: 20px;
-                top: 33%;
+                right: 38px;
+                top: 28%;
                 z-index: 1000;
             }
 

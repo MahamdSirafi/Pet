@@ -89,8 +89,19 @@
             i {
                 position: absolute;
                 right: 20px;
-                top: 33%;
+                top: 28%;
                 z-index: 1000;
+            }
+
+            p.doc {
+
+                font-family: ArabicFont;
+
+            }
+
+            .care {
+                top: 73%;
+                right: 15px;
             }
 
             input[type="text"],
