@@ -2,7 +2,7 @@ let tabs = document.querySelectorAll("ul li");
 let content = document.querySelectorAll(".content > div");
 let img = document.querySelector(".image-cover img");
 let inputImage = document.getElementById('file-image');
-
+let isAdoc = doctor;
 
 tabs.forEach((li) => {
 
@@ -27,3 +27,8 @@ tabs.forEach((li) => {
 inputImage.addEventListener('click', () => {
     img.src = URL.createObjectURL(inputImage.files[0]);
 });
+
+if (!isAdoc) {
+    document.querySelector(".doctor").style.display = "none";
+
+}
