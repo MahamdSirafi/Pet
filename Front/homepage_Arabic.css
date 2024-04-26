@@ -49,6 +49,14 @@ html {
   }
 }
 
+.fonts-Ar1 {
+  font-family: ArabicFont;
+}
+
+.fonts-Ar2 {
+  font-family: ArabicFont2;
+}
+
 ul {
   list-style: none;
 }
