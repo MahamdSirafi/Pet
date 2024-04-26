@@ -30,11 +30,11 @@ html {
 
 @font-face {
   font-family: myfont;
-  src: url(/Front/webfonts/mvboli\ \(1\).ttf);
+  src: url("/Front/Fonts/mvboli (1).ttf");
 }
 @font-face {
   font-family: secondfont;
-  src: url(/Front/webfonts/Asul-Bold.ttf);
+  src: url("/Front/Fonts/Asul-Bold.ttf");
 }
 ul {
   list-style: none;
