@@ -1572,11 +1572,11 @@ body.show-cart .cart-tab {
 }
 .signup .content form .care {
   top: 73%;
-  right: 33px;
+  right: 13px;
 }
 .signup .content form i {
   position: absolute;
-  right: 38px;
+  right: 18px;
   top: 28%;
   z-index: 1000;
 }
