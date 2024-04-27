@@ -59,6 +59,8 @@ input[type="submit"] {
 }
 
 .language {
+    position: relative;
+    z-index: 10000;
     cursor: pointer;
 
     .language-box {
