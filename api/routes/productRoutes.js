@@ -4,12 +4,12 @@ const authMiddlewers = require('../middlewares/authMiddlewers');
 const dynamicImgMiddlewers = require('../middlewares/dynamicImgMiddlewers');
 const dynamicMiddleware = require('../middlewares/dynamicMiddleware');
 const productController = require('../controllers/productController');
-router.use(authMiddlewers.protect);
 router
   .route('/')
   .get(productController.getAllProduct)
   .post(
-    authMiddlewers.restrictTo('admin'),
+    authMiddlewers.protect,
+  authMiddlewers.restrictTo('admin'),
     dynamicImgMiddlewers.uploadPhoto(
       `public/img/products`,
       `products-${Math.random() * 1000000}`,
@@ -18,6 +18,7 @@ router
     dynamicMiddleware.setPathImginBody('companies', 'image'),
     productController.createProduct
   );
+router.use(authMiddlewers.protect);
 router
   .route('/:id')
   .get(productController.getProduct)

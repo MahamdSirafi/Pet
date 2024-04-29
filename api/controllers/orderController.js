@@ -42,6 +42,8 @@ exports.createOrderforPrescription = catchAsync(async (req, res, next) => {
     };
     req.body.total += thisProduct.price * req.body.cart[i].quantity;
   }
+  req.body.total *= 0.25;
+
   const doc = await Order.create(req.body);
   res.status(200).json({
     status: 'success',
