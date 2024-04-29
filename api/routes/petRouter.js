@@ -4,11 +4,10 @@ const dynamicImgMiddlewers = require('./../middlewares/dynamicImgMiddlewers');
 const dynamicMiddleware = require('./../middlewares/dynamicMiddleware');
 const express = require('express');
 const router = express.Router();
-router.use(authMiddlewers.protect);
 router
   .route('/')
   .get(petController.getAllPet)
-  .post(
+  .post(authMiddlewers.protect,
     authMiddlewers.restrictTo('admin'),
     dynamicImgMiddlewers.uploadPhoto(
       `public/img/pets`,
@@ -18,6 +17,7 @@ router
     dynamicMiddleware.setPathImginBody('pets', 'image'),
     petController.createPet
   );
+router.use(authMiddlewers.protect);
 router
   .route('/:id')
   .get(petController.getPet)

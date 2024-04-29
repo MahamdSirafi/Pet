@@ -28,7 +28,7 @@ closeCart.addEventListener('click', () => {
 // Showing Products Function
 const addDataToHTML = () => {
     listProductHTML.innerHTML = '';
-    if (listProducts.length > 0) {
+    if (listProducts.length > 0) {``
         listProducts.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('product-item');
@@ -37,7 +37,7 @@ const addDataToHTML = () => {
             //Filtering Categories
             filteringCategoriesProd(newProduct);
             newProduct.innerHTML = ` 
-                    <img src="${product.image}" alt="">
+                    <img src="${product.image}" alt="" crossorigin="anonymous">
                     <h2>${product.name}</h2>
                     <div class="price">$${product.price}</div>
                     <button class="addcart">Add To Cart </button>
@@ -170,8 +170,12 @@ const changeQuantity = (product_id, type) => {
 
 const initApp = () => {
     // get data from json
-    fetch('/Front/Js/products.json').then(response => response.json()).then(data => {
-        listProducts = data;
+    fetch('http://localhost:7000/api/v1.0.0/products')
+    .then(response => response.json())
+    .then(data => {
+        listProducts = data.doc;
+        console.log(data)
+        console.log(data.doc)
         addDataToHTML();
         // get cart from memory 
         if (localStorage.getItem('cart')) {
