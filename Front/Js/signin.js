@@ -1,11 +1,11 @@
 
-const form = document.querySelector(".form");
+const form = document.getElementById("inputs");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   let data = {
-    email: document.getElementById("em").value,
-    password: document.getElementById("pas").value,
+    email: document.getElementById("username").value,
+    password: document.getElementById("password").value,
   };
   try {
     fetch("http://localhost:8000/api/v1.0.0/users/login", {
@@ -22,13 +22,13 @@ form.addEventListener("submit", (event) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.status=="success") {
-          localStorage.setItem('token',data.token)
-          if (data.user.role=="admin") {
-     
-            window.location.href = "./dashbord.html";
+        if (data.status == "success") {
+          localStorage.setItem('token', data.token)
+          if (data.user.role == "admin") {
+
+            window.location.href = "/Front/Html/crud_Dashboard.html";
           } else {
-            window.location.href = "./index.html";
+            window.location.href = "/Front/homepage_Arabic.html";
           }
         } else {
           alert(data.message);
@@ -36,4 +36,5 @@ form.addEventListener("submit", (event) => {
       });
   } catch (err) {
     console.log(err);
-  }});
+  }
+});

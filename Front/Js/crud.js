@@ -13,7 +13,7 @@ var form = document.getElementById("myForm"),
     newUserBtn = document.querySelector(".newUser")
 
 
-let getData = localStorage.getItem('userProfile') ? JSON.parse(localStorage.getItem('userProfile')) : []
+// let getData = localStorage.getItem('userProfile') ? JSON.parse(localStorage.getItem('userProfile')) : []
 
 let isEdit = false, editId
 showInfo()
@@ -45,9 +45,15 @@ file.onchange = function () {
 
 
 function showInfo() {
-    document.querySelectorAll('.employeeDetails').forEach(info => info.remove())
-    getData.forEach((element, index) => {
-        let createElement = `<tr class="employeeDetails">
+    try {
+        fetch(`http://localhost:7000/api/v1.0.0/products?type=product`)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                if (data.status == "success") {
+                    document.querySelectorAll('.employeeDetails').forEach(info => info.remove())
+                    data.doc.forEach((element, index) => {
+                        let createElement = `<tr class="employeeDetails">
             <td>${index + 1}</td>
             <td><img src="${element.picture}" alt="" width="50" height="50"></td>
             <td>${element.employeeName}</td>
@@ -65,8 +71,19 @@ function showInfo() {
             </td>
         </tr>`
 
-        userInfo.innerHTML += createElement
-    })
+                        userInfo.innerHTML += createElement
+
+                    });
+
+                } else {
+                    alert(data.messag);
+                }
+            });
+
+    } catch (err) {
+        console.log(err);
+    }
+
 }
 showInfo()
 
@@ -98,16 +115,28 @@ function editInfo(index, pic, name, Age, City, Email, Phone) {
 
 function deleteInfo(index) {
     if (confirm("Are you sure want to delete?")) {
-        getData.splice(index, 1)
-        localStorage.setItem("userProfile", JSON.stringify(getData))
-        showInfo()
+        fetch(`http://localhost:8000/api/v1.0.0/products/${index}`, {
+            method: "DELETE",
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status = "success") {
+                    alert("delete success")
+                    window.location.href = "/Front/Html/crud_Dashboard.html"
+                }
+                else {
+                    alert(data.messag)
+
+                }
+            })
+
+
     }
 }
+showInfo()
 
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
     const information = {
         picture: imgInput.src == undefined ? "./image/Profile Icon.webp" : imgInput.src,
         employeeName: userName.value,
@@ -116,26 +145,41 @@ form.addEventListener('submit', (e) => {
         employeeEmail: email.value,
         employeePhone: phone.value
     }
-
-    if (!isEdit) {
-        getData.push(information)
+    try {
+        fetch(`http://localhost:8000/api/v1.0.0/use/${index}`, {
+            method: "PATCH",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status == "success") {
+                    alert("success");
+                    window.location.href = "/Front/Html/crud_Dashboard.html";
+                } else {
+                    alert(data.message);
+                }
+            });
+    } catch (err) {
+        console.log(err);
     }
-    else {
-        isEdit = false
-        getData[editId] = information
-    }
+});
 
-    localStorage.setItem('userProfile', JSON.stringify(getData))
+submitBtn.innerText = "Submit"
+modalTitle.innerHTML = "Fill The Form"
 
-    submitBtn.innerText = "Submit"
-    modalTitle.innerHTML = "Fill The Form"
+showInfo()
 
-    showInfo()
+form.reset()
 
-    form.reset()
+imgInput.src = "./image/Profile Icon.webp"
 
-    imgInput.src = "./image/Profile Icon.webp"
-
-    // modal.style.display = "none"
-    // document.querySelector(".modal-backdrop").remove()
-})
+// modal.style.display = "none"
+// document.querySelector(".modal-backdrop").remove()
