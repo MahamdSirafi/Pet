@@ -4,8 +4,8 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   let data = {
-    email: document.getElementById("username").value,
-    password: document.getElementById("password").value,
+    name: document.getElementById("username").value,
+    password: document.getElementById("password").value
   };
   try {
     fetch("http://localhost:8000/api/v1.0.0/users/login", {
