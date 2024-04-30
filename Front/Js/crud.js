@@ -16,6 +16,7 @@ var form = document.getElementById("myForm"),
 // let getData = localStorage.getItem('userProfile') ? JSON.parse(localStorage.getItem('userProfile')) : []
 
 let isEdit = false, editId
+console.log(isEdit);
 showInfo()
 
 newUserBtn.addEventListener('click', () => {
