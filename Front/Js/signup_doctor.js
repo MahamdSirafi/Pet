@@ -5,8 +5,10 @@ form.addEventListener("submit", (event) => {
         name: document.getElementById("username").value,
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
-        care_center: document.getElementById("center").value,
-        address: document.getElementById("address").value,
+        health_centers: {
+            name: document.getElementById( "center" ).value,
+            address: document.getElementById( "address" ).value
+        },
         role: "doctor"
 
     };
@@ -29,7 +31,7 @@ form.addEventListener("submit", (event) => {
             .then((data) => {
                 if (data.status == "success") {
                     localStorage.setItem("jwt", data.token)
-                    localStorage.setItem("doctor", data.doctor)
+                    localStorage.setItem("doctor", data.user)
                     window.location.href = "/Front/doctor_DashBoard.html";
                 } else {
                     alert(data.message);
