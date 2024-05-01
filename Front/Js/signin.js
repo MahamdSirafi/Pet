@@ -8,7 +8,7 @@ form.addEventListener("submit", (event) => {
     password: document.getElementById("password").value
   };
   try {
-    fetch("http://localhost:8000/api/v1.0.0/users/login", {
+    fetch("http://localhost:7000/api/v1.0.0/users/login", {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
