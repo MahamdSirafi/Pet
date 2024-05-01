@@ -29,7 +29,7 @@ form.addEventListener("submit", (event) => {
             .then((data) => {
                 if (data.status == "success") {
                     localStorage.setItem("jwt", data.token)
-                    localStorage.setItem("doctor", data.doctor)
+                    localStorage.setItem("doctor", data.user)
                     window.location.href = "/Front/doctor_DashBoard.html";
                 } else {
                     alert(data.message);
