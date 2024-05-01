@@ -106,6 +106,7 @@
                 document.getElementById( "category" ).value = category;
             }
 
+<<<<<<< HEAD
             // set the message for form status
             function setSuccessMessage ( message )
             {
@@ -148,6 +149,44 @@
                     getData(); // reload table 
                 } );
             }
+=======
+        // set the message for form status
+        function setSuccessMessage(message) {
+            document.getElementById("message").innerHTML = message;
+        }
+        function editDataCall(id) {
+            // call get user details by id API
+            fetch("http://localhost:7000/api/v1.0.0/products?id=" + id, {
+                method: "GET"
+            }).then((res) => res.json()).then((response) => {
+                console.log("Edit info", response);
+                editFormData = response[0];
+                setFormData(editFormData.number, editFromData.name, editFormData.price, editFormData.category)
+            })
+        }
+
+        // callled this function when user click on button
+        function submitForm() {
+            if (!editFormData) addUser(); // if the editFormData is undefined then call addUser()
+            else editData();
+        }
+        // add user function 
+        function addUser() {
+            let payload = getFormData();
+            fetch("http://localhost:7000/api/v1.0.0/products", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            }).then((res) => res.json()).then((response) => {
+                setSuccessMessage(response.message)
+                // clear input email and name
+                clearFormData();
+                getData(); // reload table 
+            })
+        }
+>>>>>>> 8d1625d0e8ebe5f01b6dbd2f83a27529b6bb7559
 
             // edit data 
 
@@ -185,6 +224,7 @@
                 } );
             }
 
+<<<<<<< HEAD
             // delete data
             function deleteData ( id )
             {
@@ -196,9 +236,21 @@
                     }
                 );
             }
+=======
+        // delete data
+        function deleteData(id) {
+            fetch("http://localhost:7000/api/v1.0.0/products?id=" + id).then((res) => res.json()).then(
+                (response) => {
+                    setSuccessMessage(response.message);
+                    getData();
+                }
+            )
+        }
+>>>>>>> 8d1625d0e8ebe5f01b6dbd2f83a27529b6bb7559
 
             // get data method
 
+<<<<<<< HEAD
             function getData ()
             {
                 fetch( "http://localhost:7000/api/v1.0.0/products?type=product" ).then(
@@ -215,6 +267,21 @@
                         tmpData += "<td>" + user.category + "</td>";
                         tmpData += "<td><button class='btn btn-primary' onclick='editDataCall(`" + user._id + "`)'>Edit</button></td>";
                         tmpData += "<td><button class='btn btn-danger' onclick='deleteData(`" + user._id + "`)'>Delete</button></td>";
+=======
+        function getData() {
+            fetch("http://localhost:7000/api/v1.0.0/products?type=product").then(
+                (res) => res.json()
+            ).then((response) => {
+                var tmpData = "";
+                console.log(response);
+                response.forEach((user) => {
+                    tmpData += "<tr>"
+                    tmpData += "<td>" + user.name + "</td>";
+                    tmpData += "<td>" + user.price + "</td>";
+                    tmpData += "<td>" + user.category + "</td>";
+                    tmpData += "<td><button class='btn btn-primary' onclick='editDataCall(`" + user._id + "`)'>Edit</button></td>";
+                    tmpData += "<td><button class='btn btn-danger' onclick='deleteData(`" + user._id + "`)'>Delete</button></td>";
+>>>>>>> 8d1625d0e8ebe5f01b6dbd2f83a27529b6bb7559
 
                         tmpData += "</tr>";
                     } );
