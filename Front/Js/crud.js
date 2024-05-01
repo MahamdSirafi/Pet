@@ -116,7 +116,7 @@ function editInfo(index, pic, name, Age, City, Email, Phone) {
 
 function deleteInfo(index) {
     if (confirm("Are you sure want to delete?")) {
-        fetch(`http://localhost:8000/api/v1.0.0/products/${index}`, {
+        fetch(`http://localhost:7000/api/v1.0.0/products/${index}`, {
             method: "DELETE",
         })
             .then((response) => response.json())

@@ -1,4 +1,4 @@
-let form = document.getElementById("inputs");
+let form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     let data = {
@@ -19,7 +19,7 @@ form.addEventListener("submit", (event) => {
             cache: "no-cache",
             credentials: "same-origin",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
             redirect: "follow",
             referrerPolicy: "no-referrer",
@@ -32,7 +32,7 @@ form.addEventListener("submit", (event) => {
                 if (data.status == "success") {
                     localStorage.setItem("jwt", data.token)
                     localStorage.setItem("doctor", data.user)
-                    window.location.href = "/Front/doctor_DashBoard.html";
+                    window.location.href = "/Front/Html/doctor_DashBoard.html";
                 } else {
                     alert(data.message);
                 }
