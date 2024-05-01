@@ -5,8 +5,10 @@ form.addEventListener("submit", (event) => {
         name: document.getElementById("username").value,
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
-        care_center: document.getElementById("center").value,
-        address: document.getElementById("address").value,
+        health_centers: {
+            name: document.getElementById( "center" ).value,
+            address: document.getElementById( "address" ).value
+        },
         role: "doctor"
 
     };

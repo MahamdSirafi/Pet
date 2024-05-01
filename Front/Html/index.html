@@ -113,7 +113,7 @@
             }).then((res) => res.json()).then((response) => {
                 console.log("Edit info", response);
                 editFormData = response[0];
-                setFormData(editFormData.name, editFormData.email)
+                setFormData(editFormData.number, editFromData.name, editFormData.price, editFormData.category)
             })
         }
 
@@ -140,6 +140,23 @@
         }
 
         // edit data 
+
+        // function editData() {
+        //     var formData = getFormData();
+        //     formData['id'] = editFormData._id; // get _id from selected user
+        //     fetch("http://localhost:3000/crud/updateData", {
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         },
+        //         body: JSON.stringify(formData)
+        //     }).then((res) => res.json()).then((response) => {
+        //         setSuccessMessage(response.message)
+        //         clearFormData(); // clear the form field
+        //         getData() // reload the table
+        //     })
+        // }
+
         function editData() {
             var formData = getFormData();
             formData['id'] = editFormData._id; // get _id from selected user
