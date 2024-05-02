@@ -25,7 +25,7 @@ form.addEventListener("submit", (event) => {
           localStorage.setItem('token', data.token)
           if (data.user.role == "admin") {
           localStorage.setItem("admin", data.user)
-            window.location.href = "/Front/Html/index.html";
+            window.location.href = "/Front/Html/crud_Dashboard_products.html";
           } else {
             window.location.href = "/Front/homepage_Arabic.html";
           }
