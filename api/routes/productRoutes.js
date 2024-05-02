@@ -9,24 +9,32 @@ router
   .get(productController.getAllProduct)
   .post(
     authMiddlewers.protect,
-  authMiddlewers.restrictTo('admin'),
+    authMiddlewers.restrictTo('admin'),
     dynamicImgMiddlewers.uploadPhoto(
       `public/img/products`,
       `products-${Math.random() * 1000000}`,
       `image`
     ),
-    dynamicMiddleware.setPathImginBody('companies', 'image'),
+    dynamicMiddleware.setPathImginBody('products', 'image'),
     productController.createProduct
   );
-router.use(authMiddlewers.protect);
 router
   .route('/:id')
   .get(productController.getProduct)
-  .patch(authMiddlewers.restrictTo('admin'), productController.updateProduct)
-  .delete(authMiddlewers.restrictTo('admin'), productController.deleteProduct);
+  .patch(
+    authMiddlewers.protect,
+    authMiddlewers.restrictTo('admin'),
+    productController.updateProduct
+  )
+  .delete(
+    authMiddlewers.protect,
+    authMiddlewers.restrictTo('admin'),
+    productController.deleteProduct
+  );
 router
   .route('/:id/uplode')
   .patch(
+    authMiddlewers.protect,
     authMiddlewers.restrictTo('admin'),
     dynamicImgMiddlewers.uploadPhoto(
       `public/img/products`,
@@ -39,5 +47,9 @@ router
   );
 router
   .route('/:id/review')
-  .patch(authMiddlewers.restrictTo('user'), productController.review);
+  .patch(
+    authMiddlewers.protect,
+    authMiddlewers.restrictTo('user'),
+    productController.review
+  );
 module.exports = router;
