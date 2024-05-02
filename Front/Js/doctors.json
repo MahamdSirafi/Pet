@@ -1,62 +1,28 @@
 [
     {
-        "doctor_id":200,
-        "doctor_firstname": "ousama",
-        "doctor_lastname": "yahaya",
-        "experiance_year": 4,
-        "care_center": "abc",
-        "image": "/assets/imgs/doctor-1.jpg"
-    },{
-        "doctor_id":200,
-        "doctor_firstname": "Mohamad",
-        "doctor_lastname": "Mostafa",
-        "experiance_year": 5,
-        "care_center": "abc",
-        "image": "/assets/imgs/doctor-2.jpg"
+        "doctor_id":100,
+        "doctor_name": "ousama",
+        "care_center": "Pets Home",
+        "care_address": "abc",
+        "image": "/Front/assets/imgs/doctor-1.jpg"
     },
     {
         "doctor_id":200,
-        "doctor_firstname": "Yasser",
-        "doctor_lastname": "abdAlhamed",
-        "experiance_year": 6,
-        "care_center": "abc",
-        "image": "/assets/imgs/doctor-3.jpg"
-    },
-    {
-        "doctor_id":200,
-        "doctor_firstname": "Abdallah",
-        "doctor_lastname": "Khalid",
-        "experiance_year": 4,
-        "care_center": "abc",
-        "image": "/assets/imgs/doctor-4.jpg"
-    },
-    {
-        "doctor_id":200,
-        "doctor_firstname": "Noha",
-        "doctor_lastname": "Haddad",
-        "experiance_year": 4,
-        "care_center": "abc",
-        "image": "/assets/imgs/doctor-5.jpg"
+        "doctor_name": "dana",
+        "care_center": "Pets Home",
+        "care_address": "abc",
+        "image": "/Front/assets/imgs/doctor-2.jpg"
     },{
-        "doctor_id":200,
-        "doctor_firstname": "Maha",
-        "doctor_lastname": "Soluman",
-        "experiance_year": 4,
-        "care_center": "abc",
-        "image": "/assets/imgs/doctor-6.jpg"
+        "doctor_id":300,
+        "doctor_name": "fatima",
+        "care_center": "Pets Home",
+        "care_address": "abc",
+        "image": "/Front/assets/imgs/doctor-3.jpg"
     },{
-        "doctor_id":200,
-        "doctor_firstname": "Jumana",
-        "doctor_lastname": "Rasheed",
-        "experiance_year": 4,
-        "care_center": "abc",
-        "image": "/assets/imgs/doctor-7.jpg"
-    },{
-        "doctor_id":200,
-        "doctor_firstname": "Nedal",
-        "doctor_lastname": "Ahmad",
-        "experiance_year": 4,
-        "care_center": "abc",
-        "image": "/assets/imgs/doctor-8.jpg"
+        "doctor_id":400,
+        "doctor_name": "sara",
+        "care_center": "Pets Home",
+        "care_address": "abc",
+        "image": "/Front/assets/imgs/doctor-4.jpg"
     }
 ]
