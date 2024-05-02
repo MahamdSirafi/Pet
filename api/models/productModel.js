@@ -13,7 +13,7 @@ const productSchema = new mongoose.Schema(
     },
     type: {
       type: String,
-      required: [true, 'enter filde category'],
+      required: [true, 'enter filde type'],
       enum: ['product', 'food', 'medican'],
     },
     name: {
