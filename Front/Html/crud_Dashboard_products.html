@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -23,6 +21,8 @@
   </head>
 
   <body>
+    <button class="btn btn-primary mt-3 me-2 " onclick="location.href='/Front/Html/crud_Dashboard_Pets.html'">Add
+      Pets</button>
     <div class="container mt-5 p-3 bg-secondary">
       <div class="row">
         <div class="col-md-4">
@@ -33,52 +33,23 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="image">Enter Product Image:</label>
-                <input
-                  type="file"
-                  name=""
-                  class="form-control"
-                  placeholder="Enter Product number"
-                  id="image"
-                />
+                <input type="file" name="" class="form-control" placeholder="Enter Product number" id="image" />
               </div>
               <div class="form-group">
                 <label for="">Enter Product Name:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Enter Product Name "
-                />
+                <input type="text" class="form-control" id="name" placeholder="Enter Product Name " />
               </div>
               <div class="form-group">
                 <label for="">Enter Price:</label>
-                <input
-                  type="number"
-                  name=""
-                  class="form-control"
-                  placeholder="Enter Price"
-                  id="price"
-                />
+                <input type="number" name="" class="form-control" placeholder="Enter Price" id="price" />
               </div>
               <div class="form-group">
                 <label for="">Enter Category:</label>
-                <input
-                  type="text"
-                  name=""
-                  class="form-control"
-                  placeholder="Enter Categoty"
-                  id="category"
-                />
+                <input type="text" name="" class="form-control" placeholder="Enter Categoty" id="category" />
               </div>
               <div class="form-group">
                 <label for="">Enter Company:</label>
-                <input
-                  type="text"
-                  name=""
-                  class="form-control"
-                  placeholder="Enter Company"
-                  id="company"
-                />
+                <input type="text" name="" class="form-control" placeholder="Enter Company" id="company" />
               </div>
               <div class="form-group">
                 <label for="">Enter Type:</label>
@@ -89,10 +60,7 @@
                 </select>
               </div>
               <div class="mt-3">
-                <button
-                  class="btn btn-primary float-right"
-                  onclick="submitForm()"
-                >
+                <button class="btn btn-primary float-right" onclick="submitForm()">
                   submit
                 </button>
               </div>
@@ -122,46 +90,52 @@
 
     <script>
       var editFormData;
-      function getFormData() {
+      function getFormData ()
+      {
         return {
           //   image: document.getElementById("image").value,
-          name: document.getElementById("name").value,
-          price: document.getElementById("price").value,
-          category: document.getElementById("category").value,
-          company: document.getElementById("company").value,
-          type: document.getElementById("type").value,
+          name: document.getElementById( "name" ).value,
+          price: document.getElementById( "price" ).value,
+          category: document.getElementById( "category" ).value,
+          company: document.getElementById( "company" ).value,
+          type: document.getElementById( "type" ).value,
         };
       }
-      function clearFormData() {
-        document.getElementById("image").value = "";
-        document.getElementById("name").value = "";
-        document.getElementById("price").value = "";
-        document.getElementById("category").value = "";
-        document.getElementById("company").value = "";
-        document.getElementById("type").value = "";
+      function clearFormData ()
+      {
+        document.getElementById( "image" ).value = "";
+        document.getElementById( "name" ).value = "";
+        document.getElementById( "price" ).value = "";
+        document.getElementById( "category" ).value = "";
+        document.getElementById( "company" ).value = "";
+        document.getElementById( "type" ).value = "";
       }
 
-      function setFormData(name, price, category, company, type) {
+      function setFormData ( name, price, category, company, type )
+      {
         // document.getElementById("image").value = image;
-        document.getElementById("name").value = name;
-        document.getElementById("price").value = price;
-        document.getElementById("category").value = category;
-        document.getElementById("company").value = company;
-        document.getElementById("type").value = type;
+        document.getElementById( "name" ).value = name;
+        document.getElementById( "price" ).value = price;
+        document.getElementById( "category" ).value = category;
+        document.getElementById( "company" ).value = company;
+        document.getElementById( "type" ).value = type;
       }
 
       // set the message for form status
-      function setSuccessMessage(message) {
-        document.getElementById("message").innerHTML = message;
+      function setSuccessMessage ( message )
+      {
+        document.getElementById( "message" ).innerHTML = message;
       }
-      function editDataCall(id) {
+      function editDataCall ( id )
+      {
         // call get user details by id API
-        fetch("http://localhost:7000/api/v1.0.0/products/" + id, {
+        fetch( "http://localhost:7000/api/v1.0.0/products/" + id, {
           method: "GET",
-        })
-          .then((res) => res.json())
-          .then((response) => {
-            console.log("Edit info", response);
+        } )
+          .then( ( res ) => res.json() )
+          .then( ( response ) =>
+          {
+            console.log( "Edit info", response );
             editFormData = response.doc;
             setFormData(
               editFormData.name,
@@ -170,50 +144,55 @@
               editFormData.company,
               editFormData.type
             );
-          });
+          } );
       }
 
       // callled this function when user click on button
-      function submitForm() {
-        if (!editFormData)
+      function submitForm ()
+      {
+        if ( !editFormData )
           addProduct(); // if the editFormData is undefined then call addUser()
         else editData();
       }
       // add user function
-      function addProduct() {
+      function addProduct ()
+      {
         // let payload = getFormData();
-        const fileInput = document.getElementById("image");
-        const file = fileInput.files[0];
+        const fileInput = document.getElementById( "image" );
+        const file = fileInput.files[ 0 ];
         const formData = new FormData();
-        formData.append("image", file);
-        formData.append("name", document.getElementById("name").value);
-        formData.append("price", document.getElementById("price").value);
-        formData.append("category", document.getElementById("category").value);
-        console.log(document.getElementById("category").value);
-        formData.append("company", document.getElementById("company").value);
-        formData.append("type", document.getElementById("type").value);
+        formData.append( "image", file );
+        formData.append( "name", document.getElementById( "name" ).value );
+        formData.append( "price", document.getElementById( "price" ).value );
+        formData.append( "category", document.getElementById( "category" ).value );
+        console.log( document.getElementById( "category" ).value );
+        formData.append( "company", document.getElementById( "company" ).value );
+        formData.append( "type", document.getElementById( "type" ).value );
         const headers = new Headers();
         headers.append(
           "Authorization",
-          `Bearer ${localStorage.getItem("token")}`
+          `Bearer ${ localStorage.getItem( "token" ) }`
         );
-        fetch("http://localhost:7000/api/v1.0.0/products", {
+        fetch( "http://localhost:7000/api/v1.0.0/products", {
           method: "POST",
           headers: headers,
           body: formData,
-        })
-          .then((res) => res.json())
-          .then((response) => {
-            if (response.status == "success") {
-              setSuccessMessage("add Product is success");
+        } )
+          .then( ( res ) => res.json() )
+          .then( ( response ) =>
+          {
+            if ( response.status == "success" )
+            {
+              setSuccessMessage( "add Product is success" );
               // clear input email and name
               clearFormData();
               getData();
               // reload table
-            } else {
-              setSuccessMessage(response.message);
+            } else
+            {
+              setSuccessMessage( response.message );
             }
-          });
+          } );
       }
       // edit data
 
@@ -233,55 +212,64 @@
       //     })
       // }
 
-      function editData() {
+      function editData ()
+      {
         var formData = getFormData();
-        formData["id"] = editFormData._id; // get _id from selected user
-        fetch("http://localhost:7000/api/v1.0.0/products/" + editFormData._id, {
+        formData[ "id" ] = editFormData._id; // get _id from selected user
+        fetch( "http://localhost:7000/api/v1.0.0/products/" + editFormData._id, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
           },
-          body: JSON.stringify(formData),
-        })
-          .then((res) => res.json())
-          .then((response) => {
-            if (response.status == "success") {
-              setSuccessMessage("update Product is success");
+          body: JSON.stringify( formData ),
+        } )
+          .then( ( res ) => res.json() )
+          .then( ( response ) =>
+          {
+            if ( response.status == "success" )
+            {
+              setSuccessMessage( "update Product is success" );
               clearFormData();
               getData();
               // reload table
-            } else {
-              setSuccessMessage(response.message);
+            } else
+            {
+              setSuccessMessage( response.message );
             }
-          });
+          } );
       }
 
       // delete data
-      function deleteData(id) {
-        console.log(localStorage.getItem("token"));
-        fetch("http://localhost:7000/api/v1.0.0/products/" + id, {
+      function deleteData ( id )
+      {
+        console.log( localStorage.getItem( "token" ) );
+        fetch( "http://localhost:7000/api/v1.0.0/products/" + id, {
           method: "DELETE",
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
           },
-        })
-          .then((res) => res.json())
-          .then((response) => {
-            setSuccessMessage("delete is success");
+        } )
+          .then( ( res ) => res.json() )
+          .then( ( response ) =>
+          {
+            setSuccessMessage( "delete is success" );
             getData();
-          });
+          } );
       }
       // get data method
 
-      function getData() {
-        fetch("http://localhost:7000/api/v1.0.0/products")
-          .then((res) => res.json())
-          .then((response) => {
+      function getData ()
+      {
+        fetch( "http://localhost:7000/api/v1.0.0/products" )
+          .then( ( res ) => res.json() )
+          .then( ( response ) =>
+          {
             var tmpData = "";
-            response.doc.forEach((item) => {
+            response.doc.forEach( ( item ) =>
+            {
               tmpData += "<tr>";
-              tmpData += `<td> <img src=${item.image}  crossorigin="anonymous" > </td>`;
+              tmpData += `<td> <img src=${ item.image }  crossorigin="anonymous" > </td>`;
               tmpData += "<td>" + item.name + "</td>";
               tmpData += "<td>" + item.price + "</td>";
               tmpData += "<td>" + item.company + "</td>";
@@ -297,12 +285,13 @@
                 "`)'>Delete</button></td>";
 
               tmpData += "</tr>";
-            });
-            document.getElementById("tbData").innerHTML = tmpData;
-          });
+            } );
+            document.getElementById( "tbData" ).innerHTML = tmpData;
+          } );
       }
 
       getData();
     </script>
   </body>
+
 </html>

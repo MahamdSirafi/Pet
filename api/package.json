@@ -21,7 +21,7 @@
     "mongoose-sequence": "^5.3.1",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.6",
-    "nodemon": "^3.0.1",
+    "nodemon": "^3.1.0",
     "pug": "^3.0.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
