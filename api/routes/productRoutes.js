@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authMiddlewers = require('../middlewares/authMiddlewers');
-const dynamicImgMiddlewers = require('../middlewares/dynamicImgMiddlewers');
+const { uploadPhoto } = require('../middlewares/productImgMiddlewers');
 const dynamicMiddleware = require('../middlewares/dynamicMiddleware');
 const productController = require('../controllers/productController');
 router
@@ -10,11 +10,7 @@ router
   .post(
     authMiddlewers.protect,
     authMiddlewers.restrictTo('admin'),
-    dynamicImgMiddlewers.uploadPhoto(
-      `public/img/products`,
-      `products-${Math.random() * 1000000}`,
-      `image`
-    ),
+    uploadPhoto,
     dynamicMiddleware.setPathImginBody('products', 'image'),
     productController.createProduct
   );
@@ -36,11 +32,7 @@ router
   .patch(
     authMiddlewers.protect,
     authMiddlewers.restrictTo('admin'),
-    dynamicImgMiddlewers.uploadPhoto(
-      `public/img/products`,
-      `prodects-${Math.random() * 1000000}`,
-      `image`
-    ),
+    uploadPhoto,
     dynamicMiddleware.filteredBody('image'),
     dynamicMiddleware.setPathImginBody('prodects', 'image'),
     productController.updateProduct
