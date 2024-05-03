@@ -47,18 +47,16 @@
                                     id="price" />
                             </div>
                             <div class="form-group">
-                                <label for="">Enter Category:</label>
-                                <input type="text" name="" class="form-control" placeholder="Enter Categoty"
-                                    id="category" />
+                                <label for="">Enter Color:</label>
+                                <input type="text" name="" class="form-control" placeholder="Enter Color" id="color" />
                             </div>
                             <div class="form-group">
-                                <label for="">Enter Company:</label>
-                                <input type="text" name="" class="form-control" placeholder="Enter Company"
-                                    id="company" />
+                                <label for="">Enter Size:</label>
+                                <input type="text" name="" class="form-control" placeholder="Enter Size" id="size" />
                             </div>
                             <div class="form-group">
-                                <label for="">Enter Type:</label>
-                                <select name="" id="type">
+                                <label for="">Enter category:</label>
+                                <select name="" id="category">
                                     <option value="cats">cats</option>
                                     <option value="dogs">dogs</option>
                                     <option value="birds">birds</option>
@@ -83,8 +81,9 @@
                             <th>image</th>
                             <th>Name</th>
                             <th>Price</th>
+                            <th>color</th>
+                            <th>size</th>
                             <th>Category</th>
-                            <th>Company</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </thead>
@@ -102,9 +101,9 @@
                     //   image: document.getElementById("image").value,
                     name: document.getElementById( "name" ).value,
                     price: document.getElementById( "price" ).value,
+                    company: document.getElementById( "color" ).value,
+                    type: document.getElementById( "size" ).value,
                     category: document.getElementById( "category" ).value,
-                    company: document.getElementById( "company" ).value,
-                    type: document.getElementById( "type" ).value,
                 };
             }
             function clearFormData ()
@@ -112,9 +111,9 @@
                 document.getElementById( "image" ).value = "";
                 document.getElementById( "name" ).value = "";
                 document.getElementById( "price" ).value = "";
+                document.getElementById( "color" ).value = "";
+                document.getElementById( "size" ).value = "";
                 document.getElementById( "category" ).value = "";
-                document.getElementById( "company" ).value = "";
-                document.getElementById( "type" ).value = "";
             }
 
             function setFormData ( name, price, category, company, type )
@@ -122,9 +121,9 @@
                 // document.getElementById("image").value = image;
                 document.getElementById( "name" ).value = name;
                 document.getElementById( "price" ).value = price;
+                document.getElementById( "color" ).value = color;
+                document.getElementById( "size" ).value = size;
                 document.getElementById( "category" ).value = category;
-                document.getElementById( "company" ).value = company;
-                document.getElementById( "type" ).value = type;
             }
 
             // set the message for form status
@@ -146,9 +145,9 @@
                         setFormData(
                             editFormData.name,
                             editFormData.price,
-                            editFormData.category,
-                            editFormData.company,
-                            editFormData.type
+                            editFormData.color,
+                            editFormData.size,
+                            editFormData.category
                         );
                     } );
             }
@@ -170,10 +169,10 @@
                 formData.append( "image", file );
                 formData.append( "name", document.getElementById( "name" ).value );
                 formData.append( "price", document.getElementById( "price" ).value );
-                formData.append( "category", document.getElementById( "category" ).value );
                 console.log( document.getElementById( "category" ).value );
-                formData.append( "company", document.getElementById( "company" ).value );
-                formData.append( "type", document.getElementById( "type" ).value );
+                formData.append( "color", document.getElementById( "color" ).value );
+                formData.append( "size", document.getElementById( "size" ).value );
+                formData.append( "category", document.getElementById( "category" ).value );
                 const headers = new Headers();
                 headers.append(
                     "Authorization",
@@ -275,12 +274,12 @@
                         response.doc.forEach( ( item ) =>
                         {
                             tmpData += "<tr>";
-                            tmpData += `<td> <img src=${ item.image }  crossorigin="anonymous" > </td>`;
+                            tmpData += `<td> <img class="w-100"src=${ item.image }  crossorigin="anonymous" > </td>`;
                             tmpData += "<td>" + item.name + "</td>";
                             tmpData += "<td>" + item.price + "</td>";
-                            tmpData += "<td>" + item.company + "</td>";
+                            tmpData += "<td>" + item.size + "</td>";
+                            tmpData += "<td>" + item.color + "</td>";
                             tmpData += "<td>" + item.category + "</td>";
-                            tmpData += "<td>" + item.type + "</td>";
                             tmpData +=
                                 "<td><button class='btn btn-primary' onclick='editDataCall(`" +
                                 item._id +

@@ -33,7 +33,7 @@ const addDataToHTML = () => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('product-item');
             newProduct.dataset.id = product.id;
-            newProduct.dataset.category = product.type;
+            newProduct.dataset.category = product.category;
             //Filtering Categories
             filteringCategoriesProd(newProduct);
             newProduct.innerHTML = ` 
@@ -170,12 +170,10 @@ const changeQuantity = (product_id, type) => {
 
 const initApp = () => {
     // get data from json
-    fetch('http://localhost:7000/api/v1.0.0/products')
+    fetch('http://localhost:7000/api/v1.0.0/pets')
     .then(response => response.json())
     .then(data => {
         listProducts = data.doc;
-        console.log(data)
-        console.log(data.doc)
         addDataToHTML();
         // get cart from memory 
         if (localStorage.getItem('cart')) {
