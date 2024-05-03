@@ -4,7 +4,8 @@ const animalSchema = new mongoose.Schema(
     category: {
       type: String,
       trim: true,
-      required: [true, 'enter filde category'],
+      enum: ['dogs', 'cats', 'birds','fish'],
+      
     },
     name: {
       type: String,

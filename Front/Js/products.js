@@ -69,7 +69,9 @@ listProductHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
     if (positionClick.classList.contains('addcart')) {
         let product_id = positionClick.parentElement.dataset.id;
-        addToCart(product_id);
+        
+        addToCart( product_id );
+        
 
     }
 
@@ -112,7 +114,7 @@ const addCartToHTML = () => {
             let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id)
             let info = listProducts[positionProduct];
             newCart.innerHTML = `<div class="image">
-                        <img src="${info.image}" alt="">
+                        <img src="${info.image}" alt="" crossorigin="anonymous">
                     </div>
                     <div class="name">
                         ${info.name}
