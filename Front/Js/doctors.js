@@ -21,28 +21,28 @@ const addDataToHTML = () =>
     listDoctor.forEach(element => {
         let newDoc = document.createElement( 'div' );
         newDoc.classList.add("doctor-card");
-        newDoc.classList.add("swiper-slide");
-    newDoc.innerHTML = `
+        newDoc.classList.add( "swiper-slide" );
+            newDoc.innerHTML = `
                             <div class="image-content">
                                         <div class="card-image">
-                                            <img src="${element.image}" alt="">
+                                            <img src="${ element.photo }" alt="">
                                         </div>
                                     </div>
                                     <div class="card-content">
                                         <div class="text">
-                                            <h2 class="name">${element.doctor_name}</h2>
-                                            <p class="description">Care Center : ${element.care_center}</p>
-                                            <p class="description">Care Address :${element.care_address}</p>
+                                            <h2 class="name">${ element.name }</h2>
+                                            <p class="description">Care Center : ${ element.health_centers.type.name }</p>
+                                            <p class="description">Care Address :${ element.health_centers.type.address }</p>
                                         </div>
                                     </div>
 
     `;
-        container.appendChild(newDoc);
+            container.appendChild( newDoc );
     });
 };
 const initApp = () => {
     // get data from json
-    fetch( "/Front/Js/doctors.json" )        
+    fetch( "http://localhost:7000/api/v1.0.0/users?role=doctor" )        
     .then(response => response.json())
     .then(data => {
         // listProducts = data.doc;

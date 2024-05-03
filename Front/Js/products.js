@@ -65,17 +65,44 @@ const filteringCategoriesProd = (newProduct) => {
     });
 }
 // Add Product To Cart
-listProductHTML.addEventListener('click', (event) => {
+listProductHTML.addEventListener( 'click', ( event ) =>
+{
     let positionClick = event.target;
-    if (positionClick.classList.contains('addcart')) {
+    if ( positionClick.classList.contains( 'addcart' ) )
+    {
         let product_id = positionClick.parentElement.dataset.id;
-        
-        addToCart( product_id );
-        
-
+        fetch( "http://localhost:7000/api/v1.0.0/orders", {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+            body: JSON.stringify( data ),
+        } )
+            .then( ( response ) => response.json() )
+            .then( ( data ) =>
+            {
+                if ( data.status == "success" )
+                {
+                    addToCart( product_id );
+            
+                } 
+            } );
     }
 
-});
+} );
+  
+    
+
+        
+
+
+
+
 
 const addToCart = (product_id) => {
     let positionThisProductInCart = listcard.findIndex((value) => value.product_id == product_id)
