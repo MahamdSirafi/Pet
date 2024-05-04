@@ -11,7 +11,9 @@ var swiper = new Swiper(".slide-content", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-});
+
+} );
+
 
 // Fetch Doctors
 let container = document.querySelector( ".card-wrapper" );
@@ -22,7 +24,7 @@ const addDataToHTML = () =>
         let newDoc = document.createElement( 'div' );
         newDoc.classList.add("doctor-card");
         newDoc.classList.add( "swiper-slide" );
-            newDoc.innerHTML = `
+        newDoc.innerHTML = `
                             <div class="image-content">
                                         <div class="card-image">
                                             <img src="${ element.photo }" alt="">
@@ -31,8 +33,8 @@ const addDataToHTML = () =>
                                     <div class="card-content">
                                         <div class="text">
                                             <h2 class="name">${ element.name }</h2>
-                                            <p class="description">Care Center : ${ element.health_centers.type.name }</p>
-                                            <p class="description">Care Address :${ element.health_centers.type.address }</p>
+                                            <p class="description">Care Center : ${ element.health_centers.name }</p>
+                                            <p class="description">Care Address :${ element.health_centers.address }</p>
                                         </div>
                                     </div>
 
@@ -40,22 +42,27 @@ const addDataToHTML = () =>
             container.appendChild( newDoc );
     });
 };
-const initApp = () => {
+const initApp = () =>
+{
     // get data from json
-    fetch( "http://localhost:7000/api/v1.0.0/users?role=doctor" )        
-    .then(response => response.json())
-    .then(data => {
-        // listProducts = data.doc;
-        listDoctor = data;
-        // console.log(data)
-        // console.log(data.doc)
-        addDataToHTML();
-        // get cart from memory 
-        // if (localStorage.getItem('cart')) {
-        //     listcard = JSON.parse(localStorage.getItem('cart'));
-        //     addCartToHTML();
-        // }
-    })
-}
+    fetch( "http://localhost:7000/api/v1.0.0/users?role=doctor", {
+        method: "GET",
+        headers: { "Authorization": `Bearer ${ localStorage.getItem( "token" ) }` }
+    } )
+        .then( response => response.json() )
+        .then( data =>
+        {
+            // listProducts = data.doc;
+            listDoctor = data.doc;
+            console.log( listDoctor );
+            // console.log(data.doc)
+            addDataToHTML();
+            // get cart from memory 
+            // if (localStorage.getItem('cart')) {
+            //     listcard = JSON.parse(localStorage.getItem('cart'));
+            //     addCartToHTML();
+            // }
+        } );
+};
 initApp();
 addDataToHTML();

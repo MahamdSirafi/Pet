@@ -23,11 +23,18 @@ form.addEventListener("submit", (event) => {
       .then((data) => {
         if (data.status == "success") {
           localStorage.setItem('token', data.token)
-          if (data.user.role == "admin") {
-          localStorage.setItem("admin", data.user)
+          if ( data.user.role === "admin" )
+          {
+            localStorage.setItem( "admin", data.user );
             window.location.href = "/Front/Html/crud_Dashboard_products.html";
-          } else {
+          } else if ( data.user.role === "doctor" )
+          {
+            localStorage.setItem( "doctor", data.user );
+            window.location.href = "/Front/Html/doctor_DashBoard.html";
+          } else
+          {
             window.location.href = "/Front/homepage_Arabic.html";
+
           }
         } else {
           alert(data.message);
