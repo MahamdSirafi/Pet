@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
   },
   photo: {
     type: String,
-    default: 'default.jpg',
+    default: 'Profile-Icon.webp',
   },
   role: {
     type: String,

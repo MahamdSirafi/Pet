@@ -71,38 +71,10 @@ listProductHTML.addEventListener( 'click', ( event ) =>
     if ( positionClick.classList.contains( 'addcart' ) )
     {
         let product_id = positionClick.parentElement.dataset.id;
-        fetch( "http://localhost:7000/api/v1.0.0/orders", {
-            method: "POST",
-            mode: "cors",
-            cache: "no-cache",
-            credentials: "same-origin",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            redirect: "follow",
-            referrerPolicy: "no-referrer",
-            body: JSON.stringify( data ),
-        } )
-            .then( ( response ) => response.json() )
-            .then( ( data ) =>
-            {
-                if ( data.status == "success" )
-                {
-                    addToCart( product_id );
-            
-                } 
-            } );
+        addToCart(product_id);
     }
 
 } );
-  
-    
-
-        
-
-
-
-
 
 const addToCart = (product_id) => {
     let positionThisProductInCart = listcard.findIndex((value) => value.product_id == product_id)
@@ -139,7 +111,8 @@ const addCartToHTML = () => {
             newCart.classList.add('item');
             newCart.dataset.id = cart.product_id;
             let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id)
-            let info = listProducts[positionProduct];
+            let info = listProducts[ positionProduct ];
+            console.log(info.image);
             newCart.innerHTML = `<div class="image">
                         <img src="${info.image}" alt="" crossorigin="anonymous">
                     </div>
