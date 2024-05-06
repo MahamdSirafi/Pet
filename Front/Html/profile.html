@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="profile-page">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +12,7 @@
     <link rel="stylesheet" href="/Front/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/Front/bootstrap.min.css" />
     <link rel="stylesheet" href="/Front/css/sass/pages/homepage_English.css" />
-    <link
-      rel="shortcut icon"
-      href="/Front/1711465949026.png"
-      type="image/svg+xml"
-    />
+    <link rel="shortcut icon" href="/Front/1711465949026.png" type="image/svg+xml" />
   </head>
 
   <body>
@@ -36,44 +33,31 @@
               <form id="prof">
                 <div class="group group-profile">
                   <div class="image-cover">
-                    <img
-                      src="/Front/assets/Profile-Icon.webp"
-                      alt=""
-                      crossorigin="anonymous"
-                    />
+                    <img src="/Front/assets/Profile-Icon.webp" alt="" crossorigin="anonymous" />
                   </div>
                   <label class="edit-profile" for="file-image">
                     EDIT PROFILE
                   </label>
-                  <input
-                    type="file"
-                    id="file-image"
-                    class="d-none"
-                    accept="images/jpeg, image/png, image/jpg"
-                  />
+                  <input type="file" id="file-image" class="d-none" accept="images/jpeg, image/png, image/jpg" />
                 </div>
                 <div class="group">
                   <label class="username">Username</label>
-                  <input type="text" value="David Dell" id="name" />
+                  <input type="text" value="" id="name" />
                 </div>
                 <div class="group">
                   <label class="email">Email</label>
-                  <input type="email" value="DavidDell@gmail.com" id="email" />
+                  <input type="email" value="" id="email" />
                 </div>
                 <div class="group doctor">
                   <label class="username">Health Center</label>
-                  <input type="text" value="Abs" id="care" />
+                  <input type="text" value="" id="care" />
                 </div>
                 <div class="group doctor">
                   <label class="username">Health Center Address</label>
-                  <input type="text" value="Abs" id="address" />
+                  <input type="text" value="" id="address" />
                 </div>
                 <div class="btns d-block mt-4">
-                  <input
-                    type="submit"
-                    value="Save changes"
-                    class="btn-pet btn-black"
-                  />
+                  <input type="submit" value="Save changes" class="btn-pet btn-black" />
                   <input type="reset" value="Cancel" class="btn btn-default" />
                 </div>
               </form>
@@ -89,22 +73,19 @@
                   <input type="password" id="new-password" />
                 </div>
                 <div class="group">
-                  <label >Repeat new password</label>
+                  <label>Repeat new password</label>
                   <input type="password" id="repeat-new-password" />
                 </div>
                 <div class="btns d-block mt-4">
-                  <input
-                    type="submit"
-                    value="Save changes"
-                    class="btn-pet btn-black"
-                  />
+                  <input type="submit" value="Save changes" class="btn-pet btn-black" />
                   <input type="reset" value="Cancel" class="btn btn-default" />
                 </div>
               </form>
             </div>
             <div class="content-group three">
-              <div class="about">
-                <div class="date">joining date : <span>2022 12 16</span></div>
+              <div class="about ">
+                <div class="date">Don't you forget your account details before logout</div>
+                <div class="logout"><button class="btn-pet btn-black">Logout</button></div>
               </div>
             </div>
           </div>
@@ -113,4 +94,5 @@
     </div>
     <script src="/Front/Js/profile.js"></script>
   </body>
+
 </html>

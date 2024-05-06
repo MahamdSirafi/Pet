@@ -3,6 +3,7 @@ let content = document.querySelectorAll(".content > div");
 let img = document.querySelector(".image-cover img");
 let inputImage = document.getElementById("file-image");
 let form = document.getElementById("prof");
+let logoutBtn = document.querySelector(".logout button");
 let formpass = document.getElementById("formpass");
 let isAdoc = false;
 tabs.forEach((li) => {
@@ -59,7 +60,15 @@ const getData = () => {
       listDoctor = data.doc;
       document.getElementById("name").value = listDoctor.name;
       img.src = listDoctor.photo;
-      document.getElementById("email").value = listDoctor.email;
+      document.getElementById( "email" ).value = listDoctor.email;
+      if ( listDoctor.role == 'doctor' )
+          { 
+        document.querySelectorAll( '.doctor' ).forEach( ( doctor ) =>
+        {
+          doctor.style.display = 'flex';
+         } )
+          }
+
       document.getElementById("care").value = listDoctor.health_centers.name;
       document.getElementById("address").value =
         listDoctor.health_centers.address;
@@ -75,7 +84,7 @@ form.addEventListener("submit", (event) => {
     formData.append("photo", file);
   }
   formData.append("name", document.getElementById("name").value);
-  formData.append("email", document.getElementById("email").value);
+  formData.append( "email", document.getElementById( "email" ).value ); 
   formData.append("health_centers.name", document.getElementById("care").value);
   formData.append(
     "health_centers.address",
@@ -96,7 +105,8 @@ form.addEventListener("submit", (event) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.status == "success") {
+        if ( data.status == "success" )
+        {
           alert("لقد تم التعديل بنجاح");
           getData();
         } else {
@@ -108,12 +118,12 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-// let imgChange = () => {
-//   inputImage.addEventListener("click", () => {
-//     img.src = URL.createObjectURL(inputImage.files[0]);
-//   });
-// };
-// imgChange();
+let imgChange = () => {
+  inputImage.addEventListener("change", () => {
+    img.src = URL.createObjectURL(inputImage.files[0]);
+  });
+};
+imgChange();
 
 // To Change Password
 formpass.addEventListener("submit", (event) => {
@@ -157,3 +167,30 @@ formpass.addEventListener("submit", (event) => {
     }
   }
 });
+logoutBtn.addEventListener( 'click',( e ) =>
+{ 
+  e.preventDefault();
+ try{
+  fetch( 'http://localhost:7000/api/v1.0.0/users/logout', {
+    method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
+  }) .then((response) => response.json())
+      .then((data) => {
+        if (data.status == "success") {
+          alert( "لقد تم تسجيل الخروج بنجاح" );
+          localStorage.removeItem( 'token' );
+          window.location.href = "/Front/Html/signin_Arabic.html";
+
+          
+        } else {
+          alert(data.message);
+        }
+      });
+  } catch (err) {
+    console.log(err);
+  }
+});
+

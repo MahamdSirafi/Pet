@@ -1,0 +1,169 @@
+.signup {
+    background-image: url('/Front/assets/Background.png');
+    background-size: cover;
+    position: relative;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    border: none;
+    outline: none;
+    text-align: center;
+
+    @media #{$maxMobile} {
+
+        background-image: none;
+        background-color: #ebdbe7;
+
+    }
+
+    @media #{$minSmall} and #{$maxSmall} {
+
+        background-position: -76px;
+
+    }
+
+    .logo {
+        @media #{$maxMobile} {
+            & {
+                position: absolute;
+                left: 8%;
+                top: 3%;
+            }
+        }
+    }
+
+    .content {
+        position: absolute;
+        left: calc(50% + 124px);
+        top: calc(50% - 232px);
+
+        @media #{$maxMobile} {
+            position: absolute;
+            left: 27%;
+            top: 10%;
+        }
+
+        .up {
+            margin-bottom: 20px;
+            transform: translateY(-50%);
+            top: 50%;
+
+            button {
+                cursor: pointer;
+                transition: .3s;
+
+            }
+
+            button:not(:first-of-type) {
+                margin-left: 40px;
+
+            }
+
+            button:not(:last-of-type):hover {
+                background-color: $blue-clicked-btn;
+
+            }
+
+            button:not(:first-of-type) {
+                margin-left: 40px;
+            }
+
+        }
+
+        form {
+
+            .username,
+            .password {
+                position: relative;
+            }
+
+            p.doc {
+
+                font-family: myfont;
+
+            }
+
+            .care {
+                top: 73%;
+                right: 13px;
+            }
+
+            i {
+                position: absolute;
+                right: 18px;
+                top: 24.5%;
+                z-index: 1000;
+            }
+
+            i.fa-home {
+                position: absolute;
+                top: 63%;
+            }
+
+            i.fa-stethoscope {
+                position: absolute;
+                top: 76.5%;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="submit"],
+            input[type="email"] {
+                display: block;
+                width: 300px;
+                border-radius: 6px;
+                padding: 10px;
+                height: 50px;
+                color: #fff;
+                margin: 20px 0;
+                transition: .2s;
+
+                &::placeholder {
+                    color: #fff;
+
+
+                }
+
+            }
+
+            input[type="password"]:focus {
+                +i {
+                    display: none;
+                }
+            }
+
+            input[type="text"]:focus {
+                +i {
+                    display: none;
+                }
+
+            }
+
+            input[type="email"]:focus {
+                +i {
+                    display: none;
+                }
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                background-color: $pink-signup;
+            }
+
+            input[type="submit"] {
+                background-color: #000;
+                font-size: 20px;
+                font-weight: bold;
+                transition: .2s;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+            }
+        }
+    }
+
+
+}

@@ -32,14 +32,16 @@ const addDataToHTML = () => {
         listProducts.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('product-item');
-            newProduct.dataset.id = product.id;
+            newProduct.dataset.id = product._id;
             newProduct.dataset.category = product.category;
             //Filtering Categories
             filteringCategoriesProd(newProduct);
             newProduct.innerHTML = ` 
                     <img src="${product.image}" alt="" crossorigin="anonymous">
                     <h2>${product.name}</h2>
-                    <div class="price">$${product.price}</div>
+                    <div class="color">اللون: ${product.color}</div>
+                    <div class="size">الحجم: ${product.size}</div>
+                    <div class="price">$السعر: ${product.price}</div>
                     <button class="addcart">Add To Cart </button>
         `;
             listProductHTML.appendChild(newProduct);
@@ -76,7 +78,8 @@ listProductHTML.addEventListener('click', (event) => {
 });
 
 const addToCart = (product_id) => {
-    let positionThisProductInCart = listcard.findIndex((value) => value.product_id == product_id)
+    let positionThisProductInCart = listcard.findIndex( ( value ) => value.product_id == product_id )
+    listcard.forEach((e)=>console.log(e.product_id));
     if (listcard.length <= 0) {
         listcard = [{
             product_id: product_id,
@@ -96,7 +99,7 @@ const addToCart = (product_id) => {
 // To Store Cart Products In Memory
 
 const addCartToMemory = () => {
-    localStorage.setItem('cart', JSON.stringify(listcard));
+    localStorage.setItem( 'petCart', JSON.stringify( listcard ) );
 }
 // Adding To Cart Function
 
@@ -109,10 +112,10 @@ const addCartToHTML = () => {
             let newCart = document.createElement('div');
             newCart.classList.add('item');
             newCart.dataset.id = cart.product_id;
-            let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id)
-            let info = listProducts[positionProduct];
+            let positionProduct = listProducts.findIndex((value) => value._id == cart.product_id)
+            let info = listProducts[ positionProduct ];
             newCart.innerHTML = `<div class="image">
-                        <img src="${info.image}" alt="">
+                        <img src="${info.image}" alt="" crossorigin="anonymous">
                     </div>
                     <div class="name">
                         ${info.name}
@@ -176,8 +179,8 @@ const initApp = () => {
         listProducts = data.doc;
         addDataToHTML();
         // get cart from memory 
-        if (localStorage.getItem('cart')) {
-            listcard = JSON.parse(localStorage.getItem('cart'));
+        if (localStorage.getItem('petCart')) {
+            listcard = JSON.parse(localStorage.getItem('petCart'));
             addCartToHTML();
         }
     })

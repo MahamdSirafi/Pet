@@ -643,6 +643,7 @@ input[type=submit] {
 .products .product-list .product-item {
   background-color: #c1f9af;
   width: 200px;
+  font-family: secondFont;
   padding: 20px;
   cursor: pointer;
   border-radius: 20px;
@@ -658,11 +659,14 @@ input[type=submit] {
 .products .product-list .product-item h2 {
   font-size: large;
   font-weight: 500;
-  margin: 3px;
+  margin: 4px;
+  margin-top: 7px;
+  font-family: myfont;
 }
 .products .product-list .product-item .price {
   letter-spacing: 7px;
   font-size: small;
+  margin-top: 10px;
 }
 .products .product-list .product-item button {
   background-color: #ff9878;
@@ -678,7 +682,9 @@ input[type=submit] {
   background-color: #25fa5a;
 }
 .products .product-list .product-item img {
-  width: 90%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
 }
 .products .cart-tab {
   width: 400px;
@@ -721,6 +727,7 @@ input[type=submit] {
 }
 .products .cart-tab .list-cart {
   overflow: auto;
+  font-family: myfont;
 }
 .products .cart-tab .list-cart::-webkit-scrollbar {
   width: 0;
@@ -736,7 +743,8 @@ input[type=submit] {
   background-color: rgba(238, 238, 238, 0.0666666667);
 }
 .products .cart-tab .list-cart .item img {
-  width: 100%;
+  width: 100px;
+  height: 100px;
 }
 .products .cart-tab .list-cart .item .quantity span {
   display: inline-block;
@@ -1076,15 +1084,26 @@ body.show-cart .cart-tab {
 }
 .doctors .slider-body .slider .slide-content .card-wrapper .doctor-card .card-content .text {
   position: relative;
-  right: 0;
   top: 0;
+  right: 0;
   text-align: center;
   margin: 0 32px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .doctors .slider-body .slider .slide-content .card-wrapper .doctor-card .card-content .text {
+    right: -40px;
+  }
+}
+@media (min-width: 991px) {
+  .doctors .slider-body .slider .slide-content .card-wrapper .doctor-card .card-content .text {
+    right: -60px;
+  }
 }
 .doctors .slider-body .slider .slide-content .card-wrapper .doctor-card .card-content .text h2.name {
   font-size: 35px;
   font-weight: 500;
   color: #333;
+  font-family: myfont;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .doctors .slider-body .slider .slide-content .card-wrapper .doctor-card .card-content .text h2.name {
@@ -1100,6 +1119,7 @@ body.show-cart .cart-tab {
   font-size: 14px;
   color: #707070;
   text-align: center;
+  font-family: secondfont;
 }
 .doctors .slider-body .slider .slide-content .card-wrapper .doctor-card .card-content .text p.description:last-of-type {
   margin-top: -15px;
@@ -1212,6 +1232,10 @@ body.show-cart .cart-tab {
   }
 }
 
+#profile-page {
+  background-color: #fff;
+}
+
 .profile .main-title h1 {
   color: rgb(122, 122, 218);
 }
@@ -1250,6 +1274,18 @@ body.show-cart .cart-tab {
   font-family: secondFont;
   text-align: center;
 }
+.profile .profile-content .content .content-group .about button {
+  text-align: center;
+  position: relative;
+  left: 50%;
+  font-size: 15px;
+  margin-top: 20px;
+  padding: 6px;
+  transform: translateX(-50%);
+}
+.profile .profile-content .content .content-group .about button:hover {
+  font-size: 16px;
+}
 .profile .profile-content .content .content-group form {
   text-align: center;
   display: flex;
@@ -1261,6 +1297,9 @@ body.show-cart .cart-tab {
 .profile .profile-content .content .content-group form .group {
   display: flex;
   flex-direction: column;
+}
+.profile .profile-content .content .content-group form .group.doctor {
+  display: none;
 }
 .profile .profile-content .content .content-group form .group label,
 .profile .profile-content .content .content-group form .group input {
@@ -1471,8 +1510,8 @@ body.show-cart .cart-tab {
   top: 30%;
   z-index: 1000;
 }
-.signin .content form input[type=text],
 .signin .content form input[type=password],
+.signin .content form input[type=email],
 .signin .content form input[type=submit] {
   display: block;
   width: 300px;
@@ -1482,11 +1521,11 @@ body.show-cart .cart-tab {
   color: #fff;
   margin: 20px 0;
 }
-.signin .content form input[type=text]::-moz-placeholder, .signin .content form input[type=password]::-moz-placeholder, .signin .content form input[type=submit]::-moz-placeholder {
+.signin .content form input[type=password]::-moz-placeholder, .signin .content form input[type=email]::-moz-placeholder, .signin .content form input[type=submit]::-moz-placeholder {
   color: #fff;
 }
-.signin .content form input[type=text]::placeholder,
 .signin .content form input[type=password]::placeholder,
+.signin .content form input[type=email]::placeholder,
 .signin .content form input[type=submit]::placeholder {
   color: #fff;
 }
@@ -1496,7 +1535,7 @@ body.show-cart .cart-tab {
 .signin .content form input[type=text]:focus + i {
   display: none;
 }
-.signin .content form input[type=text],
+.signin .content form input[type=email],
 .signin .content form input[type=password] {
   background-color: #5DAFFE;
 }
@@ -1586,6 +1625,137 @@ body.show-cart .cart-tab {
   right: 18px;
   top: 28%;
   z-index: 1000;
+}
+.signup .content form input[type=text],
+.signup .content form input[type=password],
+.signup .content form input[type=submit],
+.signup .content form input[type=email] {
+  display: block;
+  width: 300px;
+  border-radius: 6px;
+  padding: 10px;
+  height: 50px;
+  color: #fff;
+  margin: 20px 0;
+  transition: 0.2s;
+}
+.signup .content form input[type=text]::-moz-placeholder, .signup .content form input[type=password]::-moz-placeholder, .signup .content form input[type=submit]::-moz-placeholder, .signup .content form input[type=email]::-moz-placeholder {
+  color: #fff;
+}
+.signup .content form input[type=text]::placeholder,
+.signup .content form input[type=password]::placeholder,
+.signup .content form input[type=submit]::placeholder,
+.signup .content form input[type=email]::placeholder {
+  color: #fff;
+}
+.signup .content form input[type=password]:focus + i {
+  display: none;
+}
+.signup .content form input[type=text]:focus + i {
+  display: none;
+}
+.signup .content form input[type=email]:focus + i {
+  display: none;
+}
+.signup .content form input[type=text],
+.signup .content form input[type=password],
+.signup .content form input[type=email] {
+  background-color: #FE5DEE;
+}
+.signup .content form input[type=submit] {
+  background-color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.signup .content form input[type=submit]:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.signup {
+  background-image: url("/Front/assets/Background.png");
+  background-size: cover;
+  position: relative;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .signup {
+    background-image: none;
+    background-color: #ebdbe7;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .signup {
+    background-position: -76px;
+  }
+}
+@media (max-width: 767px) {
+  .signup .logo {
+    position: absolute;
+    left: 8%;
+    top: 3%;
+  }
+}
+.signup .content {
+  position: absolute;
+  left: calc(50% + 124px);
+  top: calc(50% - 232px);
+}
+@media (max-width: 767px) {
+  .signup .content {
+    position: absolute;
+    left: 27%;
+    top: 10%;
+  }
+}
+.signup .content .up {
+  margin-bottom: 20px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.signup .content .up button {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.signup .content .up button:not(:first-of-type) {
+  margin-left: 40px;
+}
+.signup .content .up button:not(:last-of-type):hover {
+  background-color: #5DAFFE;
+}
+.signup .content .up button:not(:first-of-type) {
+  margin-left: 40px;
+}
+.signup .content form .username,
+.signup .content form .password {
+  position: relative;
+}
+.signup .content form p.doc {
+  font-family: myfont;
+}
+.signup .content form .care {
+  top: 73%;
+  right: 13px;
+}
+.signup .content form i {
+  position: absolute;
+  right: 18px;
+  top: 24.5%;
+  z-index: 1000;
+}
+.signup .content form i.fa-home {
+  position: absolute;
+  top: 63%;
+}
+.signup .content form i.fa-stethoscope {
+  position: absolute;
+  top: 76.5%;
 }
 .signup .content form input[type=text],
 .signup .content form input[type=password],
