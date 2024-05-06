@@ -1,4 +1,9 @@
+#profile-page {
+    background-color: #fff;
+}
+
 .profile {
+
     .main-title {
         h1 {
             color: rgb(122, 122, 218);
@@ -51,11 +56,27 @@
 
             .content-group {
 
+
                 .date {
                     font-family: secondFont;
                     text-align: center;
                 }
 
+                .about {
+                    button {
+                        text-align: center;
+                        position: relative;
+                        left: 50%;
+                        font-size: 15px;
+                        margin-top: 20px;
+                        padding: 6px;
+                        transform: translateX(-50%);
+
+                        &:hover {
+                            font-size: 16px;
+                        }
+                    }
+                }
 
                 form {
                     text-align: center;
@@ -70,7 +91,9 @@
                         display: flex;
                         flex-direction: column;
 
-
+                        &.doctor {
+                            display: none;
+                        }
 
                         label,
                         input {
@@ -144,5 +167,7 @@
         .content-group:not(:first-child) {
             display: none;
         }
+
+
     }
 }

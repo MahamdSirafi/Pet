@@ -91,8 +91,8 @@
                 z-index: 1000;
             }
 
-            input[type="text"],
             input[type="password"],
+            input[type="email"],
             input[type="submit"] {
                 display: block;
                 width: 300px;
@@ -120,7 +120,7 @@
                 }
             }
 
-            input[type="text"],
+            input[type="email"],
             input[type="password"] {
                 background-color: $blue-signin;
             }

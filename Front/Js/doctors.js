@@ -27,7 +27,7 @@ const addDataToHTML = () =>
         newDoc.innerHTML = `
                             <div class="image-content">
                                         <div class="card-image">
-                                            <img src="${ element.photo }" alt="">
+                                            <img src="${ element.photo }" alt="" crossorigin="anonymous">
                                         </div>
                                     </div>
                                     <div class="card-content">

@@ -1438,8 +1438,8 @@ body.show-cart .cart-tab {
   top: 30%;
   z-index: 1000;
 }
-.signin .content form input[type=text],
 .signin .content form input[type=password],
+.signin .content form input[type=email],
 .signin .content form input[type=submit] {
   display: block;
   width: 300px;
@@ -1450,11 +1450,11 @@ body.show-cart .cart-tab {
   margin: 20px 0;
   font-family: ArabicFont2;
 }
-.signin .content form input[type=text]::-moz-placeholder, .signin .content form input[type=password]::-moz-placeholder, .signin .content form input[type=submit]::-moz-placeholder {
+.signin .content form input[type=password]::-moz-placeholder, .signin .content form input[type=email]::-moz-placeholder, .signin .content form input[type=submit]::-moz-placeholder {
   color: #fff;
 }
-.signin .content form input[type=text]::placeholder,
 .signin .content form input[type=password]::placeholder,
+.signin .content form input[type=email]::placeholder,
 .signin .content form input[type=submit]::placeholder {
   color: #fff;
 }
@@ -1464,7 +1464,7 @@ body.show-cart .cart-tab {
 .signin .content form input[type=text]:focus + i {
   display: none;
 }
-.signin .content form input[type=text],
+.signin .content form input[type=email],
 .signin .content form input[type=password] {
   background-color: #5DAFFE;
 }
