@@ -43,4 +43,4 @@ form.addEventListener("submit", (event) => {
     }
 
 
-})
+} );

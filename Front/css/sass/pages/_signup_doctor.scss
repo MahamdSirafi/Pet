@@ -11,16 +11,16 @@
     text-align: center;
 
     @media #{$maxMobile} {
-        & {
-            background-image: none;
-            background-color: #ebdbe7;
-        }
+
+        background-image: none;
+        background-color: #ebdbe7;
+
     }
 
     @media #{$minSmall} and #{$maxSmall} {
-        & {
-            background-position: -76px;
-        }
+
+        background-position: -76px;
+
     }
 
     .logo {
@@ -36,14 +36,12 @@
     .content {
         position: absolute;
         left: calc(50% + 124px);
-        top: calc(50% - 286px);
+        top: calc(50% - 232px);
 
         @media #{$maxMobile} {
-            & {
-                position: absolute;
-                left: 27%;
-                top: 10%;
-            }
+            position: absolute;
+            left: 27%;
+            top: 10%;
         }
 
         .up {
@@ -94,18 +92,18 @@
             i {
                 position: absolute;
                 right: 18px;
-                top: 21.5%;
+                top: 24.5%;
                 z-index: 1000;
             }
 
             i.fa-home {
                 position: absolute;
-                top: 57%;
+                top: 63%;
             }
 
             i.fa-stethoscope {
                 position: absolute;
-                top: 69%;
+                top: 76.5%;
             }
 
             input[type="text"],
@@ -152,17 +150,6 @@
             input[type="password"],
             input[type="email"] {
                 background-color: $pink-signup;
-            }
-
-            label {
-                background-color: $blue-signin;
-                cursor: pointer;
-                transition: .3s ease;
-                font-size: 16px;
-
-                &:hover {
-                    background-color: #469ef3;
-                }
             }
 
             input[type="submit"] {

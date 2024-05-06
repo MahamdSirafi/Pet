@@ -1685,7 +1685,7 @@ body.show-cart .cart-tab {
 .signup .content {
   position: absolute;
   left: calc(50% + 124px);
-  top: calc(50% - 286px);
+  top: calc(50% - 232px);
 }
 @media (max-width: 767px) {
   .signup .content {
@@ -1726,16 +1726,16 @@ body.show-cart .cart-tab {
 .signup .content form i {
   position: absolute;
   right: 18px;
-  top: 21.5%;
+  top: 24.5%;
   z-index: 1000;
 }
 .signup .content form i.fa-home {
   position: absolute;
-  top: 57%;
+  top: 63%;
 }
 .signup .content form i.fa-stethoscope {
   position: absolute;
-  top: 69%;
+  top: 76.5%;
 }
 .signup .content form input[type=text],
 .signup .content form input[type=password],
@@ -1772,15 +1772,6 @@ body.show-cart .cart-tab {
 .signup .content form input[type=password],
 .signup .content form input[type=email] {
   background-color: #FE5DEE;
-}
-.signup .content form label {
-  background-color: #5DAFFE;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 16px;
-}
-.signup .content form label:hover {
-  background-color: #469ef3;
 }
 .signup .content form input[type=submit] {
   background-color: #000;
