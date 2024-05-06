@@ -222,6 +222,7 @@
         .product-item {
             background-color: #c1f9af;
             width: 200px;
+            font-family: ArabicFont2;
             padding: 20px;
             cursor: pointer;
             border-radius: 20px;
@@ -241,8 +242,9 @@
             h2 {
                 font-size: large;
                 font-weight: 500;
-                margin: 3px;
-                font-family: ArabicFont2;
+                margin: 4px;
+                margin-top: 7px;
+                font-family: ArabicFont;
 
             }
 
@@ -269,7 +271,9 @@
             }
 
             img {
-                width: 90%;
+                width: 100px;
+                height: 100px;
+                border: 1px solid #000;
             }
         }
     }
@@ -322,6 +326,7 @@
 
         .list-cart {
             overflow: auto;
+            font-family: secondFont;
 
             &::-webkit-scrollbar {
                 width: 0;
@@ -339,7 +344,8 @@
                 }
 
                 img {
-                    width: 100%;
+                    width: 100px;
+                    height: 100px;
                 }
 
                 .quantity {

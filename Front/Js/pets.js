@@ -39,7 +39,9 @@ const addDataToHTML = () => {
             newProduct.innerHTML = ` 
                     <img src="${product.image}" alt="" crossorigin="anonymous">
                     <h2>${product.name}</h2>
-                    <div class="price">$${product.price}</div>
+                    <div class="color">اللون: ${product.color}</div>
+                    <div class="size">الحجم: ${product.size}</div>
+                    <div class="price">$السعر: ${product.price}</div>
                     <button class="addcart">Add To Cart </button>
         `;
             listProductHTML.appendChild(newProduct);
@@ -76,7 +78,8 @@ listProductHTML.addEventListener('click', (event) => {
 });
 
 const addToCart = (product_id) => {
-    let positionThisProductInCart = listcard.findIndex((value) => value.product_id == product_id)
+    let positionThisProductInCart = listcard.findIndex( ( value ) => value.product_id == product_id )
+    listcard.forEach((e)=>console.log(e.product_id));
     if (listcard.length <= 0) {
         listcard = [{
             product_id: product_id,
@@ -96,7 +99,7 @@ const addToCart = (product_id) => {
 // To Store Cart Products In Memory
 
 const addCartToMemory = () => {
-    localStorage.setItem('petCart', JSON.stringify(listcard));
+    localStorage.setItem( 'petCart', JSON.stringify( listcard ) );
 }
 // Adding To Cart Function
 

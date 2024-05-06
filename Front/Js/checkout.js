@@ -1,11 +1,16 @@
 let listCart = [];
+// function checkCart(){
+//         var cookieValue = document.cookie
+//         .split('; ')
+//         .find(row => row.startsWith('listCart='));
+//         if(cookieValue){
+//             listCart = JSON.parse(cookieValue.split('=')[1]);
+//         }
+// }
 function checkCart(){
-        var cookieValue = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('listCart='));
-        if(cookieValue){
-            listCart = JSON.parse(cookieValue.split('=')[1]);
-        }
+    listCart = localStorage.getItem( 'productCart' );
+    listCart += localStorage.getItem( 'petCart' );
+    console.log(listCart);
 }
 checkCart();
 addCartToHTML();

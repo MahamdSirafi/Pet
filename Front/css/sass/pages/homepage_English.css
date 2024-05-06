@@ -643,6 +643,7 @@ input[type=submit] {
 .products .product-list .product-item {
   background-color: #c1f9af;
   width: 200px;
+  font-family: secondFont;
   padding: 20px;
   cursor: pointer;
   border-radius: 20px;
@@ -658,11 +659,14 @@ input[type=submit] {
 .products .product-list .product-item h2 {
   font-size: large;
   font-weight: 500;
-  margin: 3px;
+  margin: 4px;
+  margin-top: 7px;
+  font-family: myfont;
 }
 .products .product-list .product-item .price {
   letter-spacing: 7px;
   font-size: small;
+  margin-top: 10px;
 }
 .products .product-list .product-item button {
   background-color: #ff9878;
@@ -678,7 +682,9 @@ input[type=submit] {
   background-color: #25fa5a;
 }
 .products .product-list .product-item img {
-  width: 90%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
 }
 .products .cart-tab {
   width: 400px;
@@ -721,6 +727,7 @@ input[type=submit] {
 }
 .products .cart-tab .list-cart {
   overflow: auto;
+  font-family: myfont;
 }
 .products .cart-tab .list-cart::-webkit-scrollbar {
   width: 0;
@@ -736,7 +743,8 @@ input[type=submit] {
   background-color: rgba(238, 238, 238, 0.0666666667);
 }
 .products .cart-tab .list-cart .item img {
-  width: 100%;
+  width: 100px;
+  height: 100px;
 }
 .products .cart-tab .list-cart .item .quantity span {
   display: inline-block;
