@@ -39,9 +39,6 @@ router.delete('/deleteMe', authMiddlewers.protect, userController.deleteMe);
 router
   .route('/')
   .get(
-    authMiddlewers.protect,
-    authMiddlewers.isactive,
-    // authMiddlewers.restrictTo('admin'),
     userController.getAllUsers
   )
   .post(
