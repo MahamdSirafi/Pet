@@ -17,8 +17,6 @@ const initAppPet = () => {
         
     })
 }
-localStorage.removeItem('listPets');
-localStorage.removeItem('listProducts');
 initAppPet();
 
 const initAppProduct = () => {
@@ -63,10 +61,10 @@ function addProductCartToHTML ()
                     `<img src="${info.image}" crossorigin="anonymous">
                     <div class="info">
                     <div class="name">${info.name}</div>
-                        <div class="price">$${info.price}/1 product</div>
+                        <div class="price">${info.price}SYP /1 product</div>
                         </div>
                         <div class="quantity">${cart.quantity}</div>
-                        <div class="returnPrice">$${info.price * cart.quantity}</div>`;
+                        <div class="returnPrice">${info.price * cart.quantity} SYP</div>`;
                         listCartProductsHTML.appendChild(newCart);
                         totalQuantity = totalQuantity + cart.quantity;
                         totalPrice = totalPrice + (info.price * cart.quantity);
@@ -74,7 +72,7 @@ function addProductCartToHTML ()
         })
     }
     totalQuantityHTML.innerText = totalQuantity;
-    totalPriceHTML.innerText = '$' + totalPrice;
+    totalPriceHTML.innerText = totalPrice + ' SYP' ;
 }
 function addPetCartToHTML ()
 {
@@ -96,10 +94,10 @@ function addPetCartToHTML ()
                     `<img src="${info.image}" crossorigin="anonymous">
                     <div class="info">
                     <div class="name">${info.name}</div>
-                        <div class="price">$${info.price}/1 product</div>
+                        <div class="price">${info.price}SYP /1 product</div>
                         </div>
                         <div class="quantity">${cart.quantity}</div>
-                        <div class="returnPrice">$${info.price * cart.quantity}</div>`;
+                        <div class="returnPrice">${info.price * cart.quantity} SYP</div>`;
                         listCartPetsHTML.appendChild(newCart);
                         totalQuantity = totalQuantity + cart.quantity;
                         totalPrice = totalPrice + (info.price * cart.quantity);
@@ -107,5 +105,6 @@ function addPetCartToHTML ()
         })
     }
     totalQuantityHTML.innerText = totalQuantity;
-    totalPriceHTML.innerText = '$' + totalPrice;
+    totalPriceHTML.innerText = totalPrice + ' SYP' ;
+
 }
