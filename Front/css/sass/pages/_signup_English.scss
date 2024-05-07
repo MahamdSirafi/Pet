@@ -91,12 +91,6 @@
                 right: 13px;
             }
 
-            i {
-                position: absolute;
-                right: 18px;
-                top: 28%;
-                z-index: 1000;
-            }
 
             input[type="text"],
             input[type="password"],
@@ -156,5 +150,14 @@
         }
     }
 
+    i {
+        position: absolute;
+        right: 18px;
+        top: 29.5%;
+        z-index: 1000;
+    }
 
+    i.fa-envelope {
+        top: 29.5%;
+    }
 }

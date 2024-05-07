@@ -1582,129 +1582,6 @@ body.show-cart .cart-tab {
 .signup .content {
   position: absolute;
   left: calc(50% + 124px);
-  top: calc(50% - 170px);
-}
-@media (max-width: 767px) {
-  .signup .content {
-    position: absolute;
-    left: 27%;
-    top: 28%;
-  }
-}
-.signup .content .up {
-  margin-bottom: 20px;
-  transform: translateY(-50%);
-  top: 50%;
-}
-.signup .content .up button {
-  cursor: pointer;
-  transition: 0.3s;
-}
-.signup .content .up button:not(:first-of-type) {
-  margin-left: 40px;
-}
-.signup .content .up button:not(:last-of-type):hover {
-  background-color: #5DAFFE;
-}
-.signup .content .up button:not(:first-of-type) {
-  margin-left: 40px;
-}
-.signup .content form .username,
-.signup .content form .password {
-  position: relative;
-}
-.signup .content form p.doc {
-  font-family: myfont;
-}
-.signup .content form .care {
-  top: 73%;
-  right: 13px;
-}
-.signup .content form i {
-  position: absolute;
-  right: 18px;
-  top: 28%;
-  z-index: 1000;
-}
-.signup .content form input[type=text],
-.signup .content form input[type=password],
-.signup .content form input[type=submit],
-.signup .content form input[type=email] {
-  display: block;
-  width: 300px;
-  border-radius: 6px;
-  padding: 10px;
-  height: 50px;
-  color: #fff;
-  margin: 20px 0;
-  transition: 0.2s;
-}
-.signup .content form input[type=text]::-moz-placeholder, .signup .content form input[type=password]::-moz-placeholder, .signup .content form input[type=submit]::-moz-placeholder, .signup .content form input[type=email]::-moz-placeholder {
-  color: #fff;
-}
-.signup .content form input[type=text]::placeholder,
-.signup .content form input[type=password]::placeholder,
-.signup .content form input[type=submit]::placeholder,
-.signup .content form input[type=email]::placeholder {
-  color: #fff;
-}
-.signup .content form input[type=password]:focus + i {
-  display: none;
-}
-.signup .content form input[type=text]:focus + i {
-  display: none;
-}
-.signup .content form input[type=email]:focus + i {
-  display: none;
-}
-.signup .content form input[type=text],
-.signup .content form input[type=password],
-.signup .content form input[type=email] {
-  background-color: #FE5DEE;
-}
-.signup .content form input[type=submit] {
-  background-color: #000;
-  font-size: 20px;
-  font-weight: bold;
-  transition: 0.2s;
-}
-.signup .content form input[type=submit]:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.signup {
-  background-image: url("/Front/assets/Background.png");
-  background-size: cover;
-  position: relative;
-  top: -2px;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  border: none;
-  outline: none;
-  text-align: center;
-}
-@media (max-width: 767px) {
-  .signup {
-    background-image: none;
-    background-color: #ebdbe7;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .signup {
-    background-position: -76px;
-  }
-}
-@media (max-width: 767px) {
-  .signup .logo {
-    position: absolute;
-    left: 8%;
-    top: 3%;
-  }
-}
-.signup .content {
-  position: absolute;
-  left: calc(50% + 124px);
   top: calc(50% - 232px);
 }
 @media (max-width: 767px) {
@@ -1801,6 +1678,132 @@ body.show-cart .cart-tab {
 }
 .signup .content form input[type=submit]:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.signup {
+  background-image: url("/Front/assets/Background.png");
+  background-size: cover;
+  position: relative;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .signup {
+    background-image: none;
+    background-color: #ebdbe7;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .signup {
+    background-position: -76px;
+  }
+}
+@media (max-width: 767px) {
+  .signup .logo {
+    position: absolute;
+    left: 8%;
+    top: 3%;
+  }
+}
+.signup .content {
+  position: absolute;
+  left: calc(50% + 124px);
+  top: calc(50% - 170px);
+}
+@media (max-width: 767px) {
+  .signup .content {
+    position: absolute;
+    left: 27%;
+    top: 28%;
+  }
+}
+.signup .content .up {
+  margin-bottom: 20px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.signup .content .up button {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.signup .content .up button:not(:first-of-type) {
+  margin-left: 40px;
+}
+.signup .content .up button:not(:last-of-type):hover {
+  background-color: #5DAFFE;
+}
+.signup .content .up button:not(:first-of-type) {
+  margin-left: 40px;
+}
+.signup .content form .username,
+.signup .content form .password {
+  position: relative;
+}
+.signup .content form p.doc {
+  font-family: myfont;
+}
+.signup .content form .care {
+  top: 73%;
+  right: 13px;
+}
+.signup .content form input[type=text],
+.signup .content form input[type=password],
+.signup .content form input[type=submit],
+.signup .content form input[type=email] {
+  display: block;
+  width: 300px;
+  border-radius: 6px;
+  padding: 10px;
+  height: 50px;
+  color: #fff;
+  margin: 20px 0;
+  transition: 0.2s;
+}
+.signup .content form input[type=text]::-moz-placeholder, .signup .content form input[type=password]::-moz-placeholder, .signup .content form input[type=submit]::-moz-placeholder, .signup .content form input[type=email]::-moz-placeholder {
+  color: #fff;
+}
+.signup .content form input[type=text]::placeholder,
+.signup .content form input[type=password]::placeholder,
+.signup .content form input[type=submit]::placeholder,
+.signup .content form input[type=email]::placeholder {
+  color: #fff;
+}
+.signup .content form input[type=password]:focus + i {
+  display: none;
+}
+.signup .content form input[type=text]:focus + i {
+  display: none;
+}
+.signup .content form input[type=email]:focus + i {
+  display: none;
+}
+.signup .content form input[type=text],
+.signup .content form input[type=password],
+.signup .content form input[type=email] {
+  background-color: #FE5DEE;
+}
+.signup .content form input[type=submit] {
+  background-color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.signup .content form input[type=submit]:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.signup i {
+  position: absolute;
+  right: 18px;
+  top: 29.5%;
+  z-index: 1000;
+}
+.signup i.fa-envelope {
+  top: 29.5%;
 }
 
 .btn-pet {
