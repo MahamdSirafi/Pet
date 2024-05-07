@@ -30,6 +30,8 @@ header .iconCart {
     z-index: 1;
 }
 
+
+
 header .totalQuantity {
     position: absolute;
     top: 0;
@@ -118,6 +120,7 @@ header .totalQuantity {
     padding: 20px;
     height: 30px;
     margin: 0;
+
 }
 
 
@@ -187,6 +190,10 @@ header .totalQuantity {
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
     padding: 20px;
+
+    @media #{$maxMobile} {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .checkoutLayout .right {
@@ -194,6 +201,21 @@ header .totalQuantity {
     border-radius: 20px;
     padding: 40px;
     color: #fff;
+    height: 500px;
+    margin-top: 100px;
+
+    @media #{$maxMobile} {
+        margin-top: 10px;
+    }
+}
+
+.right h1 {
+    font-family: secondFont;
+}
+
+.returnCart h1 {
+    font-family: myfont;
+    font-weight: normal;
 }
 
 .checkoutLayout .right .form {
@@ -202,12 +224,15 @@ header .totalQuantity {
     gap: 20px;
     border-bottom: 1px solid #7a7fe2;
     padding-bottom: 20px;
+    font-family: myfont;
+
 }
 
 .checkoutLayout .form h1,
 .checkoutLayout .form .group:nth-child(-n+3) {
     grid-column-start: 1;
     grid-column-end: 3;
+    font-family: myfont;
 }
 
 .checkoutLayout .form input,
@@ -239,11 +264,10 @@ header .totalQuantity {
     height: 40px;
     border: none;
     border-radius: 20px;
-    background-color: #49D8B9;
     margin-top: 20px;
     font-weight: bold;
     color: #fff;
-
+    cursor: pointer;
 
 }
 
@@ -254,10 +278,13 @@ header .totalQuantity {
 
 .returnCart .list .item img {
     height: 80px;
+    width: 80px;
+    margin-right: 70px;
 }
 
 .returnCart .list .item {
     display: grid;
+    font-family: myfont;
     grid-template-columns: 80px 1fr 50px 80px;
     align-items: center;
     gap: 20px;
@@ -271,4 +298,14 @@ header .totalQuantity {
 .returnCart .list .item .returnPrice {
     font-size: large;
     font-weight: bold;
+    font-family: secondFont;
 }
+
+// .list-container {
+//     display: flex;
+//     justify-content: space-between;
+
+//     @media #{$maxMobile} {
+//         flex-direction: column;
+//     }
+// }

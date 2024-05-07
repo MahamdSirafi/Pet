@@ -2128,12 +2128,33 @@ header .totalQuantity {
   gap: 50px;
   padding: 20px;
 }
+@media (max-width: 767px) {
+  .checkoutLayout {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .checkoutLayout .right {
   background-color: #5358B3;
   border-radius: 20px;
   padding: 40px;
   color: #fff;
+  height: 500px;
+  margin-top: 100px;
+}
+@media (max-width: 767px) {
+  .checkoutLayout .right {
+    margin-top: 10px;
+  }
+}
+
+.right h1 {
+  font-family: secondFont;
+}
+
+.returnCart h1 {
+  font-family: myfont;
+  font-weight: normal;
 }
 
 .checkoutLayout .right .form {
@@ -2142,12 +2163,14 @@ header .totalQuantity {
   gap: 20px;
   border-bottom: 1px solid #7a7fe2;
   padding-bottom: 20px;
+  font-family: myfont;
 }
 
 .checkoutLayout .form h1,
 .checkoutLayout .form .group:nth-child(-n+3) {
   grid-column-start: 1;
   grid-column-end: 3;
+  font-family: myfont;
 }
 
 .checkoutLayout .form input,
@@ -2179,10 +2202,10 @@ header .totalQuantity {
   height: 40px;
   border: none;
   border-radius: 20px;
-  background-color: #49D8B9;
   margin-top: 20px;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
 }
 
 .returnCart h1 {
@@ -2192,10 +2215,13 @@ header .totalQuantity {
 
 .returnCart .list .item img {
   height: 80px;
+  width: 80px;
+  margin-right: 70px;
 }
 
 .returnCart .list .item {
   display: grid;
+  font-family: myfont;
   grid-template-columns: 80px 1fr 50px 80px;
   align-items: center;
   gap: 20px;
@@ -2209,6 +2235,7 @@ header .totalQuantity {
 .returnCart .list .item .returnPrice {
   font-size: large;
   font-weight: bold;
+  font-family: secondFont;
 }
 
 * {

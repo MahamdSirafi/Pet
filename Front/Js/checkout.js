@@ -1,46 +1,109 @@
+let listProducts = [];
+let listPets = [];
+let listCartProduct = [];
+let listCartPet = [];
 let listCart = [];
-// function checkCart(){
-//         var cookieValue = document.cookie
-//         .split('; ')
-//         .find(row => row.startsWith('listCart='));
-//         if(cookieValue){
-//             listCart = JSON.parse(cookieValue.split('=')[1]);
-//         }
-// }
+let totalQuantity = 0;
+let totalPrice = 0;
+const initAppPet = () => {
+    // get data from json
+    fetch('http://localhost:7000/api/v1.0.0/pets')
+    .then(response => response.json())
+    .then(data => {
+        listPets = data.doc;
+        // localStorage.setItem('listPets',listPets);
+        addPetCartToHTML();
+        
+        
+    })
+}
+localStorage.removeItem('listPets');
+localStorage.removeItem('listProducts');
+initAppPet();
+
+const initAppProduct = () => {
+    // get data from json
+    fetch('http://localhost:7000/api/v1.0.0/products')
+    .then(response => response.json())
+    .then(data => {
+        listProducts = data.doc;
+        // localStorage.setItem('listProducts',listProducts);
+
+        addProductCartToHTML();
+        
+       
+    })
+}
+initAppProduct();
 function checkCart(){
-    listCart = localStorage.getItem( 'productCart' );
-    listCart += localStorage.getItem( 'petCart' );
-    console.log(listCart);
+    
+    listCartProduct = JSON.parse(localStorage.getItem( 'productCart' ));
+    listCartPet = JSON.parse(localStorage.getItem( 'petCart' )) ;
+    
 }
 checkCart();
-addCartToHTML();
-function addCartToHTML(){
+function addProductCartToHTML ()
+{
     // clear data default
-    let listCartHTML = document.querySelector('.returnCart .list');
-    listCartHTML.innerHTML = '';
-
+    console.log(listProducts);
+    let listCartProductsHTML = document.querySelector('.returnCart .list');
     let totalQuantityHTML = document.querySelector('.totalQuantity');
     let totalPriceHTML = document.querySelector('.totalPrice');
-    let totalQuantity = 0;
-    let totalPrice = 0;
     // if has product in Cart
-    if(listCart){
-        listCart.forEach(product => {
-            if(product){
-                let newCart = document.createElement('div');
-                newCart.classList.add('item');
-                newCart.innerHTML = 
-                    `<img src="${product.image}">
+    if(listCartProduct){
+        listCartProduct.forEach((cart) => {
+            if ( cart )
+                {
+                    let newCart = document.createElement('div');
+                    newCart.classList.add( 'item' );
+                newCart.dataset.id = cart.product_id;
+                    let positionProduct = listProducts.findIndex( ( value ) => value._id == cart.product_id );
+                let info = listProducts[ positionProduct ];
+                    newCart.innerHTML = 
+                    `<img src="${info.image}" crossorigin="anonymous">
                     <div class="info">
-                        <div class="name">${product.name}</div>
-                        <div class="price">$${product.price}/1 product</div>
-                    </div>
-                    <div class="quantity">${product.quantity}</div>
-                    <div class="returnPrice">$${product.price * product.quantity}</div>`;
-                listCartHTML.appendChild(newCart);
-                totalQuantity = totalQuantity + product.quantity;
-                totalPrice = totalPrice + (product.price * product.quantity);
-            }
+                    <div class="name">${info.name}</div>
+                        <div class="price">$${info.price}/1 product</div>
+                        </div>
+                        <div class="quantity">${cart.quantity}</div>
+                        <div class="returnPrice">$${info.price * cart.quantity}</div>`;
+                        listCartProductsHTML.appendChild(newCart);
+                        totalQuantity = totalQuantity + cart.quantity;
+                        totalPrice = totalPrice + (info.price * cart.quantity);
+                    }
+        })
+    }
+    totalQuantityHTML.innerText = totalQuantity;
+    totalPriceHTML.innerText = '$' + totalPrice;
+}
+function addPetCartToHTML ()
+{
+    // clear data default
+    let listCartPetsHTML = document.querySelector('.returnCart .list');
+    let totalQuantityHTML = document.querySelector('.totalQuantity');
+    let totalPriceHTML = document.querySelector('.totalPrice');
+    // if has product in Cart
+    if(listCartPet){
+        listCartPet.forEach((cart) => {
+            if ( cart )
+                {
+                    let newCart = document.createElement('div');
+                    newCart.classList.add( 'item' );
+                newCart.dataset.id = cart.product_id;
+                    let positionProduct = listPets.findIndex( ( value ) => value._id == cart.product_id );
+                let info = listPets[ positionProduct ];
+                    newCart.innerHTML = 
+                    `<img src="${info.image}" crossorigin="anonymous">
+                    <div class="info">
+                    <div class="name">${info.name}</div>
+                        <div class="price">$${info.price}/1 product</div>
+                        </div>
+                        <div class="quantity">${cart.quantity}</div>
+                        <div class="returnPrice">$${info.price * cart.quantity}</div>`;
+                        listCartPetsHTML.appendChild(newCart);
+                        totalQuantity = totalQuantity + cart.quantity;
+                        totalPrice = totalPrice + (info.price * cart.quantity);
+                    }
         })
     }
     totalQuantityHTML.innerText = totalQuantity;
