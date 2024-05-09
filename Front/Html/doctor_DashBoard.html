@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doctor DashBoard</title>
     <link rel="stylesheet" href="/Front/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Front/css/sass/pages/homepage_English.css" />
+    <link rel="stylesheet" href="/all.min.css">
+
   </head>
 
   <body>
-    <div class="users">
-      <div class="img-container">
-        <img src="/Front/" alt="" />
-        <ul>
-          <li><a href="./profile.html">profile</a></li>
-        </ul>
+    <div class=" side-container">
+      <div class="side-bar">
+        <input type="checkbox" id="click">
+        <label for="click">
+          <i class='menu-btn fa fa-bars'></i>
+          <i class='close-btn fa fa-close text'></i>
+        </label>
+
+        <div class="sidenav">
+          <div class="logo">
+            <h2 class="title-dash">Doctor DashBoard</h2>
+          </div>
+          <div class="menu_text">
+            <p>Menu</p>
+          </div>
+
+          <div class="icon_items">
+            <ul>
+              <li class="active">
+                <i class='fa fa-home'></i>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <i class='fa fa-user-circle'></i>
+                <a href="#">User</a>
+              </li>
+              <li>
+                <i class='fa fa-sign-in'></i>
+                <a href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="doctor-dashboard">
+
+      <div class="container">
+        <div class="img-container">
+          <img src="/Front/" alt="" />
+          <ul>
+            <li><a href="./profile.html" crossorigin="anonymous">profile</a></li>
+          </ul>
+          <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+            <label class="btn btn-outline-danger d-flex" for="vbtn-radio1"><img src="/Front/assets/Profile-Icon.webp"
+                alt="">
+              <h2>Aseel Zetoni</h2>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+            <label class="btn btn-outline-danger d-flex" for="vbtn-radio2"><img src="/Front/assets/Profile-Icon.webp"
+                alt="">
+              <h2>Aseel Zetoni</h2>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-danger d-flex" for="vbtn-radio3"><img src="/Front/assets/Profile-Icon.webp"
+                alt="">
+              <h2>Aseel Zetoni</h2>
+            </label>
+          </div>
+        </div>
+      </div>
+      <script src="/Front/Js/bootstrap.bundle.min.js"></script>
   </body>
+
 </html>
