@@ -26,7 +26,7 @@ body: JSON.stringify(data),
  .then((response) => response.json())
 .then((data) => {
  if (data.status == "success") {
-   localStorage.setItem("jwt",data.token)
+   localStorage.setItem("token",data.token)
    localStorage.setItem("user",data.user)
    window.location.href = "/Front/homepage_Arabic.html";
  } else {

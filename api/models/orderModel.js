@@ -17,7 +17,12 @@ const orderSchema = new mongoose.Schema(
         type: {
           type: String,
           required: [true, 'enter type FK Product or Pet'],
-          enum: ['Product', 'Pet'],
+          enum: ['Product', 'Pet', 'product', 'pet'],
+          set: (value) => {
+            if (value == 'product') return 'Product';
+            if (value == 'pet') return 'Pet';
+            else return value;
+          },
         },
       },
     ],
@@ -28,7 +33,7 @@ const orderSchema = new mongoose.Schema(
     },
     address: {
       type: String,
-      required: [true, 'restaurant must have a Location.'],
+      required: [true, 'يجب ادخال موقع التوصيل.'],
     },
     total: {
       type: Number,
