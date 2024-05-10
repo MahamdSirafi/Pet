@@ -1457,6 +1457,12 @@ body.show-cart .cart-tab {
   text-transform: uppercase;
 }
 
+.doctor-dashboard {
+  background: #eee;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+}
 .doctor-dashboard label {
   padding: 20px;
 }
@@ -1475,7 +1481,7 @@ body.show-cart .cart-tab {
 .side-container {
   width: 100%;
   height: 100vh;
-  background: #119aaf;
+  background: #eee;
   color: #fff;
 }
 
@@ -1507,30 +1513,6 @@ label .close-btn {
   margin-right: 20px;
 }
 
-.sidenav .search_bar {
-  margin-top: 32px;
-  position: relative;
-}
-
-.sidenav .search_bar i {
-  position: absolute;
-  color: #000;
-  font-size: 24px;
-  left: 38px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.sidenav .search_bar input {
-  width: 50%;
-  padding: 11px;
-  padding-left: 40px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  margin-left: 15px;
-}
-
 .sidenav .menu_text {
   margin-top: 24px;
 }
@@ -1558,9 +1540,18 @@ label .close-btn {
   transition: 0.5s ease;
 }
 
-.icon_items .active,
+.side-bar i.fa-bars,
+.side-bar i.fa-close {
+  position: fixed;
+}
+
+.icon_items ul li.active,
 .sidenav .icon_items ul li:hover {
-  background: #119aaf;
+  background: #dc3545;
+}
+
+.list-menu.active {
+  background: #dc3545;
 }
 
 .sidenav .icon_items ul li i {
@@ -1603,15 +1594,6 @@ label .close-btn {
 #click:checked ~ .sidenav .logo h2 {
   opacity: 1;
   pointer-events: auto;
-}
-
-#click:checked ~ .sidenav .search_bar input {
-  width: 100%;
-  margin-left: 0;
-}
-
-#click:checked ~ .sidenav .search_bar i {
-  left: 20px;
 }
 
 #click:checked ~ label {

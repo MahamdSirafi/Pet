@@ -116,55 +116,61 @@ function addPetCartToHTML ()
     totalPriceHTML.innerText = totalPrice + ' SYP' ;
 
 }
+let data;
 // Post to Order 
 
     let checkBtn = document.querySelector( '.buttonCheckout' );
-    checkBtn.addEventListener( 'click', ( e ) =>
+checkBtn.addEventListener( 'click', ( e ) =>
+{
+    console.log( totalPrice );
+    let items = document.querySelectorAll( '.item' );
+    items.forEach( ( it ) =>
     {
-        console.log(totalPrice);
-        let items = document.querySelectorAll( '.item' );
-        items.forEach( ( it ) =>
-        { 
-            console.log(document.getElementById('address').value);
-            console.log(totalPrice);
-            let data = {
-               cart: [ {
-                    _id: it.dataset.id,
-                    product: it.dataset.name,
-                    price: it.dataset.price,
-                    type: it.dataset.type,
+        console.log( document.getElementById( 'address' ).value );
+        console.log( totalPrice );
+        data = {
+            cart: [ {
+                _id: it.dataset.id,
+                product: it.dataset.name,
+                price: it.dataset.price,
+                type: it.dataset.type,
+            }
+            ],
+            address: document.getElementById( 'address' ).value,
+            total: totalPrice
+        };
+    } );
+  try
+    {
+        fetch( "http://localhost:7000/api/v1.0.0/orders", {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+                //   "Content-Type": "application/json"
+                "Authorization": `Bearer ${ localStorage.getItem( "token" ) }`
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+            body: JSON.stringify( data ),
+        } )
+            .then( ( response ) => response.json() )
+            .then( ( data ) =>
+            {
+                if ( data.status == "success" ) 
+                {
+                    localStorage.removeItem( "petCart" );
+                    localStorage.removeItem( "productCart" );
+                } else
+                {
+                    alert( data.message );
                 }
-                ],
-                address: document.getElementById('address').value ,
-                total: totalPrice,
-        }
-  try {
-    fetch( "http://localhost:7000/api/v1.0.0/orders", {
-      method: "POST",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        //   "Content-Type": "application/json"
-           "Authorization": `Bearer ${localStorage.getItem("token")}`
-     },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.status == "success") 
-          {
-            localStorage.removeItem( "petCart" );
-                localStorage.removeItem( "productCart" );
-        } else {
-          alert(data.message);
-        }
-      });
-  } catch (err) {
-    console.log(err);
-  }
+            } );
+    } catch ( err )
+    {
+        console.log( err );
+    }
 } );
-        } );
+    
     
