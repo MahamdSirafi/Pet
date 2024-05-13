@@ -100,21 +100,30 @@ const addCartToHTML = () => {
             newCart.dataset.id = cart.product_id;
             let positionProduct = listProducts.findIndex( ( value ) => value._id == cart.product_id );
             let info = listProducts[ positionProduct ];
-            newCart.innerHTML = `<div class="image">
-                        <img src="${info.image}" alt="" crossorigin="anonymous">
+            info.cart.forEach( carts =>
+            { 
+                med.forEach( med =>
+                { 
+                        if (med._id === carts.product._id)
+                    
+                        newCart.innerHTML = `<div class="image">
+                        <img src="${med.image}" alt="" crossorigin="anonymous">
                     </div>
                     <div class="name">
-                        ${info.name}
+                        ${carts.product.name}
                     </div>
                     <div class="total-price">
-                    ${info.price * cart.quantity} SYP
+                    ${med.price *0.25* cart.quantity} SYP
                     </div>
                     <div class="quantity">
                         <span class="minus"> - </span>
                         <span>${cart.quantity}</span>
                         <span class="plus"> + </span>
                     </div>`;
-            listcardHtml.appendChild(newCart);
+           
+                    listcardHtml.appendChild(newCart);
+                } )
+            } )
         })
     }
     iconCartSpan.innerText = totalQuantity;
