@@ -40,7 +40,7 @@
               </li>
               <li class="list-menu">
                 <i class='fa fa-sign-in'></i>
-                <a href="#">Logout</a>
+                <a class="logout" href="#">Logout</a>
               </li>
             </ul>
           </div>
@@ -50,28 +50,22 @@
     <div class="doctor-dashboard">
 
       <div class="container">
-        <div class="img-container">
-          <div class="btn-group-vertical list-users" role="group" aria-label="Vertical radio toggle button group">
-            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
-            <label class="btn btn-outline-danger d-flex" for="vbtn-radio1"><img src="/Front/assets/Profile-Icon.webp"
-                alt="">
-              <h2>Aseel Zetoni</h2>
-            </label>
-            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
-            <label class="btn btn-outline-danger d-flex" for="vbtn-radio2"><img src="/Front/assets/Profile-Icon.webp"
-                alt="">
-              <h2>Aseel Zetoni</h2>
-            </label>
-            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-            <label class="btn btn-outline-danger d-flex" for="vbtn-radio3"><img src="/Front/assets/Profile-Icon.webp"
-                alt="">
-              <h2>Aseel Zetoni</h2>
-            </label>
+        <div class="lists ">
+          <div class="btn-group-vertical list-users  " role="group" aria-label="Vertical radio toggle button group">
+            <h2>Users List</h2>
+          </div>
+          <div class="list-medicines ">
+            <h2>Medicines List</h2>
           </div>
         </div>
+        <div class="btns">
+          <input type="submit" value="Send" id="sub" class="btn btn-danger" >
+          <input type="reset" value="Cancel" id="can" class="btn btn-classic">
+        </div>
       </div>
-      <!-- <script src="/Front/Js/bootstrap.bundle.min.js"></script> -->
-      <script src="/Front/Js/doctor_Dashboard.js"></script>
+    </div>
+    <script src="/Front/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Front/Js/doctor_Dashboard.js"></script>
   </body>
 
 </html>

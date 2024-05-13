@@ -808,6 +808,27 @@ body.show-cart .cart-tab {
   border-radius: 50%;
 }
 
+.prescriptions-p {
+  background-color: #ff9878;
+}
+.prescriptions-p p {
+  font-family: secondfont;
+  color: #fff;
+}
+
+.product-list .doctor,
+.product-list .dis,
+.product-list .prices,
+.product-list .quantity {
+  font-family: secondfont;
+}
+.product-list .dis {
+  color: #ff9878;
+}
+.product-list .product-item:hover .dis {
+  color: #fff;
+}
+
 .contact {
   background-color: #f1efef;
 }
@@ -1458,24 +1479,77 @@ body.show-cart .cart-tab {
 }
 
 .doctor-dashboard {
-  background: #eee;
+  font-family: myfont;
   position: absolute;
   left: 20%;
   top: 10%;
 }
-.doctor-dashboard label {
+.doctor-dashboard .list-users label {
   padding: 20px;
+  width: 300px;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
-.doctor-dashboard label img {
+.doctor-dashboard .list-users label img {
   width: 100px;
   height: 100px;
   border: 1px solid #000;
   margin-right: 10px;
   border-radius: 50%;
 }
-.doctor-dashboard label h2 {
+.doctor-dashboard .list-users label h2 {
   margin-top: 20px;
   font-family: myfont;
+}
+.doctor-dashboard .container #image-list {
+  width: 100px;
+  border: 1px solid #000;
+  margin-right: 20px;
+  margin-left: 20px;
+  height: 100px;
+}
+.doctor-dashboard .container p {
+  color: #dc3545;
+}
+.doctor-dashboard .container :checked {
+  background-color: #dc3545;
+  border: #dc3545;
+}
+.doctor-dashboard .container :focus {
+  background-color: #dc3545;
+}
+.doctor-dashboard .container .lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .doctor-dashboard .container .lists {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+.doctor-dashboard .container .lists .list-medicines {
+  position: absolute;
+  right: 300px;
+  top: 0;
+}
+@media (max-width: 767px) {
+  .doctor-dashboard .container .lists .list-medicines {
+    left: 0;
+    top: 400px;
+  }
+}
+.doctor-dashboard .container .btns {
+  margin-top: 200px;
+  margin-left: 0;
+}
+@media (max-width: 767px) {
+  .doctor-dashboard .container .btns {
+    margin-top: 600px;
+    margin-left: 50px;
+  }
 }
 
 .side-container {
@@ -1483,6 +1557,7 @@ body.show-cart .cart-tab {
   height: 100vh;
   background: #eee;
   color: #fff;
+  z-index: 1000;
 }
 
 .title-dash {
@@ -1497,6 +1572,7 @@ body.show-cart .cart-tab {
   padding: 32px 16px;
   background-color: #000;
   transition: width 0.6s;
+  z-index: 10000;
 }
 
 label .close-btn {
@@ -1543,6 +1619,7 @@ label .close-btn {
 .side-bar i.fa-bars,
 .side-bar i.fa-close {
   position: fixed;
+  z-index: 200;
 }
 
 .icon_items ul li.active,
@@ -1573,12 +1650,22 @@ label .close-btn {
   display: none;
 }
 
+input[type=number] {
+  background-color: #dc3545;
+  width: 50px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  outline: none;
+  color: #fff;
+  border: none;
+}
+
 .side-container label {
   position: absolute;
   left: 3%;
   top: 1.5%;
   font-size: 24px;
-  z-index: 1;
+  z-index: 12222;
   cursor: pointer;
 }
 

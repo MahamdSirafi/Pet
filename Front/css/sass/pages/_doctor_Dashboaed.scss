@@ -1,26 +1,92 @@
 .doctor-dashboard {
-    background: #eee;
+    font-family: myfont;
     position: absolute;
     left: 20%;
     top: 10%;
 
-    label {
-        padding: 20px;
+    .list-users {
+        label {
+            padding: 20px;
+            width: 300px;
+            font-size: 20px;
+            margin-bottom: 5px;
 
-        img {
-            width: 100px;
-            height: 100px;
-            border: 1px solid #000;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
+            img {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #000;
+                margin-right: 10px;
+                border-radius: 50%;
+            }
 
-        h2 {
-            margin-top: 20px;
-            font-family: myfont;
+            h2 {
+                margin-top: 20px;
+                font-family: myfont;
+            }
         }
     }
+
+    .container {
+        #image-list {
+            width: 100px;
+            border: 1px solid #000;
+            margin-right: 20px;
+            margin-left: 20px;
+            height: 100px;
+        }
+
+        p {
+            color: #dc3545;
+        }
+
+        :checked {
+            background-color: #dc3545;
+            border: #dc3545;
+        }
+
+        :focus {
+            background-color: #dc3545;
+        }
+
+        .lists {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+
+            @media #{$maxMobile} {
+                flex-direction: column;
+                align-items: baseline;
+            }
+
+            .list-medicines {
+                position: absolute;
+                right: 300px;
+                top: 0;
+
+                @media #{$maxMobile} {
+                    left: 0;
+                    top: 400px;
+                }
+            }
+
+
+        }
+
+        .btns {
+            margin-top: 200px;
+            margin-left: 0;
+
+            @media #{$maxMobile} {
+                margin-top: 600px;
+                margin-left: 50px;
+            }
+        }
+    }
+
 }
+
+
 
 // side
 .side-container {
@@ -28,6 +94,7 @@
     height: 100vh;
     background: #eee;
     color: #fff;
+    z-index: 1000;
 }
 
 .title-dash {
@@ -42,6 +109,7 @@
     padding: 32px 16px;
     background-color: #000;
     transition: width 0.6s;
+    z-index: 10000;
 }
 
 label .close-btn {
@@ -90,6 +158,7 @@ label .close-btn {
     i.fa-bars,
     i.fa-close {
         position: fixed;
+        z-index: 200;
     }
 }
 
@@ -121,12 +190,22 @@ label .close-btn {
     display: none;
 }
 
+input[type="number"] {
+    background-color: #dc3545;
+    width: 50px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    outline: none;
+    color: #fff;
+    border: none;
+}
+
 .side-container label {
     position: absolute;
     left: 3%;
     top: 1.5%;
     font-size: 24px;
-    z-index: 1;
+    z-index: 12222;
     cursor: pointer;
 }
 

@@ -151,7 +151,8 @@ checkBtn.addEventListener("click", (e) => {
           localStorage.removeItem("petCart");
           localStorage.removeItem("productCart");
         } else {
-          alert(data.message);
+          alert( 'يجب أن تسجل دخولك أولاً' );
+          window.location.href = '/Front/Html/signin_English.html';
         }
       });
   } catch (err) {
