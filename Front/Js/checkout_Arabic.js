@@ -76,15 +76,15 @@ function addProductCartToHTML() {
         newCart.dataset.price = info.price;
         newCart.dataset.name = info.name;
         newCart.dataset.quantity = cart.quantity;
-        newCart.innerHTML = `<img src="${info.image}" crossorigin="anonymous">
+        newCart.innerHTML = `<img class="mx-4" src="${info.image}" crossorigin="anonymous">
                     <div class="info">
-                    <div class="name">${info.name}</div>
-                        <div class="price">${info.price}SYP /1 product</div>
+                    <div class="name" style="margin-right: 20px;">${info.name}</div>
+                        <div class="price" style="margin-right: 20px;"> منتج/1 ل.س${info.price}</div>
                         </div>
                         <div class="quantity">${cart.quantity}</div>
-                        <div class="returnPrice">${
+                        <div class="returnPrice" style="margin-right: -20px;">ل.س${
                           info.price * cart.quantity
-                        } SYP</div>`;
+                        } </div>`;
         listCartProductsHTML.appendChild(newCart);
         totalQuantity = totalQuantity + cart.quantity;
         totalPrice = totalPrice + info.price * cart.quantity;
@@ -115,15 +115,15 @@ function addPetCartToHTML() {
         newCart.dataset.price = info.price;
         newCart.dataset.name = info.name;
         newCart.dataset.quantity = cart.quantity;
-        newCart.innerHTML = `<img src="${info.image}" crossorigin="anonymous">
+        newCart.innerHTML = `<img class="mx-4" src="${info.image}" crossorigin="anonymous">
                     <div class="info">
-                    <div class="name">${info.name}</div>
-                        <div class="price">${info.price}SYP /1 pet</div>
+                    <div class="name" style="margin-right: 20px;">${info.name}</div>
+                        <div class="price" style="margin-right: 20px;">حيوان/1 ل.س${info.price}</div>
                         </div>
                         <div class="quantity">${cart.quantity}</div>
-                        <div class="returnPrice">${
+                        <div class="returnPrice" style="margin-right: -20px;">ل.س${
                           info.price * cart.quantity
-                        } SYP</div>`;
+                        } </div>`;
         listCartPetsHTML.appendChild(newCart);
         totalQuantity = totalQuantity + cart.quantity;
         totalPrice = totalPrice + info.price * cart.quantity;
@@ -133,7 +133,7 @@ function addPetCartToHTML() {
     });
   }
   totalQuantityHTML.innerText = totalQuantity;
-  totalPriceHTML.innerText = totalPrice + " SYP";
+  totalPriceHTML.innerText = totalPrice + " ل.س";
 }
 let mult = 1;
 function addDataToHTML() {
@@ -170,13 +170,13 @@ function addDataToHTML() {
                     // console.log(totalPrice);
                   newCart.dataset.price = med.price - med.price*0.25;
                   newCart.dataset.name = carts.product.name;
-                  newCart.innerHTML = `<img src="${ med.image }" crossorigin="anonymous">
+                  newCart.innerHTML = `<img class="mx-4" src="${ med.image }" crossorigin="anonymous">
                     <div class="info">
-                    <div class="name">${ carts.product.name }</div>
-                    <div class="price">${med.price - med.price *0.25 }SYP /1 medicine <span>With discount</span></div>
+                    <div class="name" style="margin-right: 20px;">${ carts.product.name }</div>
+                    <div class="price" style="margin-right: 20px;"> دواء/1 ل.س ${med.price - med.price *0.25 } <span>مع حسم</span></div>
                     </div>
                     <div class="quantity">${ cart.quantity }</div>
-                    <div class="returnPrice">${(med.price - med.price*0.25)* cart.quantity} SYP</div>`;
+                    <div class="returnPrice" style="margin-right: -20px;">ل.س${(med.price - med.price*0.25)* cart.quantity} </div>`;
                     
                     listCartProductsHTML.appendChild(newCart);
                     
@@ -191,7 +191,7 @@ function addDataToHTML() {
     });
   }
   totalQuantityHTML.innerText = totalQuantity;
-  totalPriceHTML.innerText = totalPrice + " SYP";
+  totalPriceHTML.innerText = totalPrice + " ل.س";
 }
 
 // Post to Order

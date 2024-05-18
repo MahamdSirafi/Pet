@@ -27,7 +27,7 @@ form.addEventListener("submit", (event) => {
           if ( data.user.role === "admin" )
           {
             localStorage.setItem( "admin", data.user );
-            window.location.href = "/Front/Html/crud_Dashboard_products.html";
+            window.location.href = "/Front/Html/crud_Dashboard_products_English.html";
           } else if ( data.user.role === "doctor" )
           {
             localStorage.setItem( "doctor", data.user );

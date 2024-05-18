@@ -705,7 +705,7 @@ input[type=submit] {
   background-color: #c1f9af;
   width: 200px;
   font-family: ArabicFont2;
-  padding: 20px;
+  padding: 30px;
   cursor: pointer;
   border-radius: 20px;
   margin: auto;
@@ -847,6 +847,10 @@ body.show-cart .cart-tab {
 }
 .brand ul li img {
   border-radius: 50%;
+}
+
+.price {
+  font-family: ArabicFont;
 }
 
 .contact {
@@ -1305,6 +1309,245 @@ body.show-cart .cart-tab {
   }
 }
 
+.doctor-dashboard {
+  font-family: ArabicFont;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+}
+.doctor-dashboard .list-users label {
+  padding: 20px;
+  width: 300px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.doctor-dashboard .list-users label img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.doctor-dashboard .list-users label h2 {
+  margin-top: 20px;
+  font-family: myfont;
+}
+.doctor-dashboard .container #image-list {
+  width: 100px;
+  border: 1px solid #000;
+  margin-right: 39px;
+  margin-left: 20px;
+  height: 100px;
+}
+.doctor-dashboard .container p {
+  color: #dc3545;
+}
+.doctor-dashboard .container :checked {
+  background-color: #dc3545;
+  border: #dc3545;
+}
+.doctor-dashboard .container :focus {
+  background-color: #dc3545;
+}
+.doctor-dashboard .container .lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .doctor-dashboard .container .lists {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+.doctor-dashboard .container .lists .list-medicines {
+  position: absolute;
+  left: 500px;
+  top: 0;
+}
+@media (max-width: 767px) {
+  .doctor-dashboard .container .lists .list-medicines {
+    left: 0;
+    top: 400px;
+  }
+}
+.doctor-dashboard .container .btns {
+  margin-top: 200px;
+  margin-left: 0;
+}
+@media (max-width: 767px) {
+  .doctor-dashboard .container .btns {
+    margin-top: 600px;
+    margin-left: 50px;
+  }
+}
+
+.side-container {
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+  color: #fff;
+  z-index: 1000;
+  font-family: ArabicFont;
+}
+
+.title-dash {
+  margin-left: -140px;
+}
+
+.side-container .sidenav {
+  width: 115px;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  padding: 32px 16px;
+  background-color: #000;
+  transition: width 0.6s;
+  z-index: 10000;
+}
+
+label .close-btn {
+  display: none;
+}
+
+.side-container .logo h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  margin-right: 20px;
+}
+
+.sidenav .menu_text {
+  margin-top: 24px;
+}
+
+.sidenav .menu_text p {
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-left: 10px;
+}
+
+.sidenav .icon_items ul {
+  list-style: none;
+  margin-top: 32px;
+  padding: 0 10px;
+}
+
+.sidenav .icon_items ul li {
+  cursor: pointer;
+  margin: 4px;
+  padding: 12px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease;
+}
+
+.side-bar i.fa-bars,
+.side-bar i.fa-close {
+  position: fixed;
+  z-index: 200;
+}
+
+.icon_items ul li.active,
+.sidenav .icon_items ul li:hover {
+  background: #dc3545;
+}
+
+.list-menu.active {
+  background: #dc3545;
+}
+
+.sidenav .icon_items ul li i {
+  font-size: 26px;
+  padding: 0 12px;
+}
+
+.sidenav .icon_items ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  padding-left: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+#click {
+  display: none;
+}
+
+.lists input[type=number] {
+  background-color: #dc3545;
+  width: 50px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  outline: none;
+  color: #fff;
+  border: none;
+}
+
+.side-container label {
+  position: absolute;
+  right: 3%;
+  top: 1.5%;
+  font-size: 24px;
+  z-index: 12222;
+  cursor: pointer;
+}
+
+#click:checked ~ .sidenav {
+  width: 260px;
+}
+
+#click:checked ~ .sidenav .icon_items ul li a {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#click:checked ~ .sidenav .logo h2 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#click:checked ~ label {
+  left: 1%;
+}
+
+#click:checked ~ label .close-btn {
+  display: block;
+}
+
+#click:checked ~ label .menu-btn {
+  display: none;
+}
+
+.prescriptions-p {
+  background-color: #ff9878;
+}
+.prescriptions-p p {
+  font-family: ArabicFont;
+  color: #fff;
+}
+
+.product-list .doctor,
+.product-list .dis,
+.product-list .prices,
+.product-list .quantity {
+  font-family: ArabicFont;
+}
+.product-list .dis {
+  color: #ff9878;
+}
+.product-list .product-item:hover .dis {
+  color: #fff;
+}
+
 .about {
   background-color: #e1e5bf;
   height: 1059px;
@@ -1589,7 +1832,7 @@ body.show-cart .cart-tab {
 .signup .content form i {
   position: absolute;
   right: 20px;
-  top: 28%;
+  top: 33%;
   z-index: 1000;
 }
 .signup .content form p.doc {

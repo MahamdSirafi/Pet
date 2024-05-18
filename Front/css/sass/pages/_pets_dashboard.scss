@@ -1,0 +1,47 @@
+.pets-dash {
+    .adding {
+        font-family: myfont;
+    }
+
+    .adding input {
+        width: 300px;
+        border: none;
+        background-color: rgb(91, 91, 245);
+        color: #fff;
+        font-family: secondfont;
+    }
+
+    input[type="file"] {
+        width: 250px;
+        margin-left: 20px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    select {
+        background-color: rgb(91, 91, 245);
+        border: none;
+        outline: none;
+        color: #fff;
+
+    }
+
+
+
+    input[type="text"]::placeholder,
+    input[type="number"]::placeholder {
+        color: #fff;
+
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    .navbar .navbar-nav {
+        justify-content: flex-end;
+        display: flex;
+    }
+}

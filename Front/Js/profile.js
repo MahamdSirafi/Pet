@@ -182,6 +182,7 @@ logoutBtn.addEventListener( 'click',( e ) =>
         if (data.status == "success") {
           alert( "لقد تم تسجيل الخروج بنجاح" );
           localStorage.removeItem( 'token' );
+          localStorage.removeItem("preCart");
           window.location.href = "/Front/Html/signin_Arabic.html";
 
           

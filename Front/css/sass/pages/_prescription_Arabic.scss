@@ -1,0 +1,31 @@
+.prescriptions-p {
+    background-color: #ff9878;
+
+    p {
+        font-family: ArabicFont;
+        color: #fff;
+    }
+}
+
+.product-list {
+
+    .doctor,
+    .dis,
+    .prices,
+    .quantity {
+        font-family: ArabicFont;
+
+    }
+
+    .dis {
+        color: #ff9878;
+
+    }
+
+    .product-item:hover {
+        .dis {
+            color: #fff;
+
+        }
+    }
+}

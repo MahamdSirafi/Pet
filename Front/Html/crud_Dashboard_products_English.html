@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crud | Products</title>
     <link rel="stylesheet" href="/Front/bootstrap.min.css" />
-    <script src="/Front/Js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/Front/css/sass/pages/homepage_English.css" />
+    <script defer src="/Front/Js/bootstrap.bundle.min.js"></script>
 
     <style>
       body {
@@ -15,50 +16,127 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+
+      html {
+        background-color: #fff;
+
+      }
+
+      .adding {
+        font-family: myfont;
+      }
+
+      .adding input {
+        width: 300px;
+        border: none;
+        background-color: rgb(91, 91, 245);
+        color: #fff;
+        font-family: secondfont;
+      }
+
+      input[type="file"] {
+        width: 250px;
+      }
+
+      button {
+        font-size: 16px;
+      }
+
+      select {
+        background-color: rgb(91, 91, 245);
+        border: none;
+        outline: none;
+        color: #fff;
+
+      }
+
+
+
+      input[type="text"]::placeholder,
+      input[type="number"]::placeholder {
+        color: #fff;
+
+      }
+
+      nav {
+        justify-content: space-between;
+      }
+
+      .navbar .navbar-nav {
+        justify-content: flex-end;
+        display: flex;
+      }
     </style>
   </head>
 
   <body>
-    <button class="btn btn-primary mt-3 me-2 " onclick="location.href='/Front/Html/crud_Dashboard_Pets.html'">Add
-      Pets</button>
+    <div class="language " style="font-family: Arial, Helvetica, sans-serif;">
+      <a class="language-box" href='crud_Dashboard_products_Arabic.html'>Ar</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
+      <a class="navbar-brand col-6 mx-2" style="font-family: myfont;" href="#">Admin Dashboard</a>
+      <button class="navbar-toggler col-6" style="width: 84px;
+    margin-right: 20px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse col-6" style="justify-content: flex-end; right: 20px; position: relative;"
+        id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Front/Html/profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link log" id='log' href="">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="container mt-5 p-3 bg-secondary">
+      <button class="btn-black btn-pet mt-3 me-2 mb-3"
+        onclick="location.href='/Front/Html/crud_Dashboard_Pets.html'">Add
+        Pets</button>
       <div class="row">
         <div class="col-md-4">
-          <div class="card">
+          <div class="card p-4 adding">
             <div class="card-header">
               <h4 class="text-center">Add Product</h4>
             </div>
-            <div class="card-body">
-              <div class="form-group">
+            <div class="form-group">
+              <div class="card-body">
                 <label for="image">Enter Product Image:</label>
-                <input type="file" name="" class="form-control" placeholder="Enter Product number" id="image" />
+                <input type="file" name="" class="form-control" placeholder="Number" id="image" />
               </div>
               <div class="form-group">
                 <label for="">Enter Product Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Product Name " />
+                <input type="text" class="form-control" id="name" placeholder="Name " />
               </div>
               <div class="form-group">
                 <label for="">Enter Price:</label>
-                <input type="number" name="" class="form-control" placeholder="Enter Price" id="price" />
+                <input type="number" name="" class="form-control" placeholder="Price" id="price" />
               </div>
               <div class="form-group">
                 <label for="">Enter Category:</label>
-                <input type="text" name="" class="form-control" placeholder="Enter Categoty" id="category" />
+                <input type="text" name="" class="form-control" placeholder="Category" id="category" />
               </div>
               <div class="form-group">
                 <label for="">Enter Company:</label>
-                <input type="text" name="" class="form-control" placeholder="Enter Company" id="company" />
+                <input type="text" name="" class="form-control" placeholder="Company" id="company" />
               </div>
               <div class="form-group">
                 <label for="">Enter Type:</label>
-                <select name="" id="type">
+                <select name="" id="type" class="mt-3">
                   <option value="food">Food</option>
                   <option value="product">Product</option>
                   <option value="medican">Medican</option>
                 </select>
               </div>
               <div class="mt-3">
-                <button class="btn btn-primary float-right" onclick="submitForm()">
+                <button class="btn-black btn-pet float-right" onclick="submitForm()">
                   submit
                 </button>
               </div>
@@ -130,6 +208,7 @@
         // call get user details by id API
         fetch( "http://localhost:7000/api/v1.0.0/products/" + id, {
           method: "GET",
+
         } )
           .then( ( res ) => res.json() )
           .then( ( response ) =>
@@ -290,6 +369,39 @@
       }
 
       getData();
+      let logoutBtn = document.getElementById( 'log' );
+      logoutBtn.addEventListener( 'click', ( e ) =>
+      {
+        e.preventDefault();
+        try
+        {
+          fetch( 'http://localhost:7000/api/v1.0.0/users/logout', {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+            }
+          } ).then( ( response ) => response.json() )
+            .then( ( data ) =>
+            {
+              if ( data.status == "success" )
+              {
+                alert( "لقد تم تسجيل الخروج بنجاح" );
+                localStorage.removeItem( 'token' );
+                window.location.href = "/Front/Html/signin_Arabic.html";
+
+
+              } else
+              {
+                alert( data.message );
+              }
+            } );
+        } catch ( err )
+        {
+          console.log( err );
+        }
+      } );
+
     </script>
   </body>
 

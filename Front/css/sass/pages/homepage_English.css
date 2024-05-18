@@ -946,7 +946,7 @@ body.show-cart .cart-tab {
 }
 @media (min-width: 768px) and (max-width: 997px) {
   .explore {
-    background-image: url("/assets/Explore.jpg");
+    background-image: url("/Front/assets/Explore.jpg");
     background-size: cover;
     height: 189vh;
   }
@@ -1478,6 +1478,44 @@ body.show-cart .cart-tab {
   text-transform: uppercase;
 }
 
+.pets-dash .adding {
+  font-family: myfont;
+}
+.pets-dash .adding input {
+  width: 300px;
+  border: none;
+  background-color: rgb(91, 91, 245);
+  color: #fff;
+  font-family: secondfont;
+}
+.pets-dash input[type=file] {
+  width: 250px;
+  margin-left: 20px;
+}
+.pets-dash button {
+  font-size: 16px;
+}
+.pets-dash select {
+  background-color: rgb(91, 91, 245);
+  border: none;
+  outline: none;
+  color: #fff;
+}
+.pets-dash input[type=text]::-moz-placeholder, .pets-dash input[type=number]::-moz-placeholder {
+  color: #fff;
+}
+.pets-dash input[type=text]::placeholder,
+.pets-dash input[type=number]::placeholder {
+  color: #fff;
+}
+.pets-dash nav {
+  justify-content: space-between;
+}
+.pets-dash .navbar .navbar-nav {
+  justify-content: flex-end;
+  display: flex;
+}
+
 .doctor-dashboard {
   font-family: myfont;
   position: absolute;
@@ -1650,7 +1688,7 @@ label .close-btn {
   display: none;
 }
 
-input[type=number] {
+.lists input[type=number] {
   background-color: #dc3545;
   width: 50px;
   margin-left: 20px;
@@ -2055,14 +2093,11 @@ input[type=number] {
 .signup .content form input[type=submit]:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-.signup i {
+.signup .content form i {
   position: absolute;
   right: 18px;
-  top: 29.5%;
+  top: 32.5%;
   z-index: 1000;
-}
-.signup i.fa-envelope {
-  top: 29.5%;
 }
 
 .btn-pet {

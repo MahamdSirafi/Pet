@@ -6,8 +6,6 @@ let listProductHTML = document.querySelector(".product-list");
 let listProducts = [];
 let listcardHtml = document.querySelector(".list-cart");
 let listcard = [];
-// let memory = localStorage.getItem( 'productCart' );
-// console.log(memory);
 // Slider Variables 
 let category = document.querySelectorAll(".product-category ul li");
 category.forEach((cat) => {
@@ -35,36 +33,53 @@ const addDataToHTML = () => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('product-item');
             newProduct.dataset.id = product._id;
-            newProduct.dataset.category = product.type;
-            newProduct.dataset.type = product.category;
+            newProduct.dataset.category = product.category;
             //Filtering Categories
             filteringCategoriesProd(newProduct);
-            filteringTypesProd(newProduct);
             newProduct.innerHTML = ` 
                     <img src="${product.image}" alt="" crossorigin="anonymous">
                     <h2>${product.name}</h2>
-                    <div class="price">${product.price} SYP</div>
-                    <button class="addcart">Add To Cart </button>
+                    <div class="color">اللون: ${product.color}</div>
+                    <div class="size">الحجم: ${product.size}</div>
+                    <div class="price"> ${product.price} ل.س</div>
+                    <button class="addcart">أضف الى السلة </button>
         `;
             listProductHTML.appendChild(newProduct);
         })
     }
 }
+//Filtering Categories Function
+const filteringCategoriesProd = (newProduct) => {
+    category.forEach((cat) => {
+        cat.addEventListener('click', (e) => {
+            let filter = e.target.dataset.name;
+            if (filter === 'all') {
+                newProduct.style.display = 'block';
+            } else {
+                if (newProduct.dataset.category === filter) {
+                    newProduct.style.display = 'block';
 
+                } else {
+                    newProduct.style.display = 'none';
+                }
+            }
+        });
+    });
+}
 // Add Product To Cart
-listProductHTML.addEventListener( 'click', ( event ) =>
-{
+listProductHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
-    if ( positionClick.classList.contains( 'addcart' ) )
-    {
+    if (positionClick.classList.contains('addcart')) {
         let product_id = positionClick.parentElement.dataset.id;
         addToCart(product_id);
+
     }
 
-} );
+});
 
 const addToCart = (product_id) => {
-    let positionThisProductInCart = listcard.findIndex( ( value ) => value.product_id == product_id );
+    let positionThisProductInCart = listcard.findIndex( ( value ) => value.product_id == product_id )
+    listcard.forEach((e)=>console.log(e.product_id));
     if (listcard.length <= 0) {
         listcard = [{
             product_id: product_id,
@@ -84,7 +99,7 @@ const addToCart = (product_id) => {
 // To Store Cart Products In Memory
 
 const addCartToMemory = () => {
-    localStorage.setItem('productCart', JSON.stringify(listcard));
+    localStorage.setItem( 'petCart', JSON.stringify( listcard ) );
 }
 // Adding To Cart Function
 
@@ -97,7 +112,7 @@ const addCartToHTML = () => {
             let newCart = document.createElement('div');
             newCart.classList.add('item');
             newCart.dataset.id = cart.product_id;
-            let positionProduct = listProducts.findIndex( ( value ) => value._id == cart.product_id );
+            let positionProduct = listProducts.findIndex((value) => value._id == cart.product_id)
             let info = listProducts[ positionProduct ];
             newCart.innerHTML = `<div class="image">
                         <img src="${info.image}" alt="" crossorigin="anonymous">
@@ -106,7 +121,7 @@ const addCartToHTML = () => {
                         ${info.name}
                     </div>
                     <div class="total-price">
-                    ${info.price * cart.quantity} SYP
+                ${info.price * cart.quantity} ل.س
                     </div>
                     <div class="quantity">
                         <span class="minus"> - </span>
@@ -158,127 +173,17 @@ const changeQuantity = (product_id, type) => {
 
 const initApp = () => {
     // get data from json
-    fetch('http://localhost:7000/api/v1.0.0/products')
+    fetch('http://localhost:7000/api/v1.0.0/pets')
     .then(response => response.json())
     .then(data => {
         listProducts = data.doc;
-        localStorage.setItem('listProduct', JSON.stringify(listProducts));
-
         addDataToHTML();
         // get cart from memory 
-        if (localStorage.getItem('productCart')) {
-            listcard = JSON.parse(localStorage.getItem('productCart'));
+        if (localStorage.getItem('petCart')) {
+            listcard = JSON.parse(localStorage.getItem('petCart'));
             addCartToHTML();
         }
     })
 }
 initApp();
 
-// Category
-let catess = document.querySelectorAll( '.categories-item' );
-// console.log( catess );
-catess.forEach( ( cat ) =>
-{ 
-    cat.addEventListener( 'click', ( e ) =>
-    {
-        // get data from json
-        // console.log(e.target.dataset.cate);
-    // fetch(`http://localhost:7000/api/v1.0.0/products?category=${e.target.dataset.cate}`)
-    // .then(response => response.json())
-    // .then(data => {
-    //     listProducts = data.doc;
-    //     // console.log(listProducts);
-    //     addDataToHTML();
-    //     // get cart from memory 
-    //     if (localStorage.getItem('productCart')) {
-    //         listcard = JSON.parse(localStorage.getItem('productCart'));
-    //         addCartToHTML();
-    //     }
-    // })
-    
-     } )
-
-} );
-//Filtering Categories Function
-const filteringCategoriesProd = (newProduct) => {
-    category.forEach((cat) => {
-        cat.addEventListener( 'click', ( e ) =>
-        {
-            let filter = e.target.dataset.name;
-                 if ( filter === 'all' )
-                {   
-                    newProduct.style.display = 'block';  
-                    
-            } else {
-                    if ( newProduct.dataset.category === filter )
-                    {
-                        newProduct.style.display = 'block';
-                    } else
-                    {
-                        newProduct.style.display = 'none';
-                }
-            }
-           
-           
-        });
-    });
-};
-const filteringTypesProd = ( newProduct ) =>
-{
-    catess.forEach( ( cat ) =>
-{ 
-    cat.addEventListener( 'click', ( e ) =>
-    {
-        let filter = e.target.dataset.cate;
-        console.log(filter);
-                    if ( newProduct.dataset.type === filter )
-                    {
-                        newProduct.style.display = 'block';
-
-                    } else{
-                        newProduct.style.display = 'none';
-                        
-                     }
-            }
- )
-} );
-};
-    
-// const initAppPro = () => {
-//     // get data from json
-//      fetch( `http://localhost:7000/api/v1.0.0/products?type=product` )
-//                     .then( response => response.json() )
-//                     .then( data =>
-//                     {
-//                         listProduct = data.doc;
-
-//                         // console.log(listProducts);
-//                         addDataToHTML();
-//                         // get cart from memory 
-//                         if ( localStorage.getItem( 'productCart' ) )
-//                         {
-//                             listcard = JSON.parse( localStorage.getItem( 'productCart' ) );
-//                             addCartToHTML();
-//                         }
-//                     } );
-// }
-// initAppPro();
-// const initAppFood= () => {
-//     // get data from json
-//      fetch( `http://localhost:7000/api/v1.0.0/products?type=food` )
-//                     .then( response => response.json() )
-//                     .then( data =>
-//                     {
-//                         listFood = data.doc;
-                        
-//                         // console.log(listProducts);
-//                         addDataToHTML();
-//                         // get cart from memory 
-//                         if ( localStorage.getItem( 'productCart' ) )
-//                         {
-//                             listcard = JSON.parse( localStorage.getItem( 'productCart' ) );
-//                             addCartToHTML();
-//                         }
-//                     } );
-// }
-// initAppFood();

@@ -223,7 +223,7 @@
             background-color: #c1f9af;
             width: 200px;
             font-family: ArabicFont2;
-            padding: 20px;
+            padding: 30px;
             cursor: pointer;
             border-radius: 20px;
             margin: auto;
@@ -364,6 +364,8 @@
                         }
                     }
                 }
+
+
             }
         }
     }
@@ -403,4 +405,8 @@ body.show-cart {
             }
         }
     }
+}
+
+.price {
+    font-family: ArabicFont;
 }

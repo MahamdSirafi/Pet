@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Doctor DashBoard</title>
+        <link rel="stylesheet" href="/Front/bootstrap.min.css" />
+        <link rel="stylesheet" href="/Front/homepage_Arabic.css" />
+        <link rel="stylesheet" href="/all.min.css">
+
+    </head>
+    <style>
+        body {
+            font-family: ArabicFont;
+            direction: rtl;
+        }
+    </style>
+
+    <body>
+        <div class="language " style="font-family: Arial, Helvetica, sans-serif;">
+            <a class="language-box" href='doctor_DashBoard.html'>En</a>
+        </div>
+        <div class=" side-container">
+            <div class="side-bar">
+                <input type="checkbox" id="click">
+                <label for="click">
+                    <i class='menu-btn fa fa-bars'></i>
+                    <i class='close-btn fa fa-close text'></i>
+                </label>
+
+                <div class="sidenav">
+                    <div class="logo">
+                        <h2 class="title-dash">صفحة الطبيب</h2>
+                    </div>
+                    <div class="menu_text">
+                        <p>القائمة</p>
+                    </div>
+
+                    <div class="icon_items">
+                        <ul>
+                            <li class="list-menu active">
+                                <i class='fa fa-home'></i>
+                                <a href="#">الرئيسية</a>
+                            </li>
+                            <li class="list-menu">
+                                <i class='fa fa-user-circle'></i>
+                                <a href="/Front/Html/profile.html">البروفايل</a>
+                            </li>
+                            <li class="list-menu">
+                                <i class='fa fa-sign-in'></i>
+                                <a class="logout" href="#">تسجيل خروج</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="doctor-dashboard">
+
+            <div class="container">
+                <div class="lists ">
+                    <div class="btn-group-vertical list-users  " role="group"
+                        aria-label="Vertical radio toggle button group">
+                        <h2>قائمة المستخدمين</h2>
+                    </div>
+                    <div class="list-medicines ">
+                        <h2>قائمة الأدوية</h2>
+                    </div>
+                </div>
+                <div class="btns">
+                    <input type="submit" value="ادخال" id="sub" class="btn btn-danger">
+                    <input type="reset" value="الغاء" id="can" class="btn btn-classic">
+                </div>
+            </div>
+        </div>
+        <script src="/Front/Js/bootstrap.bundle.min.js"></script>
+        <script src="/Front/Js/doctor_Dashboard.js"></script>
+    </body>
+
+</html>

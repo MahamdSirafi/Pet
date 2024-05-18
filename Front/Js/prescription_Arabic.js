@@ -38,10 +38,10 @@ const addDataToHTML = () => {
                     <img src="${ med.image }" alt="" crossorigin="anonymous">
                     <h2>${ cart.product.name }</h2>
                     <div class="doctor">D.${ product.doctor.name }</div>
-                    <div class="prices">Price : ${ med.price }SYP</div>
-                    <div class="dis">After discount : ${ med.price - med.price*0.25 }SYP</div>
-                    <div class="quantity">Quantity : ${ cart.quantity }</div>
-                    <button class="addcart">Add To Cart </button>`;
+                    <div class="prices">السعر : ل.س ${ med.price }</div>
+                    <div class="dis">بعد الحسم : ل.س ${ med.price - med.price*0.25 }</div>
+                    <div class="quantity">الكمية : ${ cart.quantity }</div>
+                    <button class="addcart">أضف الى السلة</button>`;
                 }
             })
             } ))
@@ -113,7 +113,7 @@ const addCartToHTML = () => {
                         ${carts.product.name}
                     </div>
                     <div class="total-price">
-                    ${(med.price - med.price *0.25)* cart.quantity} SYP
+                    ${(med.price - med.price *0.25)* cart.quantity} ل.س
                     </div>
                     <div class="quantity">
                         <span class="minus"> - </span>

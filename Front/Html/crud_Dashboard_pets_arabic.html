@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Crud | Pets</title>
+        <link rel="stylesheet" href="/Front/bootstrap.min.css" />
+        <link rel="stylesheet" href="/Front/css/sass/pages/homepage_English.css" />
+        <link rel="stylesheet" href="/Front/homepage_Arabic.css" />
+        <script src="/Front/Js/bootstrap.bundle.min.js"></script>
+        <style>
+            body {
+                background-image: url("termina-back.JPG");
+                background-repeat: no-repeat;
+                background-size: cover;
+                direction: rtl;
+                font-family: ArabicFont;
+            }
+
+            html {
+                background-color: #fff;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="pets-dash">
+            <div class="language " style="font-family: Arial, Helvetica, sans-serif;">
+                <a class="language-box" href='crud_Dashboard_Pets_English.html'>En</a>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
+                <a class="navbar-brand col-6 mx-2" style="font-family: ArabicFont;" href="#">صفحة الأدمن</a>
+                <button class="navbar-toggler col-6" style="width: 84px;
+                    margin-right: 20px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse col-6"
+                    style="justify-content: flex-end; right: 20px; position: relative;" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-5 ">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Front/Html/profile.html">البروفايل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link log" id='log' href="">تسجيل خروج</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container mt-5 p-3 bg-secondary">
+                <button class="btn-pet btn-black mt-3 me-2 mb-3 " style="font-family: ArabicFont;"
+                    onclick="location.href='/Front/Html/crud_Dashboard_products.html'">اضافة
+                    منتجات</button>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card ">
+                            <div class="card-header">
+                                <h4 class="text-center">اضافة حيوانات</h4>
+                            </div>
+                            <div class="card-body adding">
+                                <div class="form-group">
+                                    <label for="image" style="font-family: ArabicFont2;">أدخل صورة الحيوان:</label>
+                                    <input type="file" style="font-family: ArabicFont;" name="" class="form-control"
+                                        placeholder="الرقم" id="image" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="" style="font-family: ArabicFont2;">أدخل اسم الحيوان:</label>
+                                    <input type="text" style="font-family: ArabicFont;" class="form-control" id="name"
+                                        placeholder="الاسم " />
+                                </div>
+                                <div class="form-group">
+                                    <label for="" style="font-family: ArabicFont2;">أدخل السعر:</label>
+                                    <input type="number" style="font-family: ArabicFont;" name="" class="form-control"
+                                        placeholder="السعر" id="price" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="" style="font-family: ArabicFont2;">أدخل اللون:</label>
+                                    <input type="text" style="font-family: ArabicFont;" name="" class="form-control"
+                                        placeholder="اللون" id="color" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="" style="font-family: ArabicFont2;">أدخل الحجم:</label>
+                                    <input type="text" style="font-family: ArabicFont;" name="" class="form-control"
+                                        placeholder="الحجم" id="size" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="" style="font-family: ArabicFont2;">اختر النوع:</label>
+                                    <select name="" id="category" class="mt-2">
+                                        <option value="cats">cats</option>
+                                        <option value="dogs">dogs</option>
+                                        <option value="birds">birds</option>
+                                        <option value="fish">fish</option>
+                                    </select>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn-black btn-pet float-right" style="font-family: ArabicFont;"
+                                        onclick="submitForm()">
+                                        ادخال
+                                    </button>
+                                </div>
+                                <div class="w-100">
+                                    <span id="message" class="text-success"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <table class="table table-bordered text-white text-center">
+                            <thead>
+                                <th>الصورة</th>
+                                <th>الاسم</th>
+                                <th>السعر</th>
+                                <th>اللون</th>
+                                <th>الحجم</th>
+                                <th>النوع</th>
+                                <th>تعديل</th>
+                                <th>حذف</th>
+                            </thead>
+                            <tbody id="tbData"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var editFormData;
+            function getFormData ()
+            {
+                return {
+                    //   image: document.getElementById("image").value,
+                    name: document.getElementById( "name" ).value,
+                    price: document.getElementById( "price" ).value,
+                    company: document.getElementById( "color" ).value,
+                    type: document.getElementById( "size" ).value,
+                    category: document.getElementById( "category" ).value,
+                };
+            }
+            function clearFormData ()
+            {
+                document.getElementById( "image" ).value = "";
+                document.getElementById( "name" ).value = "";
+                document.getElementById( "price" ).value = "";
+                document.getElementById( "color" ).value = "";
+                document.getElementById( "size" ).value = "";
+                document.getElementById( "category" ).value = "";
+            }
+
+            function setFormData ( name, price, color, size, category )
+            {
+                // document.getElementById("image").value = image;
+                document.getElementById( "name" ).value = name;
+                document.getElementById( "price" ).value = price;
+                document.getElementById( "color" ).value = color;
+                document.getElementById( "size" ).value = size;
+                document.getElementById( "category" ).value = category;
+            }
+
+            // set the message for form status
+            function setSuccessMessage ( message )
+            {
+                document.getElementById( "message" ).innerHTML = message;
+            }
+            function editDataCall ( id )
+            {
+                // call get user details by id API
+                fetch( "http://localhost:7000/api/v1.0.0/pets/" + id, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+                    }
+                } )
+                    .then( ( res ) => res.json() )
+                    .then( ( response ) =>
+                    {
+                        console.log( "Edit info", response );
+                        editFormData = response.doc;
+                        setFormData(
+                            editFormData.name,
+                            editFormData.price,
+                            editFormData.color,
+                            editFormData.size,
+                            editFormData.category
+                        );
+                    } );
+            }
+
+            // callled this function when user click on button
+            function submitForm ()
+            {
+                if ( !editFormData )
+                    addProduct(); // if the editFormData is undefined then call addUser()
+                else editData();
+            }
+            // add user function
+            function addProduct ()
+            {
+                // let payload = getFormData();
+                const fileInput = document.getElementById( "image" );
+                const file = fileInput.files[ 0 ];
+                const formData = new FormData();
+                formData.append( "image", file );
+                formData.append( "name", document.getElementById( "name" ).value );
+                formData.append( "price", document.getElementById( "price" ).value );
+                console.log( document.getElementById( "category" ).value );
+                formData.append( "color", document.getElementById( "color" ).value );
+                formData.append( "size", document.getElementById( "size" ).value );
+                formData.append( "category", document.getElementById( "category" ).value );
+                const headers = new Headers();
+                headers.append(
+                    "Authorization",
+                    `Bearer ${ localStorage.getItem( "token" ) }`
+                );
+                fetch( "http://localhost:7000/api/v1.0.0/pets", {
+                    method: "POST",
+                    headers: headers,
+                    body: formData,
+                } )
+                    .then( ( res ) => res.json() )
+                    .then( ( response ) =>
+                    {
+                        if ( response.status == "success" )
+                        {
+                            setSuccessMessage( "add Product is success" );
+                            // clear input email and name
+                            clearFormData();
+                            getData();
+                            // reload table
+                        } else
+                        {
+                            setSuccessMessage( response.message );
+                        }
+                    } );
+            }
+            // edit data
+
+            // function editData() {
+            //     var formData = getFormData();
+            //     formData['id'] = editFormData._id; // get _id from selected user
+            //     fetch("http://localhost:3000/crud/updateData", {
+            //         method: "POST",
+            //         headers: {
+            //             "Content-Type": "application/json"
+            //         },
+            //         body: JSON.stringify(formData)
+            //     }).then((res) => res.json()).then((response) => {
+            //         setSuccessMessage(response.message)
+            //         clearFormData(); // clear the form field
+            //         getData() // reload the table
+            //     })
+            // }
+
+            function editData ()
+            {
+                var formData = getFormData();
+                formData[ "id" ] = editFormData._id; // get _id from selected user
+                fetch( "http://localhost:7000/api/v1.0.0/pets/" + editFormData._id, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+                    },
+                    body: JSON.stringify( formData ),
+                } )
+                    .then( ( res ) => res.json() )
+                    .then( ( response ) =>
+                    {
+                        if ( response.status == "success" )
+                        {
+                            setSuccessMessage( "update Product is success" );
+                            clearFormData();
+                            getData();
+                            // reload table
+                        } else
+                        {
+                            setSuccessMessage( response.message );
+                        }
+                    } );
+            }
+
+            // delete data
+            function deleteData ( id )
+            {
+                console.log( localStorage.getItem( "token" ) );
+                fetch( "http://localhost:7000/api/v1.0.0/pets/" + id, {
+                    method: "DELETE",
+                    headers: {
+                        Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+                    },
+                } )
+                    .then( ( res ) => res.json() )
+                    .then( ( response ) =>
+                    {
+                        setSuccessMessage( "delete is success" );
+                        getData();
+                    } );
+            }
+            // get data method
+
+            function getData ()
+            {
+                fetch( "http://localhost:7000/api/v1.0.0/pets" )
+                    .then( ( res ) => res.json() )
+                    .then( ( response ) =>
+                    {
+                        var tmpData = "";
+                        response.doc.forEach( ( item ) =>
+                        {
+                            tmpData += "<tr>";
+                            tmpData += `<td> <img class="w-100"src=${ item.image }  crossorigin="anonymous" > </td>`;
+                            tmpData += "<td>" + item.name + "</td>";
+                            tmpData += "<td>" + item.price + "</td>";
+                            tmpData += "<td>" + item.size + "</td>";
+                            tmpData += "<td>" + item.color + "</td>";
+                            tmpData += "<td>" + item.category + "</td>";
+                            tmpData +=
+                                "<td><button class='btn btn-primary' onclick='editDataCall(`" +
+                                item._id +
+                                "`)'>تعديل</button></td>";
+                            tmpData +=
+                                "<td><button class='btn btn-danger' onclick='deleteData(`" +
+                                item._id +
+                                "`)'>حذف</button></td>";
+
+                            tmpData += "</tr>";
+                        } );
+                        document.getElementById( "tbData" ).innerHTML = tmpData;
+                    } );
+            }
+
+            getData();
+            let logoutBtn = document.getElementById( 'log' );
+            logoutBtn.addEventListener( 'click', ( e ) =>
+            {
+                e.preventDefault();
+                try
+                {
+                    fetch( 'http://localhost:7000/api/v1.0.0/users/logout', {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+                        }
+                    } ).then( ( response ) => response.json() )
+                        .then( ( data ) =>
+                        {
+                            if ( data.status == "success" )
+                            {
+                                alert( "لقد تم تسجيل الخروج بنجاح" );
+                                localStorage.removeItem( 'token' );
+                                window.location.href = "/Front/Html/signin_Arabic.html";
+
+
+                            } else
+                            {
+                                alert( data.message );
+                            }
+                        } );
+                } catch ( err )
+                {
+                    console.log( err );
+                }
+            } );
+        </script>
+    </body>
+
+</html>

@@ -39,9 +39,9 @@ const addDataToHTML = () => {
             newProduct.innerHTML = ` 
                     <img src="${product.image}" alt="" crossorigin="anonymous">
                     <h2>${product.name}</h2>
-                    <div class="color">اللون: ${product.color}</div>
-                    <div class="size">الحجم: ${product.size}</div>
-                    <div class="price">السعر: ${product.price} SYP</div>
+                    <div class="color">Color: ${product.color}</div>
+                    <div class="size">Size: ${product.size}</div>
+                    <div class="price">Price: ${product.price} SYP</div>
                     <button class="addcart">Add To Cart </button>
         `;
             listProductHTML.appendChild(newProduct);

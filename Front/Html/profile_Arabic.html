@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" id="profile-page">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Your Profile</title>
+        <meta name="title" content="Pets Home - website for pets" />
+        <meta name="description" content="This is an eCommerce website for pets" />
+        <link rel="stylesheet" href="../../all.min.css" />
+        <link rel="stylesheet" href="/Front/normalize.css" />
+        <link rel="stylesheet" href="/Front/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="/Front/bootstrap.min.css" />
+        <link rel="stylesheet" href="/Front/css/sass/pages/homepage_English.css" />
+        <link rel="stylesheet" href="/Front/homepage_Arabic.css" />
+        <link rel="shortcut icon" href="/Front/1711465949026.png" type="image/svg+xml" />
+    </head>
+    <style>
+        #ti::before {
+            top: 80px;
+        }
+    </style>
+
+    <body>
+        <div class="profile" style="font-family: ArabicFont;">
+            <div class="language" style="font-family: Arial, Helvetica, sans-serif;">
+                <a class="language-box" href='/Front/Html/profile.html'>En</a>
+            </div>
+            <div class="container">
+                <div class="main-title" style="font-family: ArabicFont;">
+                    <h1 style="font-family: ArabicFont;" id="ti">البروفايل</h1>
+                    <p style="font-family: ArabicFont2;">اعدادات حسابك</p>
+                </div>
+                <div class="profile-content">
+                    <ul class="tabs">
+                        <li class="active" data-tab=".one">عام</li>
+                        <li data-tab=".two">كلمة المرور</li>
+                        <li data-tab=".three">المزيد</li>
+                    </ul>
+                    <div class="content">
+                        <div class="content-group one">
+                            <form id="prof">
+                                <div class="group group-profile">
+                                    <div class="image-cover">
+                                        <img src="/Front/assets/Profile-Icon.webp" alt="" crossorigin="anonymous" />
+                                    </div>
+                                    <label class="edit-profile" for="file-image" style="font-family: ArabicFont;">
+                                        تعديل البروفايل
+                                    </label>
+                                    <input type="file" id="file-image" class="d-none"
+                                        accept="images/jpeg, image/png, image/jpg" />
+                                </div>
+                                <div class="group">
+                                    <label class="username" style="font-family: ArabicFont;">اسم المستخدم</label>
+                                    <input type="text" value="" id="name" />
+                                </div>
+                                <div class="group">
+                                    <label style="font-family: ArabicFont;" class="email">الايميل</label>
+                                    <input type="email" value="" id="email" />
+                                </div>
+                                <div class="group doctor">
+                                    <label style="font-family: ArabicFont;" class="username">المركز الصحي</label>
+                                    <input style="font-family: ArabicFont;" type="text" value="" id="care" />
+                                </div>
+                                <div class="group doctor">
+                                    <label style="font-family: ArabicFont;" class="username">عنوان المركز الصحي</label>
+                                    <input type="text" value="" id="address" />
+                                </div>
+                                <div class="btns d-block mt-4">
+                                    <input style="font-family: ArabicFont2;" type="submit" value="حفظ التغيرات"
+                                        class="btn-pet btn-black" />
+                                    <input style="font-family: ArabicFont;" type="reset" value="الغاء"
+                                        class="btn btn-default" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="content-group two">
+                            <form id="formpass">
+                                <div class="group">
+                                    <label style="font-family: ArabicFont;" for="current-password">كلمة المرور
+                                        الحالية</label>
+                                    <input style="font-family: ArabicFont;" type="password" id="current-password" />
+                                </div>
+                                <div class="group">
+                                    <label style="font-family: ArabicFont;">كلمة المرور الجديدة</label>
+                                    <input type="password" id="new-password" />
+                                </div>
+                                <div class="group">
+                                    <label style="font-family: ArabicFont;">أعد كتابة كلمة المرور الجديدة</label>
+                                    <input type="password" id="repeat-new-password" />
+                                </div>
+                                <div class="btns d-block mt-4">
+                                    <input type="submit" style="font-family: ArabicFont2;" value="حفظ التغيرات"
+                                        style="font-family: ArabicFont;" class="btn-pet btn-black" />
+                                    <input style="font-family: ArabicFont;" type="reset"
+                                        style="font-family: ArabicFont;" value="الغاء" class="btn btn-default" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="content-group three">
+                            <div class="about ">
+                                <div style="font-family: ArabicFont;" class="date">وصفاتك</div>
+                                <div style="font-family: ArabicFont;" class="pres"><button
+                                        style="font-family: ArabicFont;" class="btn-pet btn-black mb-3"
+                                        onclick="location.href='/Front/Html/prescriptions.html'">الوصفات</button>
+                                </div>
+                                <div style="font-family: ArabicFont;" class="date">لا تنس تفاصيل حسابك قبل تسجيل خروجك
+                                </div>
+                                <div style="font-family: ArabicFont;" class="logout"><button
+                                        style="font-family: ArabicFont;" class="btn-pet btn-black">تسجيل الخروج</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/Front/Js/profile.js"></script>
+    </body>
+
+</html>
