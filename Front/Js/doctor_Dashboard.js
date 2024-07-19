@@ -87,7 +87,7 @@ function addMedicineToHTML ()
                 newMed.innerHTML =
                 `
                 <div class="form-check d-flex align-items-center">
-                <input class="form-check-input " type="checkbox" value="" id="${med._id}" nn="${med._id}" >
+                <input class="form-check-input " type="checkbox" value="" id="${med._id}" nn="${med._id}" required>
                 <label class="form-check-label d-flex align-items-center" for="${med._id}">
                 <img id="image-list" src="${med.image}" crossorigin="anynomous" alt="">
                 <p>${med.name}</p>
