@@ -15,13 +15,73 @@
                 background-image: url("termina-back.JPG");
                 background-repeat: no-repeat;
                 background-size: cover;
-                direction: rtl;
-                font-family: ArabicFont;
             }
 
             html {
                 background-color: #fff;
 
+            }
+
+            .nav-item {
+                margin-left: 30px;
+            }
+
+            .card {
+                margin-left: 30px;
+            }
+
+            @media (max-width:991px) {
+                .card-header {
+                    width: 100%;
+                }
+
+                .card-body .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    align-items: center;
+                }
+
+                .card {
+                    margin-bottom: 100px;
+                }
+
+                .add-pro {
+                    position: relative;
+                    left: 37%;
+                }
+            }
+
+            @media (min-width:992px) {
+                .card-body .form-group input {
+                    width: 100%;
+                }
+
+                .card-body .form-group input[type="file"] {
+                    width: 95%;
+                    margin-left: 9px;
+                }
+
+                .card {
+                    position: relative;
+                    right: 20px;
+                }
+
+                table {
+                    position: relative;
+                    right: 40px;
+                }
+            }
+
+            @media (max-width:767px) {
+                table {
+                    font-size: 5px;
+                }
+
+                .btn-primary,
+                .btn-danger {
+                    font-size: 5px;
+                }
             }
         </style>
     </head>
@@ -32,33 +92,37 @@
                 <a class="language-box" href='crud_Dashboard_Pets_English.html'>En</a>
             </div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
-                <a class="navbar-brand col-6 mx-2" style="font-family: ArabicFont;" href="#">صفحة الأدمن</a>
-                <button class="navbar-toggler col-6" style="width: 84px;
-                    margin-right: 20px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse col-6"
-                    style="justify-content: flex-end; right: 20px; position: relative;" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-5 ">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">الرئيسية</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Front/Html/profile.html">البروفايل</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link log" id='log' href="">تسجيل خروج</a>
-                        </li>
-                    </ul>
+
+                <div class="container-fluid">
+                    <a class="navbar-brand col-6 mx-2" style="font-family: ArabicFont;" href="#">صفحة الأدمن</a>
+                    <button class="navbar-toggler col-6" style="width: 84px;
+                                    margin-right: 20px;" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse col-6"
+                        style="justify-content: flex-end; right: 20px; position: relative;" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-5 ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">الرئيسية</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Front/Html/profile.html">البروفايل</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link log" id='log' href="">تسجيل خروج</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
             <div class="container mt-5 p-3 bg-secondary">
-                <button class="btn-pet btn-black mt-3 me-2 mb-3 " style="font-family: ArabicFont;"
+                <button class="btn-pet add-pro btn-black mt-3 me-2 mb-3 " style="font-family: ArabicFont;"
                     onclick="location.href='/Front/Html/crud_Dashboard_products_Arabic.html'">اضافة
                     منتجات</button>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="card ">
                             <div class="card-header">
                                 <h4 class="text-center">اضافة حيوانات</h4>
@@ -111,7 +175,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-12  col-lg-8 col-sm-12">
                         <table class="table table-bordered text-white text-center">
                             <thead>
                                 <th>الصورة</th>
@@ -135,7 +199,7 @@
             function getFormData ()
             {
                 return {
-                    //   image: document.getElementById("image").value,
+                    image: document.getElementById( "image" ).value,
                     name: document.getElementById( "name" ).value,
                     price: document.getElementById( "price" ).value,
                     company: document.getElementById( "color" ).value,
@@ -155,7 +219,7 @@
 
             function setFormData ( name, price, color, size, category )
             {
-                // document.getElementById("image").value = image;
+                // document.getElementById( "image" ).value = image;
                 document.getElementById( "name" ).value = name;
                 document.getElementById( "price" ).value = price;
                 document.getElementById( "color" ).value = color;
@@ -240,6 +304,11 @@
                         }
                     } );
             }
+            //changing image
+
+
+
+
             // edit data
 
             // function editData() {
@@ -322,7 +391,7 @@
                             tmpData += "<td>" + item.color + "</td>";
                             tmpData += "<td>" + item.category + "</td>";
                             tmpData +=
-                                "<td><button class='btn btn-primary' onclick='editDataCall(`" +
+                                "<td><button id='change' class='btn btn-primary' onclick='editDataCall(`" +
                                 item._id +
                                 "`)'>تعديل</button></td>";
                             tmpData +=
@@ -369,6 +438,7 @@
                     console.log( err );
                 }
             } );
+
         </script>
     </body>
 

@@ -20,6 +20,68 @@
                 background-color: #fff;
 
             }
+
+            .nav-item {
+                margin-left: 30px;
+            }
+
+            .card {
+                margin-left: 30px;
+            }
+
+            @media (max-width:991px) {
+                .card-header {
+                    width: 100%;
+                }
+
+                .card-body .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    align-items: center;
+                }
+
+                .card {
+                    margin-bottom: 100px;
+                }
+
+                .add-pro {
+                    position: relative;
+                    left: 37%;
+                }
+            }
+
+            @media (min-width:992px) {
+                .card-body .form-group input {
+                    width: 100%;
+                }
+
+                .card-body .form-group input[type="file"] {
+                    width: 95%;
+                    margin-left: 9px;
+                }
+
+                .card {
+                    position: relative;
+                    right: 20px;
+                }
+
+                table {
+                    position: relative;
+                    right: 40px;
+                }
+            }
+
+            @media (max-width:767px) {
+                table {
+                    font-size: 5px;
+                }
+
+                .btn-primary,
+                .btn-danger {
+                    font-size: 5px;
+                }
+            }
         </style>
     </head>
 
@@ -29,34 +91,37 @@
                 <a class="language-box" href='crud_Dashboard_pets_arabic.html'>Ar</a>
             </div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
-                <a class="navbar-brand col-6 mx-2" style="font-family: myfont;" href="#">Admin Dashboard</a>
-                <button class="navbar-toggler col-6" style="width: 84px;
-                    margin-right: 20px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse col-6"
-                    style="justify-content: flex-end; right: 20px; position: relative;" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto ">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Front/Html/profile.html">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link log" id='log' href="">Logout</a>
-                        </li>
-                    </ul>
+                <div class="container-fluid">
+                    <a class="navbar-brand col-6 mx-2" style="font-family: myfont;" href="#">Admin Dashboard</a>
+                    <button class="navbar-toggler col-6" style="width: 84px;
+                                    margin-right: 20px;" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse col-6"
+                        style="justify-content: flex-end; right: 20px; position: relative;" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Front/Html/profile.html">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link log" id='log' href="">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
             <div class="container mt-5 p-3 bg-secondary">
-                <button class="btn-pet btn-black mt-3 me-2 mb-3 "
+                <button class="btn-pet add-pro btn-black mt-3 me-2 mb-3 "
                     onclick="location.href='/Front/Html/crud_Dashboard_products_English.html'">Add
                     Products</button>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="card ">
                             <div class="card-header">
                                 <h4 class="text-center">Add Pets</h4>
                             </div>
@@ -102,7 +167,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-12  col-lg-8 col-sm-12">
                         <table class="table table-bordered text-white text-center">
                             <thead>
                                 <th>image</th>
@@ -134,6 +199,7 @@
                     category: document.getElementById( "category" ).value,
                 };
             }
+
             function clearFormData ()
             {
                 document.getElementById( "image" ).value = "";
@@ -153,7 +219,11 @@
                 document.getElementById( "size" ).value = size;
                 document.getElementById( "category" ).value = category;
             }
+            function setImage ( image )
+            {
+                document.getElementById( "image" ).value = image;
 
+            }
             // set the message for form status
             function setSuccessMessage ( message )
             {
@@ -252,6 +322,38 @@
             function editData ()
             {
                 var formData = getFormData();
+                // var formImage = getImage();
+
+                // try
+                // {
+                //     fetch( "http://localhost:7000/api/v1.0.0/pets/662a0895b1d7004afde878ca/uplode", {
+                //         method: "PATCH",
+                //         mode: "cors",
+                //         cache: "no-cache",
+                //         credentials: "same-origin",
+                //         headers: headers,
+                //         body: formDataImage,
+                //         redirect: "follow",
+                //         referrerPolicy: "no-referrer",
+                //     } )
+                //         .then( ( response ) => response.json() )
+                //         .then( ( data ) =>
+                //         {
+                //             if ( data.status == "success" )
+                //             {
+                //                 alert( "لقد تم التعديل بنجاح" );
+                //             } else
+                //             {
+                //                 alert( data.message );
+                //             }
+                //         } );
+                // } catch ( err )
+                // {
+                //     console.log( err );
+                // }
+
+
+
                 formData[ "id" ] = editFormData._id; // get _id from selected user
                 fetch( "http://localhost:7000/api/v1.0.0/pets/" + editFormData._id, {
                     method: "PATCH",
@@ -276,7 +378,6 @@
                         }
                     } );
             }
-
             // delete data
             function deleteData ( id )
             {
@@ -295,7 +396,42 @@
                     } );
             }
             // get data method
+            function editImage ( id )
+            {
 
+                var formImage = document.getElementById( 'image' );
+                const fileInput = formImage;
+                // console.log( fileInput );
+
+                const file = fileInput.files[ 0 ];
+                console.log( file );
+                const formDataImage = new FormData();
+                if ( file )
+                {
+                    formDataImage.append( "image", file );
+                }
+                fetch( `http://localhost:7000/api/v1.0.0/pets/${ id }/uplode`, {
+                    method: "PATCH",
+                    headers: {
+                        Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+                    },
+                    body: formDataImage,
+                } )
+                    .then( ( res ) => res.json() )
+                    .then( ( response ) =>
+                    {
+                        if ( response.status == "success" )
+                        {
+                            setSuccessMessage( "update Product is success" );
+                            clearFormData();
+                            getData();
+                            // reload table
+                        } else
+                        {
+                            setSuccessMessage( response.message );
+                        }
+                    } );
+            }
             function getData ()
             {
                 fetch( "http://localhost:7000/api/v1.0.0/pets" )
@@ -306,7 +442,7 @@
                         response.doc.forEach( ( item ) =>
                         {
                             tmpData += "<tr>";
-                            tmpData += `<td> <img class="w-100"src=${ item.image }  crossorigin="anonymous" > </td>`;
+                            tmpData += `<td> <img class="w-100"src=${ item.image }  crossorigin="anonymous" > <button class='btn btn-success' onclick='editImage(` + item._id + `)'>Edit Image</button> </td>`;
                             tmpData += "<td>" + item.name + "</td>";
                             tmpData += "<td>" + item.price + "</td>";
                             tmpData += "<td>" + item.size + "</td>";
