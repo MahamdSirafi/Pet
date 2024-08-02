@@ -199,13 +199,27 @@
             function getFormData ()
             {
                 return {
-                    image: document.getElementById( "image" ).value,
+                    // image: document.getElementById( "image" ).value,
                     name: document.getElementById( "name" ).value,
                     price: document.getElementById( "price" ).value,
                     company: document.getElementById( "color" ).value,
                     type: document.getElementById( "size" ).value,
                     category: document.getElementById( "category" ).value,
                 };
+            }
+            function getForEdit ()
+            {
+                const fileInput = document.getElementById( "image" );
+                const file = fileInput.files[ 0 ];
+                const formData = new FormData();
+                formData.append( "image", file );
+                formData.append( "name", document.getElementById( "name" ).value );
+                formData.append( "price", document.getElementById( "price" ).value );
+                console.log( document.getElementById( "category" ).value );
+                formData.append( "color", document.getElementById( "color" ).value );
+                formData.append( "size", document.getElementById( "size" ).value );
+                formData.append( "category", document.getElementById( "category" ).value );
+                return formData;
             }
             function clearFormData ()
             {
@@ -329,15 +343,14 @@
 
             function editData ()
             {
-                var formData = getFormData();
+                var formData = getForEdit();
                 formData[ "id" ] = editFormData._id; // get _id from selected user
-                fetch( "http://localhost:7000/api/v1.0.0/pets/" + editFormData._id, {
+                fetch( "http://localhost:7000/api/v1.0.0/pets/" + editFormData._id + '/uplode', {
                     method: "PATCH",
                     headers: {
-                        "Content-Type": "application/json",
                         Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
                     },
-                    body: JSON.stringify( formData ),
+                    body: formData,
                 } )
                     .then( ( res ) => res.json() )
                     .then( ( response ) =>
@@ -358,19 +371,28 @@
             // delete data
             function deleteData ( id )
             {
-                console.log( localStorage.getItem( "token" ) );
-                fetch( "http://localhost:7000/api/v1.0.0/pets/" + id, {
-                    method: "DELETE",
-                    headers: {
-                        Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
-                    },
-                } )
-                    .then( ( res ) => res.json() )
-                    .then( ( response ) =>
-                    {
-                        setSuccessMessage( "delete is success" );
-                        getData();
-                    } );
+
+                var result = confirm( "هل أنت متأكد من حذف العنصر؟" );
+                if ( result == false )
+                {
+                    event.preventDefault();
+
+                } else
+                {
+                    console.log( localStorage.getItem( "token" ) );
+                    fetch( "http://localhost:7000/api/v1.0.0/pets/" + id, {
+                        method: "DELETE",
+                        headers: {
+                            Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+                        },
+                    } )
+                        .then( ( res ) => res.json() )
+                        .then( ( response ) =>
+                        {
+                            setSuccessMessage( "delete is success" );
+                            getData();
+                        } );
+                }
             }
             // get data method
 

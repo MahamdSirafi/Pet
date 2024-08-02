@@ -68,8 +68,8 @@ try {
       .then((response) => response.json())
       .then((data) => {
         if (data.status == "success") {
-          alert( "سيتم الانتقال لصفحة تغيير كلمة المرور" );
-          window.location.href="/api/views/user/resetPassword1.ejs"
+          alert( " هل تريد السماح للوصول لبريدك الالكتروني؟" );
+          window.location.href = data.url;
                 } else {
                   alert(data.message);
                 }

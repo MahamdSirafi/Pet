@@ -247,9 +247,23 @@
           type: document.getElementById( "type" ).value,
         };
       }
+      function getForEdit ()
+      {
+        const fileInput = document.getElementById( "image" );
+        const file = fileInput.files[ 0 ];
+        const formData = new FormData();
+        formData.append( "image", file );
+        formData.append( "name", document.getElementById( "name" ).value );
+        formData.append( "price", document.getElementById( "price" ).value );
+        formData.append( "category", document.getElementById( "category" ).value );
+        console.log( document.getElementById( "category" ).value );
+        formData.append( "company", document.getElementById( "company" ).value );
+        formData.append( "type", document.getElementById( "type" ).value );
+        return formData;
+      }
       function clearFormData ()
       {
-        document.getElementById( "image" ).value = "";
+        // document.getElementById( "image" ).value = "";
         document.getElementById( "name" ).value = "";
         document.getElementById( "price" ).value = "";
         document.getElementById( "category" ).value = "";
@@ -361,15 +375,14 @@
 
       function editData ()
       {
-        var formData = getFormData();
+        var formData = getForEdit();
         formData[ "id" ] = editFormData._id; // get _id from selected user
-        fetch( "http://localhost:7000/api/v1.0.0/products/" + editFormData._id, {
+        fetch( "http://localhost:7000/api/v1.0.0/products/" + editFormData._id + '/uplode', {
           method: "PATCH",
           headers: {
-            "Content-Type": "application/json",
             Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
           },
-          body: JSON.stringify( formData ),
+          body: formData
         } )
           .then( ( res ) => res.json() )
           .then( ( response ) =>
@@ -390,19 +403,27 @@
       // delete data
       function deleteData ( id )
       {
-        console.log( localStorage.getItem( "token" ) );
-        fetch( "http://localhost:7000/api/v1.0.0/products/" + id, {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
-          },
-        } )
-          .then( ( res ) => res.json() )
-          .then( ( response ) =>
-          {
-            setSuccessMessage( "delete is success" );
-            getData();
-          } );
+        var result = confirm( "هل أنت متأكد من حذف العنصر؟" );
+        if ( result == false )
+        {
+          event.preventDefault();
+
+        } else
+        {
+          console.log( localStorage.getItem( "token" ) );
+          fetch( "http://localhost:7000/api/v1.0.0/products/" + id, {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+            },
+          } )
+            .then( ( res ) => res.json() )
+            .then( ( response ) =>
+            {
+              setSuccessMessage( "delete is success" );
+              getData();
+            } );
+        }
       }
       // get data method
 

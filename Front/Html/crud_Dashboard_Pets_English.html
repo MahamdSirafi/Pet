@@ -199,6 +199,20 @@
                     category: document.getElementById( "category" ).value,
                 };
             }
+            function getForEdit ()
+            {
+                const fileInput = document.getElementById( "image" );
+                const file = fileInput.files[ 0 ];
+                const formData = new FormData();
+                formData.append( "image", file );
+                formData.append( "name", document.getElementById( "name" ).value );
+                formData.append( "price", document.getElementById( "price" ).value );
+                console.log( document.getElementById( "category" ).value );
+                formData.append( "color", document.getElementById( "color" ).value );
+                formData.append( "size", document.getElementById( "size" ).value );
+                formData.append( "category", document.getElementById( "category" ).value );
+                return formData;
+            }
 
             function clearFormData ()
             {
@@ -321,47 +335,14 @@
 
             function editData ()
             {
-                var formData = getFormData();
-                // var formImage = getImage();
-
-                // try
-                // {
-                //     fetch( "http://localhost:7000/api/v1.0.0/pets/662a0895b1d7004afde878ca/uplode", {
-                //         method: "PATCH",
-                //         mode: "cors",
-                //         cache: "no-cache",
-                //         credentials: "same-origin",
-                //         headers: headers,
-                //         body: formDataImage,
-                //         redirect: "follow",
-                //         referrerPolicy: "no-referrer",
-                //     } )
-                //         .then( ( response ) => response.json() )
-                //         .then( ( data ) =>
-                //         {
-                //             if ( data.status == "success" )
-                //             {
-                //                 alert( "لقد تم التعديل بنجاح" );
-                //             } else
-                //             {
-                //                 alert( data.message );
-                //             }
-                //         } );
-                // } catch ( err )
-                // {
-                //     console.log( err );
-                // }
-
-
-
+                var formData = getForEdit();
                 formData[ "id" ] = editFormData._id; // get _id from selected user
-                fetch( "http://localhost:7000/api/v1.0.0/pets/" + editFormData._id, {
+                fetch( "http://localhost:7000/api/v1.0.0/pets/" + editFormData._id + '/uplode', {
                     method: "PATCH",
                     headers: {
-                        "Content-Type": "application/json",
                         Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
                     },
-                    body: JSON.stringify( formData ),
+                    body: formData,
                 } )
                     .then( ( res ) => res.json() )
                     .then( ( response ) =>
@@ -381,57 +362,30 @@
             // delete data
             function deleteData ( id )
             {
-                console.log( localStorage.getItem( "token" ) );
-                fetch( "http://localhost:7000/api/v1.0.0/pets/" + id, {
-                    method: "DELETE",
-                    headers: {
-                        Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
-                    },
-                } )
-                    .then( ( res ) => res.json() )
-                    .then( ( response ) =>
-                    {
-                        setSuccessMessage( "delete is success" );
-                        getData();
-                    } );
+                var result = confirm( "هل أنت متأكد من حذف العنصر؟" );
+                if ( result == false )
+                {
+                    event.preventDefault();
+
+                } else
+                {
+                    console.log( localStorage.getItem( "token" ) );
+                    fetch( "http://localhost:7000/api/v1.0.0/pets/" + id, {
+                        method: "DELETE",
+                        headers: {
+                            Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
+                        },
+                    } )
+                        .then( ( res ) => res.json() )
+                        .then( ( response ) =>
+                        {
+                            setSuccessMessage( "delete is success" );
+                            getData();
+                        } );
+                }
             }
             // get data method
-            function editImage ( id )
-            {
 
-                var formImage = document.getElementById( 'image' );
-                const fileInput = formImage;
-                // console.log( fileInput );
-
-                const file = fileInput.files[ 0 ];
-                console.log( file );
-                const formDataImage = new FormData();
-                if ( file )
-                {
-                    formDataImage.append( "image", file );
-                }
-                fetch( `http://localhost:7000/api/v1.0.0/pets/${ id }/uplode`, {
-                    method: "PATCH",
-                    headers: {
-                        Authorization: `Bearer ${ localStorage.getItem( "token" ) }`,
-                    },
-                    body: formDataImage,
-                } )
-                    .then( ( res ) => res.json() )
-                    .then( ( response ) =>
-                    {
-                        if ( response.status == "success" )
-                        {
-                            setSuccessMessage( "update Product is success" );
-                            clearFormData();
-                            getData();
-                            // reload table
-                        } else
-                        {
-                            setSuccessMessage( response.message );
-                        }
-                    } );
-            }
             function getData ()
             {
                 fetch( "http://localhost:7000/api/v1.0.0/pets" )

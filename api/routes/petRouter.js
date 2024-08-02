@@ -25,7 +25,7 @@ router
   .patch(
     authMiddlewers.restrictTo('admin'),
     uploadPhoto,
-    dynamicMiddleware.filteredBody('image'),
+    // dynamicMiddleware.filteredBody('image'),
     dynamicMiddleware.setPathImginBody('pets', 'image'),
     petController.updatePet
   );
