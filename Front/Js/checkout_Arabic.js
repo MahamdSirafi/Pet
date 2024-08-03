@@ -135,64 +135,7 @@ function addPetCartToHTML() {
   totalQuantityHTML.innerText = totalQuantity;
   totalPriceHTML.innerText = totalPrice + " ل.س";
 }
-let mult = 1;
-function addDataToHTML() {
-  // clear data default
-  let listCartProductsHTML = document.querySelector(".returnCart .list");
-  let totalQuantityHTML = document.querySelector(".totalQuantity");
-  let totalPriceHTML = document.querySelector( ".totalPrice" );
-  
-  // if has product in Cart
-  if (listCartPres) {
-    listCartPres.forEach((cart) => {
-      if (cart) {
-        let newCart = document.createElement("div");
-        newCart.classList.add("item");
-        newCart.dataset.id = cart.product_id;
-        newCart.dataset.type = "pres";
-        newCart.dataset.quantity = cart.quantity;
-        totalQuantity = totalQuantity + cart.quantity;
-        // console.log(cart.quantity);
-        let positionProduct = listPres.findIndex(
-          (value) => value._id == cart.product_id
-        );
-        let info = listPres[ positionProduct ];
-        info.cart.forEach( carts =>
-          { 
-            med.forEach( ( med ) =>
-              { 
-                // if ( med._id === carts.product._id )
-                if ( carts.product._id ===  med._id)
-                  {
-                    mult = ( med.price - med.price * 0.25 ) * cart.quantity;
-                    totalPrice = totalPrice + ( med.price - med.price * 0.25 ) * cart.quantity;
-                    console.log(mult);
-                    // console.log(totalPrice);
-                  newCart.dataset.price = med.price - med.price*0.25;
-                  newCart.dataset.name = carts.product.name;
-                  newCart.innerHTML = `<img class="mx-4" src="${ med.image }" crossorigin="anonymous">
-                    <div class="info">
-                    <div class="name" style="margin-right: 20px;">${ carts.product.name }</div>
-                    <div class="price" style="margin-right: 20px;"> دواء/1 ل.س ${med.price - med.price *0.25 } <span>مع حسم</span></div>
-                    </div>
-                    <div class="quantity">${ cart.quantity }</div>
-                    <div class="returnPrice" style="margin-right: -20px;">ل.س${(med.price - med.price*0.25)* cart.quantity} </div>`;
-                    
-                    listCartProductsHTML.appendChild(newCart);
-                    
-                  }
-                  
-            
-            
-          } )
-          
-        } )
-      }
-    });
-  }
-  totalQuantityHTML.innerText = totalQuantity;
-  totalPriceHTML.innerText = totalPrice + " ل.س";
-}
+
 
 // Post to Order
 

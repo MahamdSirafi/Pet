@@ -24,30 +24,31 @@ const addDataToHTML = () => {
     if (listProducts.length > 0) {
         listProducts.forEach( product =>
             {
-            let newProduct = document.createElement( 'div' );
-            product.cart.forEach( ( cart =>
-            { 
-                med.forEach( ( med ) =>
-                { 
-                    
-                        if (med._id === cart.product._id)
-                   {
-                    newProduct.classList.add( 'product-item' );
-                    newProduct.dataset.id = product._id;
+                product.cart.forEach( ( cart =>
+                    { 
+                   
+                        med.forEach( ( med ) =>
+                            {
+                                
+                                if (med._id === cart.product._id)
+                                {
+                                         let newProduct = document.createElement( 'div' );
+                     newProduct.classList.add( 'product-item' );
+                                    newProduct.dataset.id = med._id;
                     newProduct.innerHTML = ` 
                     <img src="${ med.image }" alt="" crossorigin="anonymous">
                     <h2>${ cart.product.name }</h2>
                     <div class="doctor">D.${ product.doctor.name }</div>
-                    <div class="prices">السعر : ل.س ${ med.price }</div>
-                    <div class="dis">بعد الحسم : ل.س ${ med.price - med.price*0.25 }</div>
-                    <div class="quantity">الكمية : ${ cart.quantity }</div>
-                    <button class="addcart">أضف الى السلة</button>`;
+                    <div class="prices">Price : ${ med.price }SYP</div>
+                    <div class="dis">After discount : ${ med.price - med.price*0.25 }SYP</div>
+                    <div class="quantity">Quantity : ${ cart.quantity }</div>
+                    <button class="addcart">Add To Cart </button>`;
+                    listProductHTML.appendChild(newProduct);
                 }
             })
             } ))
                 
             
-            listProductHTML.appendChild(newProduct);
         })
     }
 }
@@ -94,36 +95,40 @@ const addCartToHTML = () => {
     let totalQuantity = 0;
     if (listcard.length > 0) {
         listcard.forEach(cart => {
-            totalQuantity = totalQuantity + cart.quantity;
-            let newCart = document.createElement('div');
-            newCart.classList.add('item');
-            newCart.dataset.id = cart.product_id;
-            let positionProduct = listProducts.findIndex( ( value ) => value._id == cart.product_id );
-            let info = listProducts[ positionProduct ];
-            info.cart.forEach( carts =>
-            { 
-                med.forEach( med =>
-                { 
-                        if (med._id === carts.product._id)
+            let positionProduct = med.findIndex( ( value ) => value._id == cart.product_id );
+            console.log(positionProduct);
+            let info = med[ positionProduct ];
+             let newCart = document.createElement('div');
+                        totalQuantity = totalQuantity + cart.quantity;
+                        newCart.classList.add('item');
+                        newCart.dataset.id = cart.product_id;
                     
                         newCart.innerHTML = `<div class="image">
-                        <img src="${med.image}" alt="" crossorigin="anonymous">
-                    </div>
-                    <div class="name">
-                        ${carts.product.name}
-                    </div>
-                    <div class="total-price">
-                    ${(med.price - med.price *0.25)* cart.quantity} ل.س
-                    </div>
-                    <div class="quantity">
+                        <img src="${ info.image }" alt="" crossorigin="anonymous">
+                        </div>
+                        <div class="name">
+                        ${ info.name }
+                        </div>
+                        <div class="total-price">
+                       ${ ( info.price - info.price * 0.25 ) * cart.quantity } SYP
+                        </div>
+                        <div class="quantity">
                         <span class="minus"> - </span>
-                        <span>${cart.quantity}</span>
+                        <span>${ cart.quantity }</span>
                         <span class="plus"> + </span>
-                    </div>`;
+                        </div>`;
            
-                    listcardHtml.appendChild(newCart);
-                } )
-            } )
+                        listcardHtml.appendChild( newCart );
+            // info.cart.forEach( carts =>
+            //     { 
+            //         med.forEach( med =>
+            //             {
+            //         if ( med._id === carts.product._id )
+            //         {
+                       
+            //         }
+            //     } )
+            // } )
         })
     }
     iconCartSpan.innerText = totalQuantity;
@@ -175,6 +180,7 @@ const initApp = () => {
     .then(response => response.json())
     .then(data => {
         listProducts = data.doc;
+        console.log(listProducts);
         addDataToHTML();
         // get cart from memory 
         if (localStorage.getItem('preCart')) {
@@ -184,3 +190,12 @@ const initApp = () => {
     })
 }
 initApp();
+if ( listProducts.length!=0 )
+{
+    console.log( listProducts );
+} else
+{ 
+    localStorage.removeItem( 'preCart' );
+    
+}
+// localStorage.removeItem('preCart');

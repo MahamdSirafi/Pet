@@ -243,4 +243,3 @@ checkBtn.addEventListener("click", (e) => {
     console.log(err);
   }
 });
-// localStorage.removeItem('preCart');
