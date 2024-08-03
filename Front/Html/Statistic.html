@@ -8,9 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/Front/css/sass/pages/homepage_English.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
-    <link rel="stylesheet" href="/Front/Html/styles.css">
     <style>
       #map {
         padding: 1rem;
@@ -27,6 +26,9 @@
 
   <body>
     <!----Navbar-->
+    <div class="language " style="font-family: Arial, Helvetica, sans-serif;">
+      <a class="language-box" href='./statistic_Arabic.html'>Ar</a>
+    </div>
     <br>
     <div style="margin-top: 50px;" id="map"></div>
     <section class="admin">
@@ -89,13 +91,13 @@
         if ( sum > 30 )
         {
           var popup = L.popup().setContent(
-            "<strong>مرتفع</strong><br>عدد القطط المباعة: " + sum
+            "<strong>High</strong><br>visitor rate" + sum
           );
           L.marker( [ lat, lng ], { icon: redIcon } ).addTo( mymap ).bindPopup( popup ).openPopup();
         } else
         {
           var popup = L.popup().setContent(
-            "<strong>مقبول</strong><br>عدد الكلاب المباعة: " + sum
+            "<strong>Acceptable</strong><br>buyer ratio" + sum
           );
           L.marker( [ lat, lng ] ).addTo( mymap ).bindPopup( popup ).openPopup();
         }
@@ -108,7 +110,7 @@
           labels: [ "2018", "2019", "2020", "2021", "2022", "2023" ],
           datasets: [
             {
-              label: "نسبة المستخدمين ",
+              label: "Percentage of users",
               data: [ 800, 600, 400, 550, 200, 90 ],
               backgroundColor: [ "#068331" ],
               borderColor: [ "green" ],
@@ -142,22 +144,22 @@
         type: "line",
         data: {
           labels: [
-            "يناير",
-            "فبراير",
-            "مارس",
-            "أبريل",
-            "مايو",
-            "يونيو",
-            "يوليو",
-            "أغسطس",
-            "سبتمبر",
-            "أكتوبر",
-            "نوفمبر",
-            "ديسمبر",
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
           ],
           datasets: [
             {
-              label: "نسبة الزيارات",
+              label: "Percentage of visits",
               data: [ 50, 70, 90, 80, 60, 40, 30, 20, 10, 20, 30, 40 ],
               backgroundColor: [ "#B3A943" ],
               borderColor: [ "#ddd044" ],
@@ -194,19 +196,17 @@
 
         data: {
           labels: [
-            "مبيعات المنتجات",
-            "مبيعات الحيوانات",
+            "Products Sales",
+            "pets Sales",
+            "Medicines Sales",
+            "Percentage of users",
+            "Accessories Sales",
+            "Percentage of transactions on the site",
 
-            "مبيعات الأدوية",
-            "نسبة ازدياد المستخدمين",
-
-
-            "مبيعات الاكسسوارات",
-            "نسبة التعاملات على الموقع",
           ],
           datasets: [
             {
-              label: "عدد المرات",
+              label: "number of times",
               data: [ 10, 20, 15, 5, 30, 25 ],
               backgroundColor: [
                 "#068331",
