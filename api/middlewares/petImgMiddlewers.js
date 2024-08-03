@@ -6,8 +6,7 @@ const multerStorage = multer.diskStorage({
     cb(null, 'public/img/pets');
   },
   filename: (req, file, cb) => {
-    const ext = file.mimetype.split('/')[1];
-    cb(null, `pets-${file.originalname}.${ext}`);
+    cb(null, `pets-${file.originalname}`);
   },
 });
 const multerFilter = (req, file, cb) => {
