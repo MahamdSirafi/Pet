@@ -39,10 +39,10 @@ const addDataToHTML = () => {
                     <img src="${ med.image }" alt="" crossorigin="anonymous">
                     <h2>${ cart.product.name }</h2>
                     <div class="doctor">D.${ product.doctor.name }</div>
-                    <div class="prices">Price : ${ med.price }SYP</div>
-                    <div class="dis">After discount : ${ med.price - med.price*0.25 }SYP</div>
-                    <div class="quantity">Quantity : ${ cart.quantity }</div>
-                    <button class="addcart">Add To Cart </button>`;
+                    <div class="prices">السعر : ${ med.price }ل.س</div>
+                    <div class="dis">بعد الحسم : ${ med.price - med.price*0.25 }ل.س</div>
+                    <div class="quantity">العدد : ${ cart.quantity }</div>
+                    <button class="addcart">أضف الى السلة </button>`;
                     listProductHTML.appendChild(newProduct);
                 }
             })
@@ -86,7 +86,7 @@ const addToCart = (product_id) => {
 // To Store Cart Products In Memory
 
 const addCartToMemory = () => {
-    localStorage.setItem('preCart', JSON.stringify(listcard));
+    localStorage.setItem('preCart1', JSON.stringify(listcard));
 }
 // Adding To Cart Function
 
@@ -183,8 +183,8 @@ const initApp = () => {
         console.log(listProducts);
         addDataToHTML();
         // get cart from memory 
-        if (localStorage.getItem('preCart')) {
-            listcard = JSON.parse(localStorage.getItem('preCart'));
+        if (localStorage.getItem('preCart1')) {
+            listcard = JSON.parse(localStorage.getItem('preCart1'));
             addCartToHTML();
         }
     })
@@ -195,7 +195,7 @@ if ( listProducts.length!=0 )
     console.log( listProducts );
 } else
 { 
-    localStorage.removeItem( 'preCart' );
+    localStorage.removeItem( 'preCart1' );
     
 }
 // localStorage.removeItem('preCart');

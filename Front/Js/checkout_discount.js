@@ -191,15 +191,13 @@ checkBtn.addEventListener("click", (e) => {
   let data = {
     cart: [],
     address: document.getElementById("address").value,
-    total: totalPrice,
   };
   let items = document.querySelectorAll(".item");
   items.forEach((it) => {
     console.log(document.getElementById("address").value);
     data.cart.push({
       product:it.dataset.id,
-      price: it.dataset.price,
-      type: it.dataset.type,
+      quantity: it.dataset.quantity,
     });
   });
   try {
@@ -224,7 +222,7 @@ checkBtn.addEventListener("click", (e) => {
         //   localStorage.removeItem("productCart");
           localStorage.removeItem("preCart1");
         } else {
-          // alert(data.message);
+          alert(data.message);
           alert( 'يجب أن تسجل دخولك أولاً' );
           window.location.href = '/Front/Html/signin_English.html';
         }

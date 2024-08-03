@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout | Cart</title>
+        <link rel="stylesheet" href="/Front/homepage_Arabic.css">
+        <link rel="stylesheet" href="/Front/css/sass/pages/homepage_English.css">
+        <link rel="stylesheet" href="/all.min.css">
+        <link rel="stylesheet" href="/Front/bootstrap.min.css">
+
+    </head>
+    <style>
+        body {
+            direction: rtl;
+            font-family: ArabicFont;
+            text-decoration: none;
+        }
+    </style>
+
+    <body>
+        <div class="language " style="font-family: Arial, Helvetica, sans-serif;">
+            <a class="language-box" href='check_cart.html' style="text-decoration: none;">En</a>
+        </div>
+        <div class="container">
+            <div class="checkoutLayout">
+                <div class="returnCart ">
+                    <a href="/Front/Html/products_English.html" style=" font-family: ArabicFont;
+                    text-decoration: none; color: #fff; font-size: 16px;" class="btn-pet btn-black">العودة للتسوق</a>
+                    <h1 style=" font-family: ArabicFont2; font-size: 22px;">قائمة المشتريات في السلة</h1>
+                    <div class="list">
+
+                        <!-- <div class="item">
+                            <img src="images/1.webp">
+                            <div class="info">
+                                <div class="name">PRODUCT 1</div>
+                                <div class="price">$22/1 product</div>
+                            </div>
+                            <div class="quantity">5</div>
+                            <div class="returnPrice">$433.3</div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+
+                <div class="right" style="height: 620px;">
+                    <h1 style=" font-family: ArabicFont;">المشتريات</h1>
+
+                    <div class="form">
+                        <div class="group">
+                            <label style=" font-family: ArabicFont;" for="name">رقم البنك</label>
+                            <input style=" font-family: ArabicFont;" type="text" name="name" id="name">
+                        </div>
+
+                        <div class="group">
+                            <label style=" font-family: ArabicFont;" for="phone">اسم البنك</label>
+                            <input type="text" name="phone" id="phone">
+                        </div>
+
+                        <div class="group">
+                            <label style=" font-family: ArabicFont;" for="address">العنوان</label>
+                            <input type="text" name="address" id="address">
+                        </div>
+                    </div>
+                    <div class="return">
+                        <div class="row">
+                            <div style=" font-family: ArabicFont;">الكمية الاجمالية</div>
+                            <div class="totalQuantity"></div>
+                        </div>
+                        <div class="row">
+                            <div style=" font-family: ArabicFont;">السعر الكلي</div>
+                            <div style=" font-family: ArabicFont;" class="totalPrice"></div>
+                        </div>
+                    </div>
+                    <button style=" font-family: ArabicFont;" class="buttonCheckout btn-pet btn-black">شراء</button>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="/Front/Js/checkout_discount_Arabic.js"></script>
+
+    </body>
+
+</html>
